@@ -1,0 +1,16 @@
+<div class="checkticket-result  {{if result}}success{{else}}error{{/if}}">
+	<p class="check-message">{{message}}</p>
+	<div class="image-back check-result">
+		
+	</div>
+	{{if scanQRCodeApi}}
+	<button class="btn btn-primary btn-check-again" data-xx-action="scanQRCode">继续检票</button>
+	{{/if}}
+	{{if token}}
+	<div class="tips">
+		<h4>非管理员如何获取检票权限？</h4>
+		<p>1、请临时检票员扫描任意一张电子票二维码。</p>
+		<p>2、在权限界面输入临时检票权限码：</p>
+	</div>
+	{{/if}}
+</div>

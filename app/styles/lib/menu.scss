@@ -1,0 +1,171 @@
+.assistive-touch-conatiner {
+	position: relative;
+
+	&.active {
+		.shadow {
+			display: block;
+		}
+	}
+	.shadow {
+		display: none;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		background-color: #fff;
+		background-color: rgba(232, 235, 237, 0.9);
+		z-index: 1000;
+	}
+	.assistive-touch {
+		position: fixed;
+		z-index: 1100;
+		width: 75px;
+		background-color: transparent;
+		text-align: center;
+		user-select: none;
+		apple-user-select: none;
+	}
+	.avatar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 50%;
+		border: 5px solid transparent;
+		box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+		background-color: rgba(255, 255, 255, .5);
+		z-index: 9999;
+		outline: 0
+	}
+	.menuMove {
+		transition: all .5s;
+	}
+	.avatar .inset-box {
+		position: relative;
+		height: 65px;
+		width: 65px;
+		background-color: #fff;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+	.avatar .inset-box .shadow, .menu_button .inset-box img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		border-radius: 50%;
+	}
+	.avatar .inset-box .shadow {
+		box-shadow: 0 0 8px rgba(0, 0, 0, .3) inset;
+	}
+	.avatar .inset-box img {
+		display: block;
+		-webkit-transition: .4s ease;
+		-moz-transition: .4s ease;
+		-ms-transition: .4s ease;
+		-o-transition: .4s ease;
+		transition: .4s ease;
+	}
+	.avatar .mark {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 12px;
+		background-color: $red-color;
+		color: #fff;
+		padding: 3px 6px;
+		border-radius: 9px;
+	}
+	.menus {
+		top: 12.5px;
+		left: 14.5px;
+		position: absolute
+	}
+	.menus li {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		-webkit-transition: .3s;
+		-moz-transition: .3s;
+		-ms-transition: .3s;
+		-o-transition: .3s;
+		transition: .3s
+	}
+	.menus li a {
+		position: relative;
+		display: block;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		// overflow: hidden;
+		color: $success-color;
+		background-color: #fff;
+		box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+	}
+	.menus li a .icon {
+		display: inline-block;
+		text-align: center;
+		margin: 10px;
+		font-size: 30px;
+		-webkit-transition: .4s ease;
+		-moz-transition: .4s ease;
+		-ms-transition: .4s ease;
+		-o-transition: .4s ease;
+		transition: .4s ease
+	}
+	.menus li a .mark {
+		position: absolute;
+		top: 3px;
+		left: 22px;
+		font-size: 12px;
+		background-color: $red-color;
+		color: #fff;
+		padding: 2px 5px;
+		border-radius: 8px;
+	}
+	.btn-rotate .menus span {
+		-webkit-transform: rotate(-135deg);
+		-moz-transform: rotate(-135deg);
+		-ms-transform: rotate(-135deg);
+		-o-transform: rotate(-135deg);
+		transform: rotate(-135deg)
+	}
+	.active .menus li a {
+		-webkit-animation: expand .6s ease 1 backwards;
+		-moz-animation: expand .6s ease 1 backwards;
+		-ms-animation: expand .6s ease 1 backwards;
+		-o-animation: expand .6s ease 1 backwards;
+		animation: expand .6s ease 1 backwards
+	}
+}
+@-webkit-keyframes expand {
+	0% {
+		top: 0
+	}
+	50% {
+		top: -10px
+	}
+	70% {
+		top: 10px
+	}
+	100% {
+		top: 0
+	}
+}
+@-moz-keyframes expand {
+	0% {
+		top: 0
+	}
+	50% {
+		top: -10px
+	}
+	70% {
+		top: 10px
+	}
+	100% {
+		top: 0
+	}
+}

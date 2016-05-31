@@ -1,0 +1,31 @@
+<!--个人已参加、报名、投票等的活动列表模板-->
+{{if page=="zone"}}
+<header class="pub-header clearfix">
+	<h3 class="pub-title">{{title}}</h3>
+	<div class="toolbars">
+		<a href="#organization/{{orgId}}/user/events?uid={{userId}}">
+			查看更多 <i class="fa fa-angle-double-right"></i>
+		</a>
+	</div>
+</header>
+{{/if}}
+<div class="pub-events">
+	{{if events.length==0}}
+	<p>暂无</p>
+	{{/if}}
+	{{each events as event i}}
+	<div class="pub-event clearfix">
+		<div class="avatar-wrapper">
+			<a href="#organization/{{orgId}}/event/{{event.id}}/info">
+				<div class="avatar image-back" style="background-image:url({{event.thumbnailUrl}}@100w_100h_1e_1c),url(./images/default/event.jpg);"></div>
+			</a>
+		</div>
+		<div class="info-wrapper">
+			<h4 class="info-main">
+				<a href="#organization/{{orgId}}/event/{{event.id}}/info">{{event.name}}</a>
+			</h4>
+			<p class="info-sub">{{event.terse}}</p>
+		</div>
+	</div>
+	{{/each}}
+</div>

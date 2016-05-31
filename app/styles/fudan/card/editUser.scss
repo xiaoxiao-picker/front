@@ -1,0 +1,30 @@
+.handle-body {
+	padding: 15px 0 50px;
+	.edit-wrapper {
+		background-color: #fff;
+		border-bottom: 1px solid $default-border-color;
+		line-height: 50px;
+		>label {
+			display: block;
+			width: 100%;
+			>span {
+				display: block;
+				float: left;
+				width: 100px;
+				padding-left: 15px;
+				>i {
+					margin-right: 5px;
+				}
+			}
+			.input-wrapper {
+				display: block;
+				margin-left: 100px;
+				width: auto;
+				input {
+					border: none;
+					width: 95%;
+				}
+			}
+		}
+	}
+}

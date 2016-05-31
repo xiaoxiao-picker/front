@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>image preview</title>
+	<style type="text/css">
+	*{
+		margin:0;padding:0;
+	}
+	</style>
+</head>
+<body>
+	<input type="file" accept="image/*" multiple="multiple" onchange="preview(this)" />
+
+	<script type="text/javascript">
+	var winWidth=document.documentElement.clientWidth;
+	var winHeight=document.documentElement.clientHeight;
+	function preview(input){
+		if(!window.FileReader) return;
+		var files=input.files;
+		var stimes=new Array(files.length);
+		for(var i=0,file;i<files.length;i++){
+			file=files[i];
+			if(!file.type.match("image/*")){
+				continue;
+			}
+
+			stimes[i]=new Date().getTime();
+			var reader=new FileReader();
+			reader.onload=(function(index){
+				return function(e){
+					var image=new Image();
+					// image.width=winWidth;
+					// image.height=winHeight;
+					image.src=e.target.result;
+					// var newImage=compress(image,1);
+					// newImage.width=winWidth;
+					var newImage=compress2(image,500);
+					document.body.appendChild(newImage);
+					// alert(newImage);
+					// alert(new Date().getTime()-stimes[index]);
+				}
+			})(i);
+			reader.readAsDataURL(file);
+
+		}
+	}
+
+	// 质量压缩法
+	function compress(image,quality,format){
+		var mimeType="image/jpeg";
+		if(format=="png"){
+			mimeType="image/png";
+		}
+		var canvas=document.createElement("canvas");
+		canvas.width=image.naturalWidth;
+		canvas.height=image.naturalHeight;
+		var context=canvas.getContext("2d");
+		context.drawImage(image,0,0);
+		image=null;
+		var imageData=canvas.toDataURL(mimeType,quality/100);
+		var newImage=new Image();
+		
+		newImage.src=imageData;
+		return newImage;
+	}
+	function compress2(image,maxHeight,format){
+		var mimeType="image/jpeg";
+		if(format=="png"){
+			mimeType="image/png";
+		}
+		var canvas=document.createElement("canvas");
+		image.width*=maxHeight/image.height;
+		image.height=maxHeight;
+		canvas.width=image.width;
+		canvas.height=image.height;
+		var context=canvas.getContext("2d");
+		context.drawImage(image,0,0,image.width,image.height);
+		image=null;
+		var imageData=canvas.toDataURL(mimeType);
+		var newImage=new Image();
+		
+		newImage.src=imageData;
+		return newImage;
+	}
+	</script>
+</body>
+</html>

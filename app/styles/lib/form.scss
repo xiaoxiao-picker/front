@@ -1,0 +1,113 @@
+.form-container {
+        width: 80%;
+        max-width: 350px;
+        margin: 0px auto 20px;
+
+        &.textbox {
+                margin-top: 0;
+                width: 100%;
+                max-width: 1000px;
+
+                .form-box {
+                        max-width: 1000px;
+                        border-radius: 0;
+                }
+
+                .xx-input {
+                        border-radius: 0;
+                }
+        }
+
+        .form-box {
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+                background-color: #fff;
+                background-color: rgba(255, 255, 255, 1);
+                border-radius: $default-border-radius;
+                position: relative;
+
+                > .btn-close {
+                        position: absolute;
+                        top: -10px;
+                        right: -10px;
+                }
+
+                .form-header {
+                        h3 {
+                                padding: 30px 30px 15px;
+                                font-size: 16px;
+                                color: $color-c2;
+                                text-align: center;
+                        }
+                }
+
+                .form-body {
+                        .xx-input {
+                                width: 100%;
+                                border: none;
+                                outline: none;
+                                font-size: 16px;
+                                padding: 20px;
+
+                                &:focus {
+                                        box-shadow: none;
+                                }
+                        }
+
+                        ul.choices {
+                                padding: 0 30px 15px;
+
+                                li {
+                                        position: relative;
+                                        border-bottom: 1px solid $default-border-color;
+                                        color: $color-c1;
+                                        cursor: pointer;
+                                        position: relative;
+
+                                        &:last-child {
+                                                border: none;
+                                        }
+
+                                        > label {
+                                                display: block;
+                                                padding: 20px 0;
+                                                cursor: pointer;
+                                        }
+
+                                        input {
+                                                position: absolute;
+                                                right: -20px;
+                                                top: 15px;
+                                                color: #fff;
+                                        }
+                                }
+                        }
+                }
+
+                .form-footer {
+                        text-align: center;
+                        background-color: #f3f3f6;
+
+                        .btn {
+                                display: block;
+                                float: left;
+                                width: 50%;
+                                padding: 15px;
+                                border-radius: 0;
+                        }
+
+                        .btn-yes {
+                                color: $color-c5;
+                        }
+
+                        .btn-no {
+                                color: $color-c2;
+                        }
+                }
+        }
+
+        .btn-choice-confirm {
+                border-radius: 0;
+        }
+}

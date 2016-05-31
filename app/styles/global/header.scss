@@ -1,0 +1,89 @@
+#header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 500;
+
+        > .wrapper {
+                background-color: $theme-color;
+                height: $wechat-header-height;
+                position: relative;
+                letter-spacing: 1px;
+                width: 100%;
+                color: #fff;
+
+                &.unfold {
+                        .icon-arrow-drop-down {
+                                transform: rotate(-180deg);
+                        }
+                }
+
+                h2 {
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: normal;
+                        color: #fff;
+                        line-height: $wechat-header-height;
+                        height: $wechat-header-height;
+                        padding-left: 55px;
+                        padding-right: 55px;
+
+                        > a {
+                                color: #fff;
+                        }
+
+                        .icon-arrow-drop-down {
+                                display: inline-block;
+                                transition: all .3s ease-in-out;
+                        }
+                }
+
+                .header-nav {
+                        position: absolute;
+                        top: 7px;
+                        cursor: pointer;
+
+                        &.left {
+                                left: 15px;
+                        }
+
+                        &.right {
+                                right: 15px;
+                        }
+
+                        .iconfont {
+                                font-size: 16px;
+                        }
+
+                        &.notification-active:before {
+                                content: " ";
+                                display: block;
+                                position: absolute;
+                                top: -3px;
+                                right: -3px;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 50%;
+                                background-color: #f92525;
+                        }
+                }
+
+                .btn-back, .avatar {
+                        width: 34px;
+                        height: 34px;
+                        display: block;
+                        border-radius: 50%;
+                }
+
+                .btn-back {
+                        color: #fff;
+                        line-height: 34px;
+                        transition: .5s ease-in-out;
+                }
+
+                .avatar {
+                        box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.16);
+                }
+        }
+}

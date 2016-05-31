@@ -1,0 +1,20 @@
+	
+	{{if count==0}}
+	<div class="xx-empty-wrapper">
+		暂无奖励记录
+	</div>
+	{{/if}}
+
+	{{each awards as award i}}
+	<section class="award">
+		<h4 class="title">
+			<a href="javascript:void(0);">{{award.awardVo.name}}</a>
+		</h4>
+		<div class="date">{{award.awardVo.createDate | makedate:'yyyy-MM-dd'}}</div>
+		<section class="desc">
+			{{each award.awardVo.description.split('\n') as text i}}
+			<p>{{text}}</p>
+			{{/each}}
+		</section>
+	</section>
+	{{/each}}

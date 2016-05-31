@@ -1,0 +1,394 @@
+body.vote-info {
+        #content {
+                margin-top: 0;
+        }
+}
+
+.vote-info-container {
+        background-color: #fff;
+        margin-bottom: 50px;
+        border-bottom: 1px solid transparent;
+
+        .vote-header {
+                position: relative;
+                height: 230px;
+                line-height: 30px;
+
+                h2 {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        padding: 15px;
+                        line-height: 20px;
+                        background-color: rgba(255, 255, 255, 0.7);
+                }
+
+                .days,
+                .hours,
+                .minutes,
+                .seconds,
+                .number {
+                        font-size: 30px;
+                        margin: 0 5px;
+                        color: $red-color;
+                        font-family: cursive, fantasy;
+                }
+        }
+
+        .vote-base-info,
+        .vote-date,
+        .vote-description,
+        .vote-regular {
+                margin: 0 15px;
+                padding: 15px 0;
+                border-bottom: 1px solid $default-border-color;
+
+                p {
+                        margin-bottom: 10px;
+
+                        .index {
+                                margin-right: 5px;
+                        }
+                }
+        }
+
+        .accordion.vote-description {
+                border: none;
+                border-bottom: 1px solid $default-border-color;
+                padding-bottom: 0;
+
+                &.active {
+                        .accordion-body {
+                                border-top: none;
+                        }
+                }
+
+                .accordion-header {
+                        background-color: #fff;
+                        padding: 0 0 10px;
+
+                        .accordion-title {
+                                font-size: 14px;
+                                font-weight: normal;
+                        }
+                }
+
+                .buttons {
+                        top: 0;
+                }
+
+                .accordion-body {
+                        .accordion-content {
+                                padding: 0;
+                        }
+                }
+        }
+
+        .vote-options {
+                margin: 0 15px;
+                padding-top: 15px;
+
+                .inner-title {
+                        .buttons {
+                                position: absolute;
+                                top: -13px;
+                                right: 0;
+
+                                button.btn-search {
+                                        padding: 10px;
+                                        font-size: 18px;
+                                        font-weight: bold;
+                                        color: $theme-color;
+                                }
+                        }
+                }
+        }
+
+        .inner-title {
+                margin-bottom: 10px;
+                position: relative;
+        }
+
+        .vote-base-info {
+                padding-bottom: 0;
+
+                .org-info {
+                        padding: 2px;
+                        margin-bottom: 10px;
+
+                        > img {
+                                float: left;
+                                height: 40px;
+                                width: 40px;
+                                border-radius: 50%;
+                                border: 2px solid #fff;
+                                box-shadow: 0 0 4.2px 0.25px rgba(0, 0, 0, 0.1);
+                        }
+
+                        .msg {
+                                margin-left: 50px;
+
+                                .title {
+                                        font-size: 16px;
+                                        line-height: 25px;
+                                }
+
+                                .name {
+                                        font-size: 12px;
+                                        line-height: 15px;
+                                }
+                        }
+                }
+
+                .options {
+                        margin-bottom: 15px;
+                }
+
+                .option {
+                        float: left;
+                        width: 33.333%;
+                        text-align: center;
+
+                        &.border-right {
+                                border-right: 1px solid $default-border-color;
+                        }
+                }
+        }
+
+        .option-box {
+                position: relative;
+                border: 1px solid $default-border-color;
+                border-radius: 5px;
+                padding: 7px;
+                margin-bottom: 15px;
+                cursor: pointer;
+
+                &:after {
+                        display: inline-block;
+                        position: absolute;
+                        right: 7px;
+                        top: 0;
+                        content: "\e623";
+                        background-color: transparent;
+                        vertical-align: middle;
+                        font-family: "iconfont" !important;
+                        font-size: 12px;
+                        line-height: 54px;
+                        font-style: normal;
+                        -webkit-font-smoothing: antialiased;
+                        -webkit-text-stroke-width: 0.2px;
+                        -moz-osx-font-smoothing: grayscale;
+                        color: $color-c2;
+                }
+
+                .icon,
+                .content {
+                        float: left;
+                }
+
+                .icon {
+                        display: block;
+                        height: 40px;
+                        width: 40px;
+                }
+
+                .content {
+                        margin-left: 10px;
+                        width: 60%;
+                }
+
+                .mark {
+                        font-size: 12px;
+                        color: $color-c2;
+                        line-height: 18px;
+                }
+
+                .title {
+                        line-height: 20px;
+                }
+
+                .total {
+                        float: right;
+                        margin-right: 15px;
+                        line-height: 40px;
+                        font-size: 12px;
+                        color: $color-c2;
+                }
+
+                .tag {
+                        position: relative;
+                        font-size: 12px;
+                        padding: 2px 4px;
+                        border-radius: 2px;
+                        background: $red-color;
+                        color: #fff;
+                        margin-left: 3px;
+
+                        &:before {
+                                position: absolute;
+                                top: 4px;
+                                left: -4px;
+                                content: ' ';
+                                width: 0;
+                                height: 0;
+                                border-width: 5px;
+                                border-style: dashed;
+                                border-color: transparent;
+                                border-left-width: 0;
+                                border-right-color: $red-color;
+                                border-right-style: solid;
+                        }
+
+                        &.green {
+                                background: $success-color;
+
+                                &:before {
+                                        border-right-color: $success-color;
+                                }
+                        }
+
+                        &.red {
+                                background: $red-color;
+
+                                &:before {
+                                        border-right-color: $red-color;
+                                }
+                        }
+
+                        &.gray {
+                                background: #cdcdcd;
+
+                                &:before {
+                                        border-right-color: #cdcdcd;
+                                }
+                        }
+                }
+        }
+}
+
+.vote-options-container {
+        margin: 0 -5px;
+
+        .option-container {
+                width: 50%;
+                position: absolute;
+                padding: 0 5px 10px;
+        }
+
+        .option-card-box {
+                min-height: 50px;
+                border-radius: $default-border-radius;
+                overflow: hidden;
+                box-shadow: 1px 2px 3px -1px rgba(0, 0, 0, 0.3);
+
+                .image-wrapper {
+                        position: relative;
+
+                        img {
+                                display: block;
+                                width: 100%;
+                        }
+
+                        .title {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                padding: 0 10px;
+                                line-height: 30px;
+                                background: rgba(0, 0, 0, 0.3);
+                                color: #fff;
+                                text-align: center;
+                                font-size: 12px;
+                        }
+                }
+
+                .bottom {
+                        position: relative;
+                        padding: 0 5px;
+                        height: 35px;
+                        line-height: 35px;
+
+                        .number {
+                                color: $red-color;
+                        }
+
+                        .btn-vote {
+                                position: absolute;
+                                top: 5px;
+                                right: 5px;
+                                padding: 4px 8px;
+                                border-radius: 30px;
+
+                                &[disabled] {
+                                        background: $color-c2;
+                                }
+                        }
+
+                        &.hideVotes {
+                                text-align: center;
+
+                                .number,
+                                .piao {
+                                        display: none;
+                                }
+
+                                .btn-vote {
+                                        position: initial;
+                                }
+                        }
+                }
+
+                > label {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        padding: 10px;
+                }
+
+                .iconfont {
+                        font-size: 16px;
+                }
+        }
+
+        > label {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 10px;
+        }
+
+        &.multiple {
+                .bottom {
+                        text-align: center;
+                }
+        }
+
+        &.single {}
+}
+
+.vote-info-footer {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-top: 1px solid $default-border-color;
+
+        #BtnMulVoteBox {
+                position: relative;
+                line-height: 55px;
+                height: 55px;
+                color: $theme-color;
+
+                .count {
+                        padding-left: 15px;
+                }
+
+                .btn {
+                        position: absolute;
+                        top: 10px;
+                        right: 15px;
+                        line-height: 20px;
+                        border-radius: 20px;
+                        padding: 7px 16px;
+                }
+        }
+}

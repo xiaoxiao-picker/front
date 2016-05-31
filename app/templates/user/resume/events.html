@@ -1,0 +1,18 @@
+{{if count==0}}
+<div class="empty-tips">
+	暂未报名任何活动
+</div>
+{{/if}}
+{{each events as event i}}
+<section class="event">
+	<h4 class="title">
+	<a href="#organization/{{orgId}}/event/{{event.id}}/info">{{event.name}}</a>
+	</h4>
+	<div class="date">{{event.startDate | makedate:'yyyy-MM-dd'}} 至 {{event.endDate | makedate:'yyyy-MM-dd'}}</div>
+	<section class="desc">
+		{{each event.terse&&event.terse.split('\n') as text i}}
+		<p>{{text}}</p>
+		{{/each}}
+	</section>
+</section>
+{{/each}}

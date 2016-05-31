@@ -1,0 +1,31 @@
+{{each options as option i}}
+<section class="option-container" data-value="{{option.id}}">
+	<div class="option-card-box single">
+		<a href="javascript:void(0);" data-xx-action="checkOption" data-option-id="{{option.id}}">
+			<div class="image-wrapper">
+				<img src="{{option.imgUrl | imageUrl:'@200w_1e'}}" alt="{{option.name}}" />
+				<div class="title ellipsis">
+					<span>{{option.name}}</span>
+				</div>
+			</div>
+		</a>
+		
+		<div class="bottom {{vote.hideVotes?'hideVotes':''}}">
+			<span class="number">{{option.totalVotes||0}}</span><span class="piao">票</span>
+			<button class="btn btn-xx-theme btn-vote" {{if (!vote.repeatable&&option.casted)||(!vote.remainVote)}}disabled{{/if}} data-value="{{option.id}}" data-xx-action="singleVote">
+				<span class="inside-loading">
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span class="inside-text">
+					<span class="iconfont icon-favorite-fill"></span>
+					{{if !vote.repeatable&&option.casted}}
+					已支持
+					{{else}}
+					支持
+					{{/if}}
+				</span>
+			</button>
+		</div>
+	</div>
+</section>
+{{/each}}

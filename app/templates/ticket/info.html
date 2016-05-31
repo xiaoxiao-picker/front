@@ -1,0 +1,51 @@
+<section class="ticket-info-container">
+    <div class="ticket-info">
+        <div class="title" data-xx-action="toggleTerse">
+	        {{ticket.name||"无"}}
+	        <div class="buttons">
+	            <span class="iconfont icon-expand-more text-gray"></span>
+	        </div>
+        </div>
+        <div class="context">{{ticket.terse}}</div>
+    </div>
+    {{if ticket.hasRequested}}
+    <div class="ticket-qrcode">
+        <img src="{{qrcodeUrl}}" alt="">
+        <p>长按保存二维码以便检票</p>
+    </div>
+    {{else}}
+    <div id="TicketSignup">
+        <!-- requires -->
+    </div>
+    {{/if}}
+</section>
+<footer id="footer">
+    {{if ticket.state=="OPENED"}} 
+        {{if ticket.hasRequested}}
+            {{if eventId}}
+            <a class="btn btn-xx-theme btn-large btn-link" href="#organization/{{orgId}}/event/{{eventId}}/info">返回活动</a> 
+            {{else}}
+            <a class="btn btn-xx-theme btn-large btn-link" href="javascript:void(0)" data-xx-action="goBack">返回</a> 
+            {{/if}}
+        {{else}}
+        <button class="btn btn-xx-theme btn-large" data-xx-action="signup">
+            <span class="inside-loading">
+    		<span class="iconfont icon-loading rolling"></span>
+            </span>
+            <span class="inside-text font-16">立即抢票</span>
+        </button>
+        {{/if}} 
+    {{else if ticket.state=="UNACTIVE"}}
+         {{if eventId}}
+            <a class="btn btn-xx-theme btn-large btn-link" href="#organization/{{orgId}}/event/{{eventId}}/info">当前时间不可抢票，返回活动</a> 
+        {{else}}
+            <a class="btn btn-xx-theme btn-large btn-link" href="javascript:void(0)" data-xx-action="goBack">当前时间不可抢票，返回</a>
+        {{/if}}
+    {{else}}
+        {{if eventId}}
+        <a class="btn btn-xx-theme btn-large btn-link" href="#organization/{{orgId}}/event/{{eventId}}/info">已关闭，返回活动</a> 
+        {{else}}
+        <a class="btn btn-xx-theme btn-large btn-link" href="javascript:void(0)" data-xx-action="goBack">已关闭，返回</a>
+        {{/if}}
+    {{/if}}
+</footer>

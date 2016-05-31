@@ -1,0 +1,69 @@
+<section class="wall-lottery-box" style="display:none;">
+	<section class="container clearfix">
+		<div class="motion-container">
+			<header class="header">
+				<h3>现场抽奖</h3>
+				<p>
+					（<span id="partInCount">0</span>人参与上墙）
+				</p>
+			</header>
+			<section class="content">
+				<img class="user-avatar" src="/images/wall-theme/avatar.png" onerror="this.src='/images/default/avatar.jpg'">
+				<div class="user-name">
+					<span></span>
+				</div>
+			</section>
+			<footer class="footer">
+				<span>一次抽取</span>
+				<select id="lotteryNumber">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+				<span>人</span>
+				<button class="btn" disabled id="btnLottery">
+					<span class="inside-loading"> 
+						<span class="iconfont icon-loading rolling"></span>
+						正在抽奖
+					</span>
+					<span class="inside-text">
+						开始抽奖
+					</span>
+				</button>
+			</footer>
+		</div>
+		<div class="theme-border"></div>
+		<div class="result-container">
+			<header class="header">
+				<h3>抽奖结果</h3>
+				<p>
+					（<span id="luckyCount">0</span>人已获奖）
+				</p>
+			</header>
+			<section class="content">
+				<div class="no-result">
+					暂无抽奖结果
+				</div>
+			</section>
+			<footer class="footer">
+				<button class="btn-link" id="nextLottery">
+					<span class="inside-loading"> 
+						<span class="iconfont icon-loading rolling"></span>
+						下一轮抽奖
+					</span>
+					<span class="inside-text">
+						<span class="iconfont icon-update"></span>
+						下一轮抽奖
+					</span>
+				</button>
+			</footer>
+		</div>
+	</section>
+</section>

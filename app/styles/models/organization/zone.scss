@@ -1,0 +1,141 @@
+body.organization-zone, body.exhibition-info-school {
+        background: #fff;
+
+        #content {
+                margin-top: 0;
+        }
+}
+
+body.exhibition-info-country {
+        #content {
+                margin-top: 0;
+        }
+}
+
+.organization-info-container {
+        .info-header {
+                position: relative;
+                height: 200px;
+
+                .front {
+                        background: rgba(33, 150, 243, 0.75);
+                        color: #fff;
+                        padding-top: 1px;
+                        text-align: center;
+                }
+
+                .avatar {
+                        display: block;
+                        height: 70px;
+                        width: 70px;
+                        margin: 28px auto 10px;
+                }
+
+                h3 {
+                        font-size: 16px;
+                        padding: 0 20px;
+                        margin-bottom: 10px;
+                }
+
+                .type {
+                        font-size: 12px;
+                        margin-bottom: 10px;
+                }
+
+                .btn-attention {
+                        padding: 3px 12px;
+                        border-radius: 15px;
+                }
+        }
+
+        .numbers {
+                padding: 15px 0 20px;
+                border-bottom: 1px solid $default-border-color;
+
+                > li {
+                        float: left;
+                        width: 33.333%;
+                        text-align: center;
+
+                        .number {
+                                font-size: 16px;
+                                line-height: 25px;
+                        }
+
+                        .title {
+                                color: #818181;
+                                font-size: 12px;
+                        }
+                }
+        }
+
+        .context {
+                padding: 15px;
+                overflow: hidden;
+                font-size: 16px;
+        }
+
+        .options-box {
+                background: #fff;
+                border-top: 1px solid $default-border-color;
+                border-bottom: 1px solid $default-border-color;
+                padding: 0 15px;
+
+                .options {
+                        padding: 5px 0;
+
+                        > li {
+                                float: left;
+                                width: 50%;
+                                padding: 15px 0;
+                                cursor: pointer;
+                        }
+
+                        .qrcode-img {
+                                float: left;
+                                width: 55px;
+                                height: 55px;
+                                display: block;
+                        }
+
+                        .wrapper {
+                                margin-left: 65px;
+                                padding-right: 5px;
+
+                                .title {
+                                        line-height: 30px;
+                                }
+                        }
+                }
+
+                .header {
+                        padding: 15px 0;
+                        color: $color-c2;
+                        border-bottom: 1px solid $default-border-color;
+                }
+
+                .footer {
+                        padding: 15px 0;
+                        text-align: center;
+                        color: $color-c2;
+                        border-top: 1px solid $default-border-color;
+                }
+        }
+
+        &.country-container {
+                .context {
+                        background: #fff;
+                        border-bottom: 1px solid $default-border-color;
+                        margin-bottom: 15px;
+                }
+        }
+}
+
+body.organization-join {
+        background: #fff;
+}
+
+#OrganizationJoin {
+        padding: 0 15px;
+        margin-bottom: 55px;
+}

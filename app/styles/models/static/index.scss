@@ -1,0 +1,806 @@
+$index-width: 960px;
+$index-inner-width: 800px;
+$index-theme-color: #5ce6a1;
+$index-header-bg-color: #6ad39f;
+$index-body-color: #f7f7f7;
+
+.index-container {
+	.section {
+		width: 100%;
+		min-width: $index-width;
+		position: relative;
+		background-color: $index-body-color;
+		overflow: hidden;
+
+		.inner-section {
+			width: $index-width;
+			height: 100%;
+			position: relative;
+			margin: 0 auto;
+			padding: 1px;
+
+			.title-img {
+				display: block;
+				margin: 50px auto;
+			}
+		}
+		&.section1 {
+			height: 430px;
+			background-color: $index-header-bg-color;
+			overflow: hidden;
+
+			.wave {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 101;
+				width: 100%;
+				height: 23px;
+				background-image: url('/images/index/wave-bottom.png');
+
+				&.wave-back {
+					animation: waves-move-left 12s infinite linear;
+				}
+				&.wave-front {
+					animation: waves-move-right 10s infinite linear;
+				}
+			}
+			.inner-section {
+				z-index: 100;
+
+				.logo-img {
+					position: absolute;
+					left: 330px;
+					top: 40px;
+					opacity: 0;
+				}
+				.light-img {
+					position: absolute;
+					z-index: 100;
+					left: 330px;
+					bottom: -30px;
+
+					&.move {
+						transition: .5s ease;
+					}
+				}
+				.cloud-img {
+					position: absolute;
+					z-index: 101;
+					left: 50px;
+					bottom: 80px;
+				}
+				.cloud-small-img {
+					position: absolute;
+					right: 150px;
+					bottom: 160px;
+				}
+
+				/*** 登录框 ***/
+				.container {
+					position: absolute;
+					top: 0;
+					left: 280px;
+					width: 400px;
+
+					.login {
+						display: none;
+					}
+					.not-login {
+						display: none;
+					}
+					.signup {
+						display: none;
+					}
+					&.logged {
+						.login {
+							animation: fade-in 1s forwards;
+							margin-top: 40px;
+							display: block;
+						}
+						.not-login {
+							display: none;
+						}
+						.signup {
+							display: none;
+						}
+					}
+					&.notlogin {
+						.login {
+							display: none;
+						}
+						.not-login {
+							animation: fade-in 1s forwards;
+							display: block;
+						}
+						.signup {
+							display: none;
+						}
+					}
+					&.signup {
+						.login {
+							display: none;
+						}
+						.not-login {
+							display: none;
+						}
+						.signup {
+							animation: fade-in 1s forwards;
+							display: block;
+						}
+					}
+					.login-box, .sign-up-box {
+						width: 320px;
+						margin: 0 auto;
+						background-color: $index-header-bg-color;
+						background-color: transparent;
+						padding: 0 10px;
+
+						.form-row {
+							display: block;
+							padding: 20px 0;
+							color: #fff;
+							line-height: 30px;
+
+							&.border-bottom {
+								border-bottom: 1px solid #fff;
+							}
+							.label {
+								float: left;
+							}
+							.input-wrapper {
+								margin-left: 65px;
+
+								&.code-wrapper {
+									input {
+										width: 120px;
+									}
+									.code-btn {
+										float: right;
+										color: #fff;
+										padding: 0 5px;
+										height: 30px;
+										background-color: $index-header-bg-color;
+										background-color: transparent;
+
+										&:hover, &:focus {
+											color: #eee;
+										}
+									}
+								}
+								input {
+									width: 100%;
+									font-size: 14px;
+									border-radius: 0;
+									padding: 0px 6px;
+									line-height: 30px;
+									border: none;
+									background-color: $index-header-bg-color;
+									background-color: transparent;
+									height: 30px;
+									color: #fff;
+								}
+							}
+						}
+						.login-footer {
+							padding: 25px 0 10px;
+
+							.btn {
+								padding: 0;
+								background-color: $index-header-bg-color;
+								background-color: transparent;
+
+								&:hover, &:focus {
+									color: #eee;
+								}
+							}
+							ul {
+								float: right;
+								text-decoration: none;
+								list-style: none;
+								line-height: 16px;
+
+								li {
+									float: left;
+									text-align: center;
+									padding: 0 5px;
+
+									&.border-right {
+										border-right: 1px solid #fff;
+									}
+									&.large {
+										width: 100%;
+										float: none;
+										text-align: left;
+									}
+									a {
+										color: #fff;
+										text-decoration: underline;
+										font-size: 12px;
+
+										&:hover, &:focus {
+											color: #eee;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				&.first-show {
+					.logo-img {
+						animation: fade-in 1s forwards;
+					}
+					.cloud-img {
+						animation: left-cloud-move-in 1s forwards;
+					}
+					.cloud-small-img {
+						animation: right-cloud-move-in 1s forwards;
+					}
+				}
+				&.enter {
+					.logo-img {
+						animation: logo-move-out .2s forwards;
+					}
+					.cloud-img {
+						animation: left-cloud-move-out .5s forwards;
+					}
+					.cloud-small-img {
+						animation: right-cloud-move-out .5s forwards;
+					}
+				}
+				&.signup {
+					.light-img {
+						bottom: -150px;
+					}
+				}
+			}
+		}
+		&.section2 {
+			border-bottom: 1px solid $index-theme-color;
+
+			.inner-section {
+				text-align: center;
+
+				.buttons {
+					padding-top: 1px;
+					height: 124px;
+
+					.btn-enter {
+						display: inline-block;
+						margin: 30px auto 0;
+
+						&:focus {
+							margin-top: 32px;
+						}
+					}
+				}
+				.nav-box {
+					position: relative;
+					border-bottom: 1px dashed $index-theme-color;
+					height: 44px;
+
+					.nav-tabs {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 44px;
+						text-align: center;
+						background-color: $index-body-color;
+						background-color: transparent;
+
+						&.show-animated {
+							transition: .5s ease;
+						}
+						&.fixed {
+							position: fixed;
+							top: 0;
+							left: 0;
+							z-index: 1000;
+							background-color: #fff;
+							background-color: rgba(255, 255, 255, .9);
+						}
+						ul {
+							display: block;
+
+							li {
+								display: inline-block;
+								padding: 0 15px;
+
+								a {
+									line-height: 44px;
+									color: #5bd18b;
+
+									&:hover, &:focus {
+										color: #20b35d;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.content-box {
+				width: $index-inner-width;
+				margin: 0 auto;
+
+				.options {
+					.option {
+						float: left;
+						width: 25%;
+						text-align: center;
+						margin-bottom: 60px;
+
+						dl {
+							margin: 0 auto;
+							display: inline-block;
+
+							dt {
+								span.function {
+									margin: 0 auto;
+								}
+							}
+							dd {
+								text-align: center;
+
+								img {
+									padding: 10px 0 5px;
+								}
+								span {
+									color: $index-theme-color;
+									font-size: 12px;
+								}
+							}
+							&:hover {
+								dt span.function {
+									animation: icon-bounce 0.5s alternate;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.section3 {
+			.inner-section {
+				padding: 0;
+				border: 1px solid $index-body-color;
+
+				.case-box {
+					margin: 0 -15px;
+
+					.case-option {
+						float: left;
+						width: 33.333%;
+						padding: 0 15px;
+						text-align: center;
+						cursor: pointer;
+						color: $index-theme-color;
+						position: relative;
+						height: 320px;
+
+						.phone-wrapper {
+							width: 100%;
+							height: 200px;
+							position: relative;
+							background-color: $index-theme-color;
+
+							img {
+								position: absolute;
+								top: 30px;
+								left: 30px;
+
+								&.move-animated {
+									transition: .5s;
+								}
+							}
+						}
+						.content {
+							position: absolute;
+							top: 200px;
+							left: 0;
+							width: 100%;
+							height: 120px;
+							background-color: $index-body-color;
+							padding: 30px 15px;
+
+							.title {
+								font-size: 18px;
+							}
+							.subTitle {
+								font-size: 14px;
+								padding-top: 15px;
+							}
+						}
+
+						/***二维码***/
+						.qrcode-wrapper {
+							position: absolute;
+							top: 50px;
+							left: 260px;
+							z-index: 200;
+							display: none;
+
+							.qrcode-box {
+								position: relative;
+								padding: 10px;
+								background-color: #f2f2f2;
+								border: 1px solid #e7e7eb;
+								border-radius: 3px;
+
+								.arrow {
+									position: absolute;
+
+									&.arrow-out {
+										display: block;
+										width: 0;
+										height: 0;
+										border-width: 12px;
+										border-style: dashed;
+										border-color: transparent;
+										border-left-width: 0;
+										border-right-color: #e7e7eb;
+										border-right-style: solid;
+										top: 70px;
+										left: -11px;
+									}
+									&.arrow-in {
+										display: block;
+										width: 0;
+										height: 0;
+										border-width: 12px;
+										border-style: dashed;
+										border-color: transparent;
+										border-left-width: 0;
+										border-right-color: #f4f5f9;
+										border-right-style: solid;
+										top: 70px;
+										left: -10px;
+									}
+								}
+								img {
+									background-color: #fff;
+									height: 150px;
+									width: 150px;
+								}
+							}
+						}
+						&:hover {
+							.phone-wrapper {
+								img {
+									top: -120px;
+								}
+							}
+							.qrcode-wrapper {
+								animation: qrcode-fade-in 0.5s forwards;
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.section4 {
+			.inner-section {
+				border-top: 1px dashed $index-theme-color;
+
+				.schools-box {
+					margin: 0 -35px;
+
+					.school-option {
+						float: left;
+						width: 20%;
+						height: 135px;
+						cursor: pointer;
+						margin-bottom: 50px;
+
+						img {
+							display: block;
+							margin: 0 auto;
+
+							&.animated {
+								transition: .4s linear;
+							}
+						}
+						&:hover {
+							img {
+								transform: rotate(360deg);
+							}
+						}
+					}
+				}
+			}
+		}
+		&.section5 {
+			height: 360px;
+
+			.inner-section {
+				.hill-img {
+					position: absolute;
+					left: 295px;
+					bottom: 0;
+				}
+				.balloon-img {
+					position: absolute;
+					left: 300px;
+					top: 80px;
+
+					&.animated {
+						animation: flotage 20s infinite linear alternate;
+					}
+				}
+			}
+		}
+		&.section6 {
+			background-color: $index-theme-color;
+
+			.inner-section {
+				text-align: center;
+				color: #fff;
+
+				.content {
+					text-align: left;
+					padding: 60px 10px 50px;
+
+					p {
+						font-size: 12px;
+						line-height: 18px;
+					}
+				}
+				ul {
+					display: inline-block;
+					margin: 0 auto;
+					color: #fff;
+
+					&.info {
+						padding-bottom: 30px;
+
+						li {
+							float: left;
+							padding: 0 30px;
+							font-size: 16px;
+
+							&.border-left {
+								border-left: 2px solid #fff;
+							}
+						}
+					}
+					&.copy-right {
+						padding-bottom: 10px;
+
+						li {
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.menu-options {
+		position: fixed;
+		right: 20px;
+		bottom: 150px;
+		z-index: 1000;
+
+		.option {
+			position: relative;
+			padding: 10px 15px;
+			color: #fff;
+			text-align: center;
+			cursor: pointer;
+			transform: translate(120px, 0);
+			transition: 0.5s ease-in-out;
+
+			&.show {
+				transform: translate(0, 0);
+			}
+			>.fa {
+				font-size: 35px;
+			}
+			>p {
+				line-height: 25px;
+			}
+			&.option-top {
+				background-color: rgba(60, 60, 60, .5);
+			}
+			&.option-wechat {
+				background-color: rgba(91, 209, 139, .8);
+
+				&:hover {
+					.qrcode-box {
+						animation: fade-in 0.5s forwards;
+						display: block;
+					}
+				}
+				.qrcode-box {
+					position: absolute;
+					top: -70px;
+					left: -215px;
+					height: 200px;
+					width: 200px;
+					padding: 10px;
+					background-color: #e8ebed;
+					border: 1px solid #e7e7eb;
+					border-radius: 3px;
+					display: none;
+
+					.arrow {
+						position: absolute;
+
+						&.arrow-out {
+							display: block;
+							width: 0;
+							height: 0;
+							border-width: 12px;
+							border-style: dashed;
+							border-color: transparent;
+							border-right-width: 0;
+							border-left-color: #e7e7eb;
+							border-left-style: solid;
+							top: 94px;
+							right: -11px;
+						}
+						&.arrow-in {
+							display: block;
+							width: 0;
+							height: 0;
+							border-width: 12px;
+							border-style: dashed;
+							border-color: transparent;
+							border-right-width: 0;
+							border-left-color: #e8ebed;
+							border-left-style: solid;
+							top: 94px;
+							right: -10px;
+						}
+					}
+					>img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+			&.option-service {
+				background-color: rgba(228, 119, 109, .8);
+			}
+		}
+	}
+}
+
+/**** 渐变显示 ****/
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/**** logo移出 ****/
+@keyframes logo-move-out {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(-190px);
+	}
+}
+@keyframes left-cloud-move {
+}
+
+/**** 左云移动显示 ****/
+@keyframes left-cloud-move-in {
+	0% {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(260px);
+	}
+}
+
+/**** 左云右移 ****/
+@keyframes left-cloud-move-out {
+	0% {
+		transform: translateX(260px);
+	}
+	100% {
+		transform: translateX(70px);
+	}
+}
+
+/**** 右云移动显示 ****/
+@keyframes right-cloud-move-in {
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-170px);
+	}
+}
+
+/**** 右云左移 ****/
+@keyframes right-cloud-move-out {
+	0% {
+		transform: translateX(-170px);
+	}
+	100% {
+		transform: translateX(-80px);
+	}
+}
+@keyframes waves-move-left {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: -600px 0;
+	}
+}
+@keyframes waves-move-right {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 600px 0;
+	}
+}
+
+/***** 气球漂浮 ******/
+@keyframes flotage {
+	0% {
+		transform: translate(0, 0);
+	}
+	20% {
+		transform: translate(70px, -30px);
+	}
+	40% {
+		transform: translate(140px, 10px);
+	}
+	60% {
+		transform: translate(210px, -20px);
+	}
+	80% {
+		transform: translate(280px, 20px);
+	}
+	100% {
+		transform: translate(330px, 10px);
+	}
+}
+
+/***** 图标抖动 ******/
+@keyframes icon-bounce {
+	0%, 100% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(15deg);
+	}
+	50% {
+		transform: rotate(-15deg);
+	}
+	75% {
+		transform: rotate(5deg);
+	}
+	85% {
+		transform: rotate(-5deg);
+	}
+}
+
+/***** 二维码显示 ******/
+@keyframes qrcode-fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(-100px);
+	}
+}

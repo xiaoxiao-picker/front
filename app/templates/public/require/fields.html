@@ -1,0 +1,70 @@
+<!-- 自定义条件 -->
+{{each fields as field i}}
+<div class="form-group {{field.type}}" data-field-id="{{field.id}}">
+	<h4 class="title clearfix">
+	{{field.name}}
+	{{if field.required}}
+	<span class="icon pull-right">*</span>
+	{{/if}}
+	</h4>
+	
+	<!-- 单行文本框 -->
+	{{if field.type=="TEXT"}}
+	<div class="content  {{field.value?'active':''}}">
+		<p class="placeholder">请填写{{field.name}}</p>
+		<p class="context">{{field.value}}</p>
+	</div>
+	<!-- 多行文本框 -->
+	{{else if field.type=="TEXTAREA"}}
+	<div class="content {{field.value?'active':''}}">
+		<p class="placeholder">请填写{{field.name}}</p>
+		<div class="context">
+			{{if field.value}}
+			{{each field.value.split('\n') as text i}}
+			<p>{{text}}</p>
+			{{/each}}
+			{{/if}}
+		</div>
+	</div>
+	<!-- 日期选择框 -->
+	{{else if field.type=="DATE"}}
+	<div class="content {{field.value?'active':''}}">
+		<p class="placeholder">请选择{{field.name}}</p>
+		<p class="context">{{field.value | makedate:'yyyy/MM/dd'}}</p>
+	</div>
+	<!-- 单选||多选 -->
+	{{else if field.type=="RADIO"||field.type=="CHECKBOX"}}
+	<div class="content {{field.selected?'active':''}}">
+		<p class="placeholder">请选择{{field.name}}</p>
+		<div class="context">
+			{{each field.options as option i}}
+			{{if option.selected}}
+			<p>{{option.name}}</p>
+			{{/if}}
+			{{/each}}
+		</div>
+	</div>
+	<!-- 图片 -->
+	{{else if field.type=="IMAGE"}}
+	<div class="content active">
+		<div class="context clearfix" style="margin: 0 -10px;">
+			{{each field.values as image i}}
+			<div class="image" data-value="{{image}}">
+				<button class="btn btn-close btn-danger" removeImage>
+					<span class="iconfont icon-close"></span>
+				</button>
+				<img src="{{image | imageUrl:'@100w_100h_1e_1c'}}" />
+			</div>
+			{{/each}}
+			<label class="image image-add {{if field.options && (field.options.limit && field.values.length >= field.options.limit)}}hide{{/if}}">
+				<span class="iconfont icon-add2"></span>
+				<input type="file" class="" accept="image/*" />
+				<img src="./../images/default/loading.gif" />
+			</label>
+			
+		</div>
+	</div>
+	{{/if}}
+	
+</div>
+{{/each}}

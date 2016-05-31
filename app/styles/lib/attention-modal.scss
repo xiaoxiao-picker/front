@@ -1,0 +1,35 @@
+.attention-modal-header {
+        background-color: #fff;
+        padding: 13px 15px;
+        font-size: 16px;
+
+        > p {
+                line-height: 23px;
+        }
+
+        span {
+                color: #5bd18b;
+        }
+
+        .token {
+                font-weight: bold;
+                font-size: 20px;
+                user-select: initial;
+                cursor: pointer;
+                color: #5bd18b;
+        }
+}
+
+.attention-modal-content {
+        padding: 15px;
+
+        img {
+                width: 260px !important;
+                height: 260px !important;
+        }
+}
+
+.attention-modal-footer {
+        background-color: #fff;
+        padding: 5px 15px;
+}

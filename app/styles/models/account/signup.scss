@@ -1,0 +1,35 @@
+
+// 注册框
+.signup-box{
+	width:800px;
+	margin:60px auto;
+	background-color:#ddd;
+	background-image:url(./../images/bg_03.jpg);
+	padding:30px 0;
+	.box-header{
+		text-align: center;
+		padding:10px 0;
+	}
+	.box-body{
+		.form-box.signupbox{
+			width: 280px;
+			margin: 0 auto;
+			.form-row{
+				margin-bottom: 10px;
+			}
+			.row-title{
+				line-height: 40px;
+			}
+			input.xx-large-input{
+				background-color: #fff;
+				//background-color:rgba(255,255,255,.5);
+				border-color: #fff;
+			}
+			.btn.btn-authcode{
+				margin-left: 10px;
+				padding:2px 5px;
+				color: #45c78b;
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.more-container {
+        padding: 15px;
+        text-align: center;
+
+        .btn.btn-more {
+                width: 100%;
+                padding: 10px 8px;
+                box-shadow: 0 2px 3px 0 rgba(4, 0, 0, 0.24);
+        }
+
+        .no-more {
+                display: none;
+                color: #ccc;
+        }
+
+        &.complete {
+                .btn.btn-more {
+                        display: none;
+                }
+
+                .no-more {
+                        display: block;
+                }
+        }
+}

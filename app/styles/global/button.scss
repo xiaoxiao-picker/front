@@ -1,0 +1,260 @@
+button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: transparent;
+	&[disabled]{
+		opacity:0.9;
+		cursor:not-allowed;
+	}
+}
+.btn {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	border: none;
+	padding: 10px 15px;
+	border-radius: $default-border-radius;
+	font-size: 14px;
+	text-align: center;
+	color: $default-btn-color;
+	background-color: $default-btn-background-color; 
+	transition: all .5s;
+
+	&.btn-sm {
+		font-size: 12px;
+		padding: 5px 7px;
+	}
+	&:hover, &:focus, &.loading {
+		background-color: $default-btn-background-color-deep;
+	}
+	&.btn-xx-success {
+
+		/* btn-success */
+		background-color: $success-btn-background-color;
+
+		&:hover, &:focus, &.loading {
+			background-color: $success-btn-background-color-deep;
+		}
+	}
+	&.btn-xx-theme {
+		color: $theme-btn-color;
+		border-color: $theme-btn-border-color;
+		background-color: $theme-btn-background-color;
+
+		&:hover, &:focus, &.loading {
+			background-color: $theme-btn-background-color-deep;
+		}
+	}
+	&.btn-xx-green {
+
+		/* green-color */
+		color: $green-btn-color;
+		border-color: $green-btn-border-color;
+		background-color: $green-btn-background-color;
+
+		&:hover, &:focus, &.loading {
+			background-color: $green-btn-background-color-deep;
+		}
+	}
+	&.btn-xx-red, &.btn-xx-danger {
+		color: #fff;
+		border-color: $red-color;
+		background-color: $red-color;
+
+		&:hover, &:active, &:focus, &.loading {
+			background-color: $deep-red-color;
+			outline: none;
+		}
+	}
+	&.btn-xx-blue {
+
+		/* blue */
+		color: $blue-btn-color;
+		border-color: $blue-btn-border-color;
+		background-color: $blue-btn-background-color;
+
+		&:hover, &:focus, &.loading {
+			background-color: $blue-btn-background-color-deep;
+		}
+	}
+	&.btn-xx-skyblue {
+
+		/* sky-blue */
+		color: $skyblue-btn-color;
+		border-color: $skyblue-btn-border-color;
+		background-color: $skyblue-btn-background-color;
+
+		&:hover, &:focus, &.loading {
+			background-color: $skyblue-btn-background-color-deep;
+		}
+	}
+	&.btn-xx-gray {
+		color: $gray-btn-color;
+		border-color: $gray-btn-border-color;
+		background-color: $gray-btn-background-color;
+
+		&:hover, &:focus, &.loading {
+			background-color: $gray-btn-background-color-deep;
+		}
+	}
+	&.btn-xx-white {
+		color: $white-btn-color;
+		border-color: $white-btn-border-color;
+		background-color: $white-btn-background-color;
+
+		&:hover, &:focus, &.loading {
+			background-color: $white-btn-background-color-deep;
+		}
+	}
+	&.btn-xx-light-green {
+		color: $light-green-btn-color;
+		border-color: $light-green-btn-border-color;
+		background-color: $light-green-btn-background-color;
+
+		&:hover, &:focus, &.loading {
+			background-color: $light-green-btn-background-color-deep;
+		}
+	}
+	&.btn-hollow-blue {
+		background-color: transparent;
+		border: 1px solid $blue-btn-border-color;
+		color: $blue-btn-border-color;
+
+		&:hover, &:focus, &.loading {
+			border-color: $blue-btn-background-color-deep;
+			color: $blue-btn-background-color-deep;
+		}
+	}
+	&.btn-xx-hollow-blue {
+		background-color: transparent;
+		border: 1px solid $blue-btn-border-color;
+		color: $blue-btn-border-color;
+
+		&:hover, &:focus, &.loading {
+			border-color: $blue-btn-background-color-deep;
+			color: $blue-btn-background-color-deep;
+		}
+	}
+	&.btn-large {
+		width: 100%;
+		border-radius: 0;
+	}
+	&.btn-xx-large {
+		width: 100%;
+		line-height: 44px;
+		padding: 0;
+	}
+	&.btn-empty {
+		border: none;
+		background-color: transparent;
+		color: $theme-color;
+	}
+	&.btn-link {
+		line-height: 40px;
+	}
+	&.btn-xx-circle {
+		border-radius: 50%;
+		padding: 0;
+	}
+}
+
+/** * 系统中一些其他按钮的样式
+* 建议之后尽量使用统一使用样式名 btn-xx-ooo, * 如果定义为 btn-success 会与 bootstrap 样式冲突，虽然我们暂时前端没用 bootstrap 框架
+* 以便统一管理 */
+.btn-lg {
+	font-size: 14px;
+	padding: 10px 20px;
+}
+.btn-normal {
+	font-size: 14px;
+	padding: 6px 12px;
+}
+.btn-sm {
+	font-size: 12px;
+	padding: 4px 10px;
+}
+.btn-primary {
+	color: #fff;
+	background-color: $primary-color;
+	&:hover, &:focus,&.active,&.loading {
+		background-color: #008eff;
+		color:#fff;
+	}
+}
+.btn-success {
+	color: #fff;
+	background-color: $success-color;
+
+	&:hover, &:focus,&.active {
+		background-color: $deep-success-color;
+	}
+}
+.btn-info {
+	color: #fff;
+	background-color: $info-color;
+}
+.btn-warning {
+	color: #fff;
+	background-color: $warning-color;
+}
+.btn-danger {
+	color: #fff;
+	background-color: $red-color;
+
+	&:hover, &:focus {
+		background-color: $deep-red-color;
+	}
+	&.active {
+		background-color: $deep-red-color;
+	}
+}
+
+/** * 与后台交互的按钮一律采用如下 DOM 格式
+* 方便在按钮触发事件里统一处理按钮
+*
+* <button class="btn btn-xx-green">
+* 	<span class="inside-loading">
+* 		<i class="fa fa-spinner rolling"></i>
+* 		loading…
+* 	</span>
+* 	<span class="inside-text">
+* 		click me to talk with daemon
+* 	</span>
+* </button> */
+button {
+	.inside-loading {
+		display: none;
+		.material-icons{
+			font-size:inherit;
+		}
+	}
+	.inside-else {
+		display: none;
+	}
+	.inside-text {
+		display: inline-block;
+	}
+	&.loading {
+		.inside-loading {
+			display: inline-block;
+		}
+		.inside-text {
+			display: none;
+		}
+		.inside-else {
+			display: none;
+		}
+	}
+	&.else {
+		.inside-loading {
+			display: none;
+		}
+		.inside-text {
+			display: none;
+		}
+		.inside-else {
+			display: inline;
+		}
+	}
+}

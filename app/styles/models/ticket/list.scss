@@ -1,0 +1,74 @@
+.ticket-list {
+	overflow: auto;
+	color: $default-title-color;
+	.ticket-cell {
+		float: left;
+		padding: 0 15px;
+		width: 100%;
+		.ticket-wrapper {
+			padding: 15px 0 5px;
+			border-bottom: 1px solid $default-border-color;
+			.event-poster-wrapper {
+				position: relative;
+				.event-poster {
+					width: 100%;
+					height: 150px;
+					background-color: $success-color;
+					border-radius: 8px;
+					background-size: 100%;
+				}
+				.event-info-wrapper {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					.event-other-info-wrapper {
+						position: relative;
+						width: 100%;
+						height: 100%;
+						border-radius: 8px;
+						.event-other-info {
+							position: absolute;
+							left: 10px;
+							bottom: 10px;
+							color: #fff;
+							margin-right: 150px;
+							line-height: 20px;
+							.event-date {
+								font-size: 12px;
+							}
+							.event-loc {
+								font-size: 12px;
+							}
+						}
+					}
+					.event-QRcode-wrapper {
+						position: absolute;
+						top: 0px;
+						right: 0px;
+						height: 140px;
+						width: 140px;
+						margin: 5px;
+						background-color: #fff;
+						border-radius: $default-border-radius;
+						background-size: 100% 100%;
+					}
+				}
+			}
+			.event-title {
+				font-size: 16px;
+				height: 25px;
+				line-height: 25px;
+				overflow: hidden;
+			}
+		}
+	}
+}
+@media (min-width:768px) {
+	.ticket-list {
+		.ticket-cell {
+			width: 50%;
+		}
+	}
+}

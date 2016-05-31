@@ -1,0 +1,43 @@
+<section class="organization-info-container" style="margin-bottom: 55px;">
+	<header class="info-header">
+		<section class="back back-image" style="background-image:url({{orgInfo.logoUrl}}), url('./images/header-bg.jpg');"></section>
+		<section class="front">
+			<img class="avatar" src="{{orgInfo.logoUrl | imageUrl:'@70w_70h_1e_1c'}}" alt="" onerror="this.src='./images/default/avatar.jpg'">
+			<h3 class="ellipsis">{{orgInfo.name||'未命名'}}</h3>
+			<div class="type">{{orgInfo.orgType||'其他'}}</div>
+			{{if wechat}}
+			<button class="btn btn-xx-white btn-sm btn-attention" data-xx-action="attention">
+				<span>关注</span>
+			</button>
+			{{/if}}
+		</section>
+	</header>
+	<ul class="numbers clearfix">
+		<li>
+			<div class="number">{{extendInfo.memberCount||'0'}}</div>
+			<div class="title">现有成员</div>
+		</li>
+		<li>
+			<div class="number">{{extendInfo.eventCount||'0'}}</div>
+			<div class="title">历史活动</div>
+		</li>
+		<li>
+			<div class="number">{{extendInfo.wechatFollowerCount||'0'}}</div>
+			<div class="title">微信粉丝</div>
+		</li>
+	</ul>
+	<section class="context">
+		{{#orgInfo.description}}
+	</section>
+</section>
+<footer id="footer">
+	{{if memberRank == -200 && orgInfo.permit}}
+	<button class="btn btn-large btn-xx-theme" data-xx-action="join">申请加入</button>
+	{{else if memberRank == -100}}
+	<button class="btn btn-large btn-xx-theme">正在审核中</button>
+	{{else if memberRank == 0}}
+	<button class="btn btn-large btn-xx-theme">你已经是 成员</button>
+	{{else if memberRank > 0}}
+	<button class="btn btn-large btn-xx-theme">你已经是 管理员</button>
+	{{/if}}
+</footer>

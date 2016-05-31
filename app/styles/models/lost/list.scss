@@ -1,0 +1,212 @@
+.lost-list-container {
+        margin-bottom: 55px;
+
+        #Losts {
+                margin-left: 19px;
+                border-left: 1px solid $default-border-color;
+                padding-top: 20px;
+        }
+
+        .lost-wrapper {
+                position: relative;
+                padding: 0 15px 20px;
+
+                .remark {
+                        position: absolute;
+                        top: 15px;
+                        left: -4px;
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background: $theme-color;
+
+                        &.green {
+                                background: $success-color;
+                        }
+
+                        &.blue {
+                                background: $blue-color;
+                        }
+
+                        &.orange {
+                                background: $orange-color;
+                        }
+
+                        &.red {
+                                background: $red-color;
+                        }
+                }
+        }
+
+        .lost-box {
+                position: relative;
+
+                .base-info {
+                        margin-right: 15px;
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid $default-border-color;
+                }
+
+                .images-wrapper {
+                        margin: -5px -5px 0;
+
+                        > img {
+                                float: left;
+                                display: block;
+                                height: 75px;
+                                width: 75px;
+                                margin: 5px;
+                                border-radius: $default-border-radius;
+                        }
+                }
+
+                h4 {
+                        font-size: 16px;
+                        line-height: 25px;
+                        margin-bottom: 5px;
+                }
+
+                .content {
+                        color: #818181;
+                        line-height: 16px;
+                        max-height: 32px;
+                        overflow: hidden;
+                        font-size: 12px;
+                }
+
+                .extend-info {
+                        margin-right: 15px;
+                        padding-top: 10px;
+                }
+
+                .options {
+                        > li {
+                                float: left;
+                                width: 50%;
+                                font-size: 12px;
+                                color: $color-c2;
+                                line-height: 18px;
+                                height: 18px;
+                                overflow: hidden;
+
+                                .iconfont {
+                                        font-size: 12px;
+                                }
+                        }
+                }
+
+                .arrow-right {
+                        position: absolute;
+                        top: 50%;
+                        right: 10px;
+                        color: #818181;
+
+                        .iconfont {
+                                margin-top: -50%;
+                                display: block;
+                                font-size: 12px;
+                        }
+                }
+
+                .tag {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 0;
+                        height: 0;
+                        border-left: 25px solid transparent;
+
+                        &.green {
+                                border-bottom: 25px solid $success-color;
+                        }
+
+                        &.red {
+                                border-bottom: 25px solid $red-color;
+                        }
+
+                        > span {
+                                position: absolute;
+                                left: -13px;
+                                top: 10px;
+                                color: #fff;
+                                font-size: 12px;
+                        }
+                }
+
+                .lost-result {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        padding: 13px;
+                        background-color: rgba(33, 150, 243, 0.8);
+                        font-size: 16px;
+                        text-align: center;
+                        color: #fff;
+                }
+        }
+
+        .lost-search-box {
+                padding: 10px 0;
+                border-bottom: 1px solid $default-border-color;
+                background: #fff;
+
+                .title {
+                        line-height: 25px;
+                }
+
+                .date {
+                        font-size: 12px;
+                        line-height: 18px;
+                        color: $color-c2;
+
+                        .iconfont {
+                                font-size: 14px;
+                        }
+                }
+        }
+}
+
+.lost-options-box {
+        position: relative;
+        margin: 100px 30px 0;
+
+        .btn-close {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+        }
+
+        .box-content {
+                background: #fff;
+                border-radius: $default-border-radius;
+                padding: 10px 30px;
+        }
+
+        .box-row {
+                border-bottom: 1px solid $default-border-color;
+
+                > a {
+                        position: relative;
+                        display: block;
+                        line-height: 55px;
+
+                        &:after {
+                                display: inline-block;
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                content: "\e612";
+                                background-color: transparent;
+                                vertical-align: middle;
+                                font-family: "iconfont" !important;
+                                font-size: 16px;
+                                font-style: normal;
+                                -webkit-font-smoothing: antialiased;
+                                -webkit-text-stroke-width: 0.2px;
+                                -moz-osx-font-smoothing: grayscale;
+                                color: $color-c2;
+                        }
+                }
+        }
+}

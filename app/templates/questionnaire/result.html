@@ -1,0 +1,43 @@
+
+<section class="result-box">
+	{{each fields as field i}}
+	<section class="ui-form-group">
+		<h4 class="ui-form-header">
+			<span class="ui-form-title">{{field.title}}</span>
+			<div class="ui-form-buttons">
+				<span>{{{TEXT:"文本",TEXTAREA:"文本",DATE:"日期",IMAGE:"图片",SINGLETON:"单选",MULTIPLE:"多选"}[field.type]}}</span>
+				{{if field.required}}<span>(必填)</span>{{/if}}
+
+			</div>
+		</h4>
+		<div class="ui-form-content clearfix">
+			{{if field.type=="TEXT"}}
+				<p class="ui-context">{{field.value}}</p>
+			{{else if field.type=="TEXTAREA"}}
+				{{each field.value.split('\n') as text i}}
+				<p class="ui-context">{{text}}</p>
+				{{/each}}
+			{{else if field.type=="DATE"}}
+				<p class="ui-context">{{field.value | makedate:'yyyy-MM-dd hh:mm'}}</p>
+			{{else if field.type=="IMAGE"}}
+				{{each field.values as image i}}
+				<div class="image-wrap">
+					<img src="{{image | imageUrl:'@100w_100h_1e_1c'}}" data-xx-action="previewImage" data-image-url="{{image}}" />
+				</div>
+				{{/each}}
+			{{else if field.type=="SINGLETON"||field.type=="MULTIPLE"}}
+				<ul class="options">
+					{{each field.options as option i}}
+					<li class="option {{option.selected?'active':''}}">
+						<span>{{option.name}}</span>
+					</li>
+					{{/each}}
+				</ul>
+			{{/if}}
+		</div>
+	</section>
+	{{/each}}
+</section>
+<footer id="footer">
+	<a class="btn btn-xx-theme btn-large" href="#organization/{{'organizationId' |application}}/questionnaire/{{questionnaire.id}}/info">返回问卷</a>
+</footer>

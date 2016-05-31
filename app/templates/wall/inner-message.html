@@ -1,0 +1,15 @@
+<li class="wall-comment clearfix" data-xx-action="checkMessage" data-message-id="{{message.id}}">
+	<div class="comment">
+		<div class="avatar-wrapper">
+			<img class="avatar" src="{{message.user.portraitUrl | imageUrl:''}}" onerror="this.src='/images/default/avatar.jpg';" />
+		</div>
+		<div class="msg-container">
+			<h4>
+				<span class="nickname">{{message.user.nickname||message.user.name||message.user.phoneNumber||"匿名"}}</span>	
+			</h4>
+			<section class="msg {{if message.text.length>20}}multiple{{else}}single{{/if}}">
+				{{message.text}}
+			</section>
+		</div>
+	</div>
+</li>	

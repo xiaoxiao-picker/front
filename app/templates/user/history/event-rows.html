@@ -1,0 +1,138 @@
+{{each sources as source i}}
+<li class="row-wrapper">
+	<span class="remark {{source.color}}"></span>
+	<!-- 活动报名 -->
+	{{if source.type == 'EVENT'}}
+	<div class="row-box">
+		<a href="#organization/{{orgId}}/event/{{source.event&&source.event.id}}/info">
+			<header class="box-header">
+				报名了
+				<span>{{source.org&&source.org.name||'未知组织'}}</span>
+				发起的
+				<span>活动</span>
+			</header>
+			<section class="box-body clearfix">
+				<img class="poster-img" src="{{source.event&&source.event.thumbnailUrl | imageUrl:'@75w_75h_1e_1c'}}" alt="" onerror="this.src='./images/default/event.jpg'">
+				<div class="info-wrapper">
+					<div class="title ellipsis">
+						{{source.event&&source.event.name}}
+					</div>
+				</div>
+			</section>
+			<footer class="box-footer">
+				<span class="iconfont icon-time-fill"></span>
+				{{source.createTime}}
+			</footer>
+		</a>
+	</div>
+	{{else if source.type == 'VOTE'}}
+	<!-- 活动投票 -->
+	{{if source.event}}
+	<div class="row-box">
+		<a href="#organization/{{orgId}}/event/{{source.event&&source.event.id}}/info">
+			<header class="box-header">
+				参与了vote
+				<span>{{source.org&&source.org.name||'未知组织'}}</span>
+				发起的
+				<span>活动投票</span>
+			</header>
+			<section class="box-body event-vote-body clearfix">
+				<img class="poster-img" src="{{source.vote&&source.vote.thumbnailUrl | imageUrl:'@75w_75h_1e_1c'}}" alt="" onerror="this.src='./images/default/event.jpg'">
+				<div class="info-wrapper">
+					<div class="title ellipsis">
+						{{source.event&&source.event.name}}
+					</div>
+					<div>
+						<span class="icon">投</span>
+						<span class="name ellipsis">{{source.vote&&source.vote.name}}</span>
+					</div>
+				</div>
+			</section>
+			<footer class="box-footer">
+				<span class="iconfont icon-time-fill"></span>
+				{{source.createTime}}
+			</footer>
+		</a>
+	</div>
+	{{else}}
+	<!-- 纯投票 -->
+	<div class="row-box">
+		<a href="#organization/{{orgId}}/vote/{{source.vote.id}}/info">
+			<header class="box-header">
+				参与了
+				<span>{{source.org&&source.org.name||'未知组织'}}</span>
+				发起的
+				<span>投票</span>
+			</header>
+			<section class="box-body clearfix">
+				<img class="poster-img" src="{{source.vote.thumbnailUrl | imageUrl:'@75w_75h_1e_1c'}}" alt="" onerror="this.src='./images/default/event.jpg'">
+				<div class="info-wrapper">
+					<div class="title ellipsis">
+						{{source.vote.name}}
+					</div>
+				</div>
+			</section>
+			<footer class="box-footer">
+				<span class="iconfont icon-time-fill"></span>
+				{{source.createTime}}
+			</footer>
+		</a>
+	</div>
+	{{/if}}
+	{{else if source.type == 'TICKET'}}
+	<!-- 活动抢票 -->
+	{{if source.event}}
+	<div class="row-box">
+		<a href="#organization/{{orgId}}/ticket/{{source.ticket.ticketSource.id}}/info?eventId={{source.event&&source.event.id}}">
+			<header class="box-header">
+				参与了
+				<span>{{source.org&&source.org.name||'未知组织'}}</span>
+				发起的
+				<span>活动电子票</span>
+			</header>
+			<section class="box-body event-ticket-body clearfix">
+				<img class="poster-img" src="{{source.ticket&&source.ticket.thumbnailUrl | imageUrl:'@75w_75h_1e_1c'}}" alt="" onerror="this.src='./images/default/event.jpg'">
+				<div class="info-wrapper">
+					<div class="title ellipsis">
+						{{source.event&&source.event.name}}
+					</div>
+					<div>
+						<span class="icon">票</span>
+						<span class="name ellipsis">{{source.ticket&&source.ticket.name}}</span>
+					</div>
+				</div>
+			</section>
+			<footer class="box-footer">
+				<span class="iconfont icon-time-fill"></span>
+				{{source.createTime}}
+			</footer>
+		</a>
+	</div>
+	{{else}}
+	<!-- 纯抢票 -->
+	<div class="row-box">
+		<a href="javascript:void(0);">
+			<header class="box-header">
+				参与了
+				<span>{{source.org&&source.org.name||'未知组织'}}</span>
+				发起的
+				<span>电子票</span>
+			</header>
+			<section class="box-body clearfix">
+				<img class="poster-img" src="{{source.ticket&&source.ticket.thumbnailUrl | imageUrl:'@75w_75h_1e_1c'}}" alt="" onerror="this.src='./images/default/event.jpg'">
+				<div class="info-wrapper">
+					<div class="title ellipsis">
+						{{source.ticket&&source.ticket.name}}
+					</div>
+				</div>
+			</section>
+			<footer class="box-footer">
+				<span class="iconfont icon-time-fill"></span>
+				{{source.createTime}}
+			</footer>
+		</a>
+	</div>
+	{{/if}}
+	{{/if}}
+</li>
+{{/each}}

@@ -1,0 +1,7 @@
+<!-- <ul class="cities" id="Cities"> -->
+	{{each cities as city i}}
+	<li class="{{selectCity==city ? 'active' : ''}}">
+		<a href="{{url}}?city={{city}}" class="city">{{city}}</a>
+	</li>
+	{{/each}}			
+<!-- </ul> -->

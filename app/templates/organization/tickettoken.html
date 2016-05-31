@@ -1,0 +1,12 @@
+<div class="checkticket-result auth">
+	<div class="image-back check-result"></div>
+	<input class="token" type="text" name="verificationToken" value="" placeholder="点击输入检票权限码" />
+	{{if scanQRCodeApi}}
+	<button class="btn btn-primary btn-check-again" data-xx-action="scanQRCodeByToken">开始检票</button>
+	{{/if}}
+	<div class="tips">
+		<h4>如何获取检票权限码？</h4>
+		<p>1、请管理员扫描任意一张电子票二维码进行检票。</p>
+		<p>2、在检票结果页面将获取临时检票权限码。</p>
+	</div>
+</div>

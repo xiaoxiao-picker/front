@@ -1,0 +1,51 @@
+.accordion {
+        border-radius: 2px;
+        border: 1px solid #ddd;
+        margin: 100px 10px;
+
+        .accordion-header {
+                padding: 10px;
+                background-color: #f5f5f5;
+                position: relative;
+
+                .accordion-title {
+                        font-size: 18px;
+                        font-weight: 500;
+                }
+
+                .buttons {
+                        position: absolute;
+                        right: 0;
+                        top: 10px;
+                        padding: 0 10px;
+                }
+        }
+
+        .accordion-body {
+                background-color: #fff;
+
+                .accordion-content {
+                        padding: 10px;
+                }
+        }
+
+        .btn-expand {
+                width: 16px;
+                height: 16px;
+                transition: all 0.2s;
+                cursor: pointer;
+                transform: rotate(0);
+                line-height: 16px;
+                margin-top: 2px;
+        }
+
+        &.active {
+                .btn-expand {
+                        transform: rotate(180deg);
+                }
+
+                .accordion-body {
+                        border-top: 1px solid #ddd;
+                }
+        }
+}

@@ -1,0 +1,59 @@
+<section class="lottery-draw-container">
+    <div class="header-box">
+        <img class="bg-image" src="./images/lottery/header-bg.png" />
+        <div class="front">
+            <img class="icon" src="./images/lottery/header-icon.png" />
+            <h4>抽奖时间：{{lottery.startDate | makedate:'yyyy.MM.dd'}} － {{lottery.endDate | makedate:'yyyy.MM.dd'}}</h4>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="wheel-box">
+            <img class="img-ring" src="./images/lottery/light-ring.png">
+            <canvas id="wheelcanvas" style="z-index:1"></canvas>
+            <div id="BtnLottery" class="button-wrapper">
+                <a class="btn-lottery" href="javascript:void(0);" data-xx-action="draw">
+                    <span class="arrow-top"></span>
+                </a>
+            </div>
+            <img class="img-deer" src="./images/lottery/deer.png">
+        </div>
+        <div class="box-footer">
+            <div class="buttons-wrapper">
+                <ul class="buttons clearfix">
+                    <li>
+                        <img class="btn-icon" src="./images/lottery/btn-setting.png" data-xx-action="showAwardsModal"/>
+                    </li>
+                    <li>
+                        <img class="btn-icon" src="./images/lottery/btn-myself.png" data-xx-action="showMyAwardModal"/>
+                    </li>
+                </ul>
+                <img class="img-tree" src="./images/lottery/tree.png" />
+                <img class="img-person" src="./images/lottery/person.png" />
+            </div>
+            <div class="rule-box">
+                <img src="./images/lottery/sawtooth-header.png">
+                <div class="content">
+                    <span class="remain">剩余次数：<span class="count">0</span></span>
+                    <div style="margin-bottom: 15px;">
+                        <h3>抽奖规则</h3>
+                        <p>1、每位成员{{lottery.cycle}}天可有{{lottery.frequency}}次抽奖机会。</p>
+                        <p>2、成员在抽奖页面点击【开始抽奖】按钮参加本次抽奖，参与抽奖的成员可在【我的奖品】中查看自己已经获得的奖品信息。</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h3>抽奖详情</h3>
+                        {{each lottery.description&&lottery.description.split('\n') as desc i}}
+                        <p>{{desc}}</p>
+                        {{/each}}
+                    </div>
+                    <div>
+                        <h3>领奖方式/联系信息</h3>
+                        <p>联系人：{{lottery.contactMan||'暂无'}}</p>
+                        <p>联系方式：{{lottery.contactPhoneNumber||'暂无'}}</p>
+                        <p>联系地址：{{lottery.contactLocation||'暂无'}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img class="img-snow" src="./images/lottery/snow-bottom.png">
+</section>

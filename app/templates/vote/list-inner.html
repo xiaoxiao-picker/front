@@ -1,0 +1,52 @@
+{{each votes as vote i}}
+<li class="card-box vote-box">
+	<a href="{{if vote.type=='UGC'}}#organization/{{orgId}}/vote/{{vote.id}}/info/ugc{{else}}#organization/{{orgId}}/vote/{{vote.id}}/info{{/if}}">
+		<header class="box-header clearfix">
+			<img class="avatar" src="{{vote.organization&&vote.organization.logoUrl | imageUrl:'@40h_40w_1e_1c'}}" onerror='this.src="./images/default/avatar.jpg"'>
+			<section class="msg">
+				<div class="title ellipsis">
+					{{vote.name}}
+				</div>
+				<div class="name text-gray ellipsis">
+					{{vote.organization&&vote.organization.name||'未命名'}}
+				</div>
+			</section>
+		</header>
+		<section class="box-body">
+			<img class="poster-img" src="{{vote.thumbnailUrl | imageUrl:'@315w_200h_1e_1c'}}" alt="" onerror="./images/default/event.jpg">
+			<div class="front">
+				<div class="bottom">
+					<span class="iconfont icon-time-fill"></span>
+					<span class="font-15" style="vertical-align: middle;">
+						{{if vote.progress.state=="NOTSTART"}}
+						{{#vote.progress.distance}}后开始
+						{{else if vote.progress.state=="UNDERWAY"}}
+						投票进行中
+						{{else if vote.progress.state=="OVER"}}
+						投票已结束
+						{{else}}
+						未知
+						{{/if}}
+					</span>
+				</div>
+			</div>
+		</section>
+		<footer class="box-footer">
+			<ul class="options clearfix">
+				<li class="option border-right">
+					<div>{{vote.totalOptions}}</div>
+					<div>参与选手</div>
+				</li>
+				<li class="option border-right">
+					<div>{{vote.totalVotes}}</div>
+					<div>累计投票</div>
+				</li>
+				<li class="option">
+					<div>{{vote.totalViews}}</div>
+					<div>浏览总数</div>
+				</li>
+			</ul>
+		</footer>
+	</a>
+</li>
+{{/each}}

@@ -1,0 +1,27 @@
+<section class="comments-container inner">
+	<header class="comment-header">
+		<h4>评论(<span class="comment-total">{{count}}</span>)</h4>
+		<a class="btn-comment" href="javascript:void(0);">
+			<span class="iconfont icon-comment-add"></span>
+		</a>
+	</header>
+	<section class="comments">
+		{{if count == 0}}
+		<p class="empty-tips">暂无评论，赶紧去抢沙发吧！</p>
+		{{else}}
+		{{include './rows'}}
+		{{/if}}
+	</section>
+	{{if count >= limit}}
+	<footer class="comment-footer">
+		<a href="#organization/{{orgId}}/{{sourceType}}/{{sourceId}}/comments">
+			<div>
+			查看全部
+			<span class="comment-total">{{count}}</span>
+			条评论
+			<i class="iconfont icon-chevron-right"></i>
+			</div>
+		</a>
+	</footer>
+	{{/if}}
+</section>

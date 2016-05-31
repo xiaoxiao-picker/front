@@ -1,0 +1,21 @@
+{{each schools as school i}}
+<section class="card-box org-box">
+	<a href="#organization/{{orgId}}/exhibition/{{school.id}}/info/country" title="">
+		<img class="poster-img" src="{{school.schoolPost | imageUrl:'@345w_200h_1e_1c'}}" alt="" onerror="this.src='./images/default/event.jpg'">
+		<div class="front">
+			{{if school.type == '985'}}
+			<span class="label label-red label-category">{{school.type}}</span>
+			{{else if school.type == '211'}}
+			<span class="label label-orange label-category">{{school.type}}</span>
+			{{/if}}
+			<footer class="bottom clearfix">
+				<img class="avatar" src="{{school.schoolLogo | imageUrl:'@50w_50h_1e_1c'}}" alt="">
+				<section class="org-info">
+					<div class="title">{{school.school&&school.school.name}}</div>
+					<div class="sub-title">{{school.terse}}</div>
+				</section>
+			</footer>
+		</div>
+	</a>
+</section>
+{{/each}}

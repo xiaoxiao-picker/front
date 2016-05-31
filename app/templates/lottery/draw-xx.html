@@ -1,0 +1,51 @@
+<section class="lottery-draw-xx-container">
+    <img class="header-img" src="./images/lottery/xiaoxiao/header-bg.jpg">
+    <div class="options-wrapper clearfix">
+        <span class="remain">剩余抽奖：<span class="count">0</span>次</span>
+        <div class="buttons">
+            <button class="btn-icon" data-xx-action="showAwardsModal">奖项设置</button>
+            <button class="btn-icon" data-xx-action="showMyAwardModal">我的奖品</button>
+        </div>
+    </div>
+    <div class="wheel-box">
+        <img class="img-ring" src="./images/lottery/light-ring.png">
+        <canvas id="wheelcanvas" style="z-index:1"></canvas>
+        <div id="BtnLottery" class="button-wrapper">
+            <a class="btn-lottery" href="javascript:void(0);" data-xx-action="draw">
+                <span class="arrow-top"></span>
+            </a>
+        </div>
+    </div>
+    <div class="rule-box">
+        <div class="box-header">
+            <img src="./images/lottery/xiaoxiao/rule-header.png">
+        </div>
+        <div class="content">
+            <div style="margin-bottom: 15px;">
+                <h3>抽奖时间</h3>
+                <p>{{lottery.startDate | makedate:'yyyy年MM月dd日'}} -- {{lottery.endDate | makedate:'yyyy年MM月dd日'}}</p>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <h3>抽奖规则</h3>
+                <p>1、每位成员{{lottery.cycle}}天可有{{lottery.frequency}}次抽奖机会。</p>
+                <p>2、成员在抽奖页面点击【开始抽奖】按钮参加本次抽奖，参与抽奖的成员可在【我的奖品】中查看自己已经获得的奖品信息。</p>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <h3>抽奖详情</h3> {{each lottery.description&&lottery.description.split('\n') as desc i}}
+                <p>{{desc}}</p>
+                {{/each}}
+            </div>
+            <div>
+                <h3>领奖方式/联系信息</h3>
+                <p>联系人：{{lottery.contactMan||'暂无'}}</p>
+                <p>联系方式：{{lottery.contactPhoneNumber||'暂无'}}</p>
+                <p>联系地址：{{lottery.contactLocation||'暂无'}}</p>
+            </div>
+        </div>
+    </div>
+    {{if lottery.id != '79af04b3-277a-422d-8f4a-5384084a2a0b'}}
+    <a class="link-xiaoxiao" href="#organization/97c7b2c2-d7eb-43ce-81bc-d3311fcc1c18/lottery/79af04b3-277a-422d-8f4a-5384084a2a0b/draw">
+        <img src="./images/lottery/xiaoxiao/xiaoxiao.jpg" />
+    </a>
+    {{/if}}
+</section>

@@ -1,0 +1,72 @@
+.imagebox-mask {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1200;
+	background-color: rgba(0, 0, 0, 0);
+	overflow: hidden;
+	animation: imageboxMask .5s ease-in-out;
+	animation-fill-mode: both;
+
+	.imagebox-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+	
+	&.remove {
+		animation: imageboxMaskRemove 1s ease-in-out;
+		animation-fill-mode: both;
+	}
+	&.remove .image {
+		animation: imageboxImageRemove .3s ease-in-out;
+		animation-delay: .4s;
+		animation-fill-mode: both;
+	}
+	.image {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		max-width: 100%;
+		max-height: 100%;
+		margin-top: -30px;
+		margin-left: -30px;
+		animation: imageboxImage .3s ease-in-out;
+		animation-fill-mode: both;
+	}
+}
+@-webkit-keyframes imageboxMask {
+	from {
+		background-color: rgba(0, 0, 0, 0);
+	}
+	to {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+@-webkit-keyframes imageboxImage {
+	from {
+		transform: scale(0, 0);
+	}
+	to {
+		transform: scale(1, 1);
+	}
+}
+@-webkit-keyframes imageboxMaskRemove {
+	from {
+		transform: scale(1, 1);
+	}
+	to {
+		transform: scale(0, 0);
+	}
+}
+@-webkit-keyframes imageboxImageRemove {
+	from {
+		transform: scale(1, 1);
+	}
+	to {
+		transform: scale(0, 0);
+	}
+}

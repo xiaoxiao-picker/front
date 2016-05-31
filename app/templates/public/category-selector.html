@@ -1,0 +1,13 @@
+<!-- 分类选择器 -->
+<section class="category-selector" id="CategorySelector">
+	<span class="arrow"><i class="arrow-in"></i></span>
+	<div class="backdrop">
+		<ul class="categories">
+			{{each categories as category i}}
+			<li class="{{category.selected?'active':''}}">
+				<a href ="{{category.url}}">{{category.name}}</a>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+</section>

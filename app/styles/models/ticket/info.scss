@@ -1,0 +1,38 @@
+.ticket-info-container {
+	margin-bottom: 55px;
+	.ticket-info {
+		position: relative;
+		padding: 15px;
+		background: #f1f9ff;
+		border-bottom: 1px solid $theme-color;
+		.title {
+			font-size: 16px;
+			line-height: 25px;
+		}
+		.context {
+			line-height: 20px;
+			color: $color-c2;
+		}
+		.buttons {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+		}
+	}
+	#TicketSignup {
+		background: #fff;
+		padding: 0 15px;
+		border-top: 1px solid $default-border-color;
+	}
+	.ticket-qrcode {
+		margin-top: 15px;
+		text-align: center;
+		>img {
+			width: 200px;
+			height: 200px;
+			border-radius: $default-border-radius;
+			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+			margin-bottom: 20px;
+		}
+	}
+}

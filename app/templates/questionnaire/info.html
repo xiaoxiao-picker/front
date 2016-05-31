@@ -1,0 +1,45 @@
+<section class="questionnaire-info-container">
+	<header class="info-header">
+		<div class="back back-image" style="background-image: url({{questionnaire.thumbnail | imageUrl:'@230h_1e_1c'}}), url(./images/default/event.jpg);"></div>
+		<div class="front">
+			<div class="bottom">
+				<span class="iconfont icon-time-fill"></span>
+				<span class="font-15" style="vertical-align: middle;">
+					{{if questionnaire.progress.state=="NOTSTART"}}
+					{{#questionnaire.progress.distance}}后开始
+					{{else if questionnaire.progress.state=="UNDERWAY"}}
+					问卷进行中
+					{{else if questionnaire.progress.state=="OVER"}}
+					问卷已结束
+					{{else}}
+					未知
+					{{/if}}
+				</span>
+			</div>
+		</div>
+	</header>
+	<section class="base-info">
+		<img class="avatar" src="{{questionnaire.organization.logoUrl | imageUrl:'@40w_40h_1e_1c'}}" alt="" onerror="this.src='./images/default/avatar.jpg'">
+		<div class="msg">
+			<div class="title ellipsis">{{questionnaire.title}}</div>
+			<div class="clearfix">
+				<div class="name ellipsis">
+					{{questionnaire.organization.name}}
+				</div>
+				<span class="date">发表于{{questionnaire.createTime}}</span>
+			</div>
+		</div>
+	</section>
+	<section class="context">
+		{{#questionnaire.text}}
+	</section>
+</section>
+<footer id="footer">
+	{{if questionnaire.hasPolled}}
+	<!-- <a class="btn btn-large btn-xx-theme" href="#organization/{{orgId}}/questionnaire/{{questionnaire.id}}/statistics">查看统计结果</a> -->
+	<!-- <button class="btn btn-large btn-xx-theme" data-xx-action="goBack">已填写问卷，点击返回</button> -->
+	<a class="btn btn-large btn-xx-theme" href="#organization/{{orgId}}/questionnaire/{{questionnaire.id}}/signup">查看结果</a>
+	{{else}}
+	<a class="btn btn-large btn-xx-theme" href="#organization/{{orgId}}/questionnaire/{{questionnaire.id}}/signup">立即填写</a>
+	{{/if}}
+</footer>

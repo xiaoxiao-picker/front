@@ -1,0 +1,39 @@
+.lost-search-wrapper {
+	position: relative;
+	margin: 7px 0 7px 45px;
+	height: 30px;
+	border-radius: 15px;
+	background-color: #f8f8f8;
+	padding: 0 60px 0 15px;
+	line-height: 30px;
+	overflow: hidden;
+	input {
+		height: 100%;
+		width: 100%;
+		border: none;
+		&:focus {
+			background-color: #f8f8f8;
+		}
+	}
+	.btn-search {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 30px;
+		width: 60px;
+		color: $success-color;
+		span {
+			display: block;
+			border-left: 1px solid $success-color;
+		}
+	}
+}
+.lost-list-container {
+	.search-result {
+		line-height: 44px;
+		text-align: center;
+		color: $success-color;
+		border-bottom: 1px solid $success-color;
+		margin-bottom: 15px;
+	}
+}

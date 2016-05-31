@@ -1,0 +1,73 @@
+.plane-box {
+        width: 100%;
+        height: 200px;
+        animation-name: ppp;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(0, 100%);
+}
+
+.plane-box0 {
+        animation-delay: 0;
+}
+
+.plane-box1 {
+        animation-delay: 1s;
+}
+
+.plane-box2 {
+        animation-delay: 2s;
+}
+
+.plane-box3 {
+        animation-delay: 3s;
+}
+
+.plane-box4 {
+        animation-delay: 4s;
+}
+
+.plane {
+        width: 100px;
+        height: 100px;
+        background-image: url("/demos/plane/images/s0.png");
+        background-repeat: no-repeat;
+        background-origin: 50%;
+        background-position: 50%;
+        animation-name: rotate;
+        animation-delay: 0;
+        animation-duration: 0.3s;
+        animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+        0% {
+                background-image: url("/demos/plane/images/s0.png");
+        }
+
+        33% {
+                background-image: url("/demos/plane/images/s1.png");
+        }
+
+        67% {
+                background-image: url("/demos/plane/images/s2.png");
+        }
+
+        100% {
+                background-image: url("/demos/plane/images/s3.png");
+        }
+}
+
+@keyframes ppp {
+        0% {
+                transform: translate(0, 100%);
+        }
+
+        100% {
+                transform: translate(100%, 0);
+        }
+}

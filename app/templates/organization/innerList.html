@@ -1,0 +1,10 @@
+{{if orgs.length > 0}}
+	{{each orgs as org i}}
+	<a href="{{if org.relateOrg}}#organization/{{org.relateOrg.id}}/index{{else}}#organization/{{orgId}}/exhibition/{{org.id}}/info{{/if}}">
+		<div class="org-option" data-value="{{if org.relateOrg}}{{org.relateOrg.id}}{{else}}{{org.id}}{{/if}}">
+			<img src="{{org.thumbnailUrl}}@100w_100h_1c_1e" onerror="this.src='./../images/default/org.jpg';" />
+			<div class="title ellipsis">{{org.name}}</div>
+		</div>
+	</a>
+	{{/each}}
+{{/if}}

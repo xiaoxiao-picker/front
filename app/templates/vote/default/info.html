@@ -1,0 +1,117 @@
+<div class="vote-info-container" id="VoteInfo">
+	<header class="vote-header image-back" style="background-image:url({{vote.thumbnailUrl | imageUrl:'@230h_1e_1c'}});" data-xx-action="previewImage" data-image-url="{{vote.thumbnailUrl}}">
+		<h2 class="bottom center">
+		{{vote.name}}
+		</h2>
+	</header>
+	<section class="vote-base-info">
+		<div class="org-info clearfix">
+			<img src="{{vote.organization && vote.organization.logoUrl | imageUrl:'@40h_40w_1e_1c'}}" onerror='this.src="./images/default/avatar.jpg"'>
+			<section class="msg">
+				<div class="title ellipsis">
+					{{vote.name}}
+				</div>
+				<div class="name text-gray ellipsis">
+					{{vote.organization&&vote.organization.name||'未命名'}}
+				</div>
+			</section>
+		</div>
+		<ul class="options clearfix">
+			<li class="option border-right">
+				<div>{{vote.totalOptions}}</div>
+				<div>参与选手</div>
+			</li>
+			<li class="option border-right">
+				<div>{{vote.totalVotes}}</div>
+				<div>累计投票</div>
+			</li>
+			<li class="option">
+				<div>{{vote.totalViews}}</div>
+				<div>浏览总数</div>
+			</li>
+		</ul>
+		<!-- 投票抽奖 -->
+		<div id="LOTTERY">
+			<!-- app/templates/vote/info/lottery -->
+		</div>
+	</section>
+	<section class="vote-date">
+			<div class="inner-title">
+				<span class="iconfont icon-time-fill text-theme"></span>
+				投票时间
+			</div>
+			<div>
+				{{vote.startDate | makedate:'yyyy-MM-dd hh:mm'}} -- {{vote.endDate | makedate:'yyyy-MM-dd hh:mm'}}
+			</div>
+	</section>
+	<section class="accordion active vote-description">
+		<header class="accordion-header">
+			<h4 class="accordion-title">
+				<span class="iconfont icon-chat-fill text-theme"></span>
+				<span>投票简介</span>
+			</h4>
+			<div class="buttons">
+				<div class="btn-expand">
+					<span class=" iconfont icon-expand-more text-gray"></span>
+				</div>
+			</div>
+		</header>
+		<section class="accordion-body">
+			<div class="accordion-content">
+				{{each vote.terse&&vote.terse.split('\n') as terse i}}
+				<p>{{terse}}</p>
+				{{/each}}
+			</div>
+		</section>
+	</section>
+
+	<section class="vote-regular">
+		<div class="inner-title">
+			<span class="iconfont icon-list2 text-theme"></span>
+			投票规则
+		</div>
+		<div class="user-select">
+			{{each vote.rules as rule i}}
+			<p><span class="index">{{i+1}}.</span>{{rule}}</p>
+			{{/each}}
+		</div>
+	</section>
+	<section class="vote-options">
+		<div class="inner-title">
+			<span class="iconfont icon-friend text-theme"></span>
+			参与选手
+		</div>
+		<div id="VoteOptionsContainer" class="vote-options-container">
+			<!-- app/templates/vote/info/option-list -->
+		</div>
+	</section>
+	<!-- more -->
+	{{include './../public/list-more'}}
+</div>
+
+<div id="footer" class="vote-info-footer">
+	<button id="BtnVoteNotStart" class="btn btn-empty btn-large hide" data-xx-action="beforeVoteDate">
+	<span>投票尚未开始</span>
+	</button>
+	<a id="BtnVoteOver" class="btn btn-empty btn-large hide" href="#organization/{{orgId}}/vote/{{vote.id}}/statistics">
+		<span>查看统计结果</span>
+	</a>
+	<button id="BtnRemainVote" class="btn btn-empty btn-large hide" data-xx-action="outOfRemainVote">
+	<span>无剩余票数</span>
+	</button>
+	<button id="BtnSingleVoteBox" class="btn btn-empty btn-large hide">
+	<span class="count"></span>
+	</button>
+	<div id="BtnMulVoteBox" class="hide">
+		<span class="count"></span>
+		<button class="btn btn-xx-theme" data-xx-action="mulVote">
+			<span class="inside-loading">
+				<span class="iconfont icon-loading rolling"></span>
+			</span>
+			<span class="inside-text">确认投票</span>
+		</button>
+	</div>	
+</div>
+
+
+

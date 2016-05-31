@@ -1,0 +1,24 @@
+<section class="wall-theme-selector" style="display:none;">
+	<section class="container">
+		<header class="header">
+			<h3>选择上墙风格</h3>
+			<button class="btn-close">
+				<span class="icon iconfont icon-close-circle"></span>
+			</button>
+		</header>
+		<section class="content">
+			<ul class="themes">
+				{{each themes as theme i}}
+				<li class="theme clearfix {{if activeThemeCode==theme.code}}active{{/if}}" data-theme-code="{{theme.code}}">
+					<div class="wrap">
+						<img class="theme-poster" src="{{theme.previewProfile}}" onerror="this.src='/images/default/article.jpg'" />
+						<div class="theme-name">
+							{{theme.name}}
+						</div>
+					</div>
+				</li>
+				{{/each}}
+			</ul>
+		</section>
+	</section>
+</section>

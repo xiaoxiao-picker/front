@@ -1,0 +1,13 @@
+<section class="message-qrcode-box" style="display:none;">
+	<section class="container">
+		<button class="btn-close">
+			<span class="icon iconfont icon-close-circle"></span>
+		</button>
+		<div class="qrcode-wrap">
+			<img class="qrcode" src="{{qrcodeURL}}" alt="加载中" />
+		</div>
+		<p class="tips">
+			{{if wechat}}关注 {{wechat.alias||wechat.name}} 回复“上墙”{{else}}扫描二维码{{/if}}即可参与上墙
+		</p>
+	</section>
+</section>

@@ -1,0 +1,26 @@
+.wechat-info-container {
+	padding: 15px;
+	.title {
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 25px;
+	}
+	.subTitle {
+		line-height: 20px;
+		color: $color-c2;
+		span {
+			font-size: 12px;
+		}
+	}
+	.image-wrapper {
+		padding: 10px 0;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	.info {
+		padding: 5px 0;
+		font-size: 14px;
+	}
+}

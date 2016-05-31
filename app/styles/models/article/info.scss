@@ -1,0 +1,38 @@
+.article-info-container {
+        .article-info {
+                background: #fff;
+        }
+
+        .info-header {
+                margin: 0 15px;
+                padding: 10px 0;
+                border-bottom: 1px solid $default-border-color;
+
+                .title {
+                        font-size: 18px;
+                        line-height: 30px;
+                }
+
+                .publish-info {
+                        font-size: 12px;
+                        color: $color-c2;
+                        line-height: 16px;
+                }
+        }
+
+        .article-content {
+                padding: 15px;
+                border-bottom: 1px solid $default-border-color;
+                margin-bottom: 15px;
+                font-size: 16px;
+
+                img, embed, * {
+                        max-width: 100%;
+                }
+        }
+
+        .comments-container {
+                border-top: 1px solid $default-border-color;
+                border-bottom: 1px solid $default-border-color;
+        }
+}

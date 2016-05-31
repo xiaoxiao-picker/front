@@ -1,0 +1,45 @@
+div[id^=dmx-l-]{
+	position: relative !important;
+	z-index: 1 !important;
+	// height: 85px !important;
+}
+
+.advert-box{
+	margin: 5px 0;
+	padding: 5px 0;
+	background-color: #f3f3f3;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+
+	.line{
+		position: relative;
+		margin:0 15px;
+		hr{
+			position: absolute;
+			top: 13px;
+			left: 0;
+			width: 100%;
+			border-color: #fff;
+			border-top: none;
+		}
+	}
+	>h4{
+		position: absolute;
+		padding: 5px 0;
+		width:100%;
+
+		
+		span{
+			padding:2px 10px;
+			color: #888;
+			background-color: #f3f3f3;
+		}
+	}
+	.advert-content{
+		margin: 0 15px;
+		overflow: hidden;
+		margin-top: 30px;
+	}
+}

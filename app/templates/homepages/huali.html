@@ -1,0 +1,44 @@
+<!-- 华理定制风格 -->
+
+<!-- 背景音乐 -->
+{{include './back-music'}}
+
+<div class="index-module3">
+	<div id="HuaLiBox">
+		<div class="back image-back blur" style="{{if json.backColor}}background-color:{{json.backColor}};{{else if json.backImage}}background-image:url({{json.backImage}}){{/if}}"></div>
+		<div class="front">
+			<div class=" header-wrapper image-back" style="{{if json.backColor}}background-color:{{json.backColor}};{{else if json.backImage}}background-image:url({{json.backImage}}){{/if}}">
+				<div class="header-back">
+					<div class="header-inner">
+						<img id="Logo" src="{{organization.logoUrl}}@300w_300h_1e_1c" onerror="this.src='./../images/default/org.jpg';" />
+						<p id="Title" class="title">{{organization.name}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="menu-box clearfix">
+				{{each groups as group j}}
+				<div class="menus clearfix">
+					{{each group as menu i}}
+					<div class="menu">
+						<a href="{{menu.url}}">
+							<div class="icon back-image" style="{{if menu.backImage}}background-image:url({{menu.backImage}});{{/if}}">
+								<div style="{{if menu.backColor}}background-color:{{menu.backColor}};{{/if}}">
+									<img src="{{menu.icon}}" />
+								</div>
+							</div>
+							<span>{{menu.name}}</span>
+						</a>
+					</div>
+					{{/each}}
+				</div>
+				{{/each}}
+			</div>
+			<!-- index -->
+			<div class="footer-index">
+				{{each groups as group i}}
+				<span class="{{if i==0}}active{{/if}}"></span>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>

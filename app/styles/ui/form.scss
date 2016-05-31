@@ -1,0 +1,77 @@
+.ui-form-group {
+        margin-bottom: 10px;
+        padding: 10px 5px;
+        background-color: #ECF7FF;
+
+        .ui-form-header {
+                font-weight: normal;
+                font-size: 16px;
+                position: relative;
+                padding: 5px 0;
+
+                .ui-form-title {
+                        border-left: 4px solid $theme-color;
+                        padding-left: 6px;
+                        line-height: 20px;
+                }
+
+                .ui-form-buttons {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+
+                        > span {
+                                vertical-align: middle;
+                                font-size: 12px;
+                        }
+                }
+        }
+
+        .ui-form-content {
+                padding: 5px;
+
+                .image-wrap {
+                        float: left;
+                        margin-right: 10px;
+
+                        img {
+                                border-radius: 4px;
+                        }
+                }
+
+                .options {
+                        .option {
+                                position: relative;
+                                padding: 3px 0;
+                                padding-left: 20px;
+                                margin-bottom: 5px;
+                                line-height: 18px;
+
+                                &:before {
+                                        content: " ";
+                                        position: absolute;
+                                        display: block;
+                                        width: 16px;
+                                        height: 16px;
+                                        left: 0;
+                                        top: 5px;
+                                        border: 4px solid #ccc;
+                                        box-sizing: border-box;
+                                        border-radius: 50%;
+                                        background-color: #fff;
+                                }
+
+                                &.active {
+                                        &:before {
+                                                background-color: $theme-color;
+                                        }
+                                }
+                        }
+                }
+        }
+
+        .ui-context {
+                word-break: break-all;
+                line-height: 20px;
+        }
+}

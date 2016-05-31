@@ -1,0 +1,21 @@
+<div class="qrcode-shadow" id="QRCODE" style="z-index:100;">
+	<div class="qrcode-wrapper">
+		<div class="buttons">
+			<button class="btn-remove btn-close" data-xx-action="closeQRCode">
+				<i class="iconfont icon-close"></i>
+			</button>
+		</div>
+		<img src="{{qrcode}}" class="qrcode" />
+		<div class="tips">
+			{{if wechat}}
+			微信号{{wechat}}，关注后发送【上墙】参与
+			{{else}}
+			扫码即可参与现场上墙互动
+			{{/if}}
+		</div>
+	</div>
+</div>
+
+
+
+

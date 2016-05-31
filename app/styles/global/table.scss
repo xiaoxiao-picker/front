@@ -1,0 +1,78 @@
+table {
+        border-spacing: 0;
+}
+
+// .xx-table {
+//         display: table;
+//         width: 100%;
+
+//         .xx-table-row {
+//                 display: table-row;
+
+//                 .xx-table-cell {
+//                         display: table-cell;
+
+//                         &.middle {
+//                                 vertical-align: middle;
+//                         }
+
+//                         &.top {
+//                                 vertical-align: top;
+//                         }
+
+//                         &.center {
+//                                 text-align: center;
+//                         }
+
+//                         &.right {
+//                                 text-align: right;
+//                         }
+//                 }
+
+//                 &.middle {
+//                         .xx-table-cell {
+//                                 vertical-align: middle;
+//                         }
+//                 }
+
+//                 &.top {
+//                         .xx-table-cell {
+//                                 vertical-align: top;
+//                         }
+//                 }
+
+//                 &.center {
+//                         .xx-table-cell {
+//                                 text-align: center;
+//                         }
+//                 }
+
+//                 &.right {
+//                         .xx-table-cell {
+//                                 text-align: right;
+//                         }
+//                 }
+//         }
+
+//         &.middle {
+//                 .xx-table-row {
+//                         .xx-table-cell {
+//                                 vertical-align: middle;
+//                                 padding: 10px;
+
+//                                 &.top {
+//                                         vertical-align: top;
+//                                 }
+//                         }
+//                 }
+//         }
+
+//         &.top {
+//                 .xx-table-row {
+//                         .xx-table-cell {
+//                                 vertical-align: top;
+//                                 padding: 10px;
+//                         }
+//                 }
+//         }
+// }

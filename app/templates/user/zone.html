@@ -1,0 +1,76 @@
+<section class="user-zone-container">
+	<header class="info-header">
+		<div class="back back-image" style="background-image:url({{user.portraitUrl}}), url('./images/header-bg.jpg');"></div>
+		<div class="front">
+			<label class="avatar-container">
+				<img class="avatar" src="{{user.portraitUrl | imageUrl:'@70w_70h_1e_1c'}}" onerror='this.src="./images/default/avatar.jpg"'>
+				{{if editable}}
+				<img class="spinner" src="./../images/default/loading.gif" />
+				<input type="file" class="avatar-uploader" data-xx-change-action="uploadProfile" accept="image/*" />
+				{{/if}}
+			</label>
+			<h3 class="ellipsis">{{user.nickname||user.name||user.phoneNumber}}</h3>
+		</div>
+	</header>
+	<section class="info-body">
+		<section class="group-box" style="border-top: none;">
+			<!-- 如果当前用户有权限编辑且手机号为空时才可编辑 -->
+			<div class="row-box clearfix {{editable&&!user.phoneNumber?'editable':''}}" data-xx-action="bindPhone" roll="button">
+				<span class="title">手机</span>
+				<span class="text ellipsis">{{user.phoneNumber||"立即绑定"}}</span>
+			</div>
+			<!-- 如果当前用户有权限编辑且邮箱为空时才可编辑 -->
+			<div class="row-box clearfix {{editable&&!user.email?'editable':''}}" data-xx-action="bindEmail" style="border-bottom: none;">
+				<span class="title">邮箱</span>
+				<span class="text ellipsis">{{user.email||"立即绑定"}}</span>
+			</div>
+		</section>
+		<section class="group-box">
+			<div class="row-box clearfix {{editable?'editable':''}}" data-xx-action="editTextField" data-target="name" >
+				<span class="title">姓名</span>
+				<span class="text ellipsis">{{user.name}}</span>
+			</div>
+			<div class="row-box clearfix {{editable?'editable':''}}" data-xx-action="editTextField" data-target="nickname" tabindex="-1">
+				<span class="title">昵称</span>
+				<span class="text ellipsis">{{user.nickname}}</span>
+			</div>
+			<div class="row-box clearfix {{editable?'editable':''}}" data-xx-action="chooseGender" data-target="gender">
+				<span class="title">性别</span>
+				<span class="text ellipsis">{{if user.gender==0}}保密{{else if user.gender==1}}男{{else if user.gender==2}}女{{else}}保密{{/if}}</span>
+			</div>
+			<div class="row-box clearfix {{editable?'editable':''}}" data-xx-action="editTextField" data-target="hometown">
+				<span class="title">故乡</span>
+				<span class="text ellipsis">{{user.hometown}}</span>
+			</div>
+			<div  class="row-box clearfix {{editable?'editable':''}}" data-xx-action="editTextField" data-target="address" style="border-bottom: none;">
+				<span class="title">地址</span>
+				<span class="text ellipsis">{{user.address}}</span>
+			</div>
+		</section>
+		<section class="group-box">
+			<div  class="row-box clearfix {{editable?'editable':''}}" data-xx-action="editTextField" data-target="school">
+				<span class="title">学校</span>
+				<span class="text ellipsis">{{user.school}}</span>
+			</div>
+			<div  class="row-box clearfix {{editable?'editable':''}}" data-xx-action="editTextField" data-target="studentId">
+				<span class="title">学号</span>
+				<span class="text ellipsis">{{user.studentId}}</span>
+			</div>
+			<div  class="row-box clearfix {{editable?'editable':''}}" data-xx-action="editTextField" data-target="campus">
+				<span class="title">校区</span>
+				<span class="text ellipsis">{{user.campus}}</span>
+			</div>
+			<div class="row-box clearfix {{editable?'editable':''}}" grade style="border-bottom: none;">
+				<span class="title">入学时间</span>
+				<span class="text ellipsis">{{user.grade | makedate:'yyyy-MM-dd'}}</span>
+			</div>
+		</section>
+		{{if isWechat}}
+		<section class="group-box">
+			<div class="row-box text-red" style="border: none; text-align: center; cursor: pointer;" data-xx-action="synchronize">
+				同步微信个人资料
+			</div>
+		</section>
+		{{/if}}
+	</section>
+</section>

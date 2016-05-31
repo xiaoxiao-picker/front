@@ -1,0 +1,24 @@
+body.vote-signup {
+	background: #fff;
+}
+#VoteSignup {
+    padding: 0 15px;
+    margin-bottom: 50px;
+}
+.feedback {
+	padding: 15px;
+	background: rgba(252, 113, 108, 0.1);
+	border-bottom: 1px solid $red-color;
+	.iconfont {
+		font-size: 18px;
+	}
+	h4 {
+		font-size: 16px;
+		color: $red-color;
+		margin-bottom: 8px;
+	}
+	p {
+		color: $color-c1;
+		line-height: 20px;
+	}
+}

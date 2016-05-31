@@ -1,0 +1,33 @@
+<!-- lib/bind-box.scss -->
+<section class="email-bind-box bind-box">
+	<button class="btn btn-close">
+		<span class="iconfont icon-close"></span>
+	</button>
+	<header class="box-header">
+		<h3>{{title}}</h3>
+	</header>
+	<div class="box-content">
+		<div class="box-row">
+			<input type="email" name="bind.phoneNumber" class="xx-input col-12 username" placeholder="请输入电子邮箱" value="{{value}}" />
+		</div>
+		<div class="box-row">
+			<input type="text" name="bind.authCode" class="xx-input col-12 authcode" placeholder="请输入验证码"  />
+			<button class="btn btn-primary btn-auth">
+				<span class="inside-text">获取验证码</span>
+				<span class="inside-loading"> 
+					正在发送
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span id="Waiting" class="inside-else"></span>
+			</button>
+		</div>
+	</div>
+	<footer class="box-footer">
+		<button class="btn btn-primary btn-confirm">
+				<span class="inside-text">立即绑定</span>
+				<span class="inside-loading">
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+			</button>
+	</footer>
+</section>

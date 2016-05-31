@@ -1,0 +1,13 @@
+{{each tickets as ticket i}}
+<div class="option-box ticket clearfix" data-value="{{ticket.id}}" data-xx-action="robTicket">
+    <img class="icon" src="./images/event/ticket-icon.png">
+    <div class="content">
+        <div>
+        <span class="mark">电子票</span>
+        <span class="tag {{ticket.timeState.color}}">{{ticket.timeState.title}}</span>
+        </div>
+        <div class="title ellipsis">{{ticket.name}}</div>
+    </div>
+    <span class="total">余:{{ticket.remaining}}</span>
+</div>
+{{/each}}

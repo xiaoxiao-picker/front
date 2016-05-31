@@ -1,0 +1,327 @@
+$icon-height: 70px;
+
+.home-footer-nav {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        height: 100px;
+        background-color: #fff;
+        background-color: transparent;
+
+        .footer-nav-tabs {
+                > li {
+                        float: left;
+                        width: 33.333%;
+                        text-align: center;
+                        list-style-type: none;
+
+                        .nav-icon {
+                                display: inline-block;
+                                height: $icon-height;
+                                width: $icon-height;
+                                border-radius: 50%;
+                                color: $theme-btn-background-color;
+                                overflow: hidden;
+                                border: 1px solid rgba(255, 255, 255, 0.7);
+
+                                img {
+                                        height: 30px;
+                                        width: 30px;
+                                        margin: 20px auto;
+                                }
+                        }
+
+                        .title {
+                                line-height: 30px;
+                                color: #fff;
+                        }
+                }
+        }
+}
+
+#FlowerBox {
+        position: fixed;
+        left: 0;
+        bottom: 0px;
+        top: 0;
+        width: 100%;
+        min-height: 500px;
+        padding-bottom: 100px;
+
+        &.open {
+                .wrapper {
+                        background-color: rgba(255, 255, 255, 0.05);
+                        border-top: 1px solid #333;
+                }
+
+                .ring {
+                        opacity: 1;
+                        transform: scale(1) rotate(0);
+                }
+
+                .tips {
+                        display: none;
+                        color: #999;
+                }
+
+                .name {
+                        display: none;
+                        color: #999;
+                }
+        }
+
+        .wrapper {
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                position: relative;
+        }
+
+        .circle,
+        .ring {
+                height: 340px;
+                width: 340px;
+        }
+
+        .circle {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -170px;
+                margin-left: -170px;
+        }
+
+        .ring {
+                position: relative;
+        }
+
+        .ring {
+                border-radius: 50%;
+                opacity: 0;
+                transform-origin: 50% 50%;
+                transform: scale(0.1) rotate(-270deg);
+                transition: all .7s ease-in-out;
+        }
+
+        .center {
+                border-radius: 50%;
+                border: 0px solid #ffffff;
+                bottom: 0;
+                color: white;
+                left: 0;
+                margin: auto;
+                position: absolute;
+                right: 0;
+                text-align: center;
+                top: 0;
+                width: 100px;
+                height: 100px;
+                transition: all 0.4s ease-out;
+                overflow: hidden;
+
+                img {
+                        background-color: #fff;
+                        background-color: rgba(255, 255, 255, 0.3);
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                }
+        }
+
+        .name {
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                bottom: 90px;
+                left: 0;
+                font-size: 20px;
+                color: #fff;
+        }
+
+        .open .center {
+                border-color: #aaaaaa;
+        }
+
+        .menuItem {
+                display: block;
+                height: 100px;
+                line-height: 100px;
+                margin-left: -50px;
+                margin-top: -50px;
+                position: absolute;
+                text-align: center;
+                width: 100px;
+                overflow: hidden;
+
+                dl {
+                        line-height: normal;
+
+                        dt {
+                                text-align: center;
+
+                                .icon {
+                                        width: $icon-height;
+                                        height: $icon-height;
+                                        border-radius: 50%;
+                                        margin: 0 auto;
+                                        overflow: hidden;
+                                        border: 1px solid rgba(255, 255, 255, 0.7);
+
+                                        img {
+                                                height: 30px;
+                                                width: 30px;
+                                                margin: 20px auto;
+                                        }
+                                }
+                        }
+
+                        dd {
+                                text-align: center;
+                                line-height: 30px;
+                                font-size: 14px;
+                                color: #fff;
+                                text-shadow: 1px 1px 3px rgba(7, 7, 7, 1);
+                        }
+                }
+        }
+
+        .tips {
+                position: fixed;
+                bottom: 110px;
+                left: 0;
+                width: 100%;
+                line-height: 30px;
+                color: #fff;
+                text-align: center;
+                display: block;
+        }
+}
+
+@media (max-width: 360px) {
+        #FlowerBox {
+                .circle, .ring {
+                        height: 270px;
+                        width: 270px;
+                }
+
+                .circle {
+                        margin-top: -135px;
+                        margin-left: -135px;
+                }
+
+                .center {
+                        width: 80px;
+                        height: 80px;
+                        line-height: 80px;
+                }
+
+                .menuItem {
+                        width: 80px;
+                        height: 80px;
+                        line-height: 80px;
+                        margin-left: -40px;
+                        margin-top: -40px;
+
+                        dl {
+                                dt {
+                                        .icon {
+                                                width: 60px;
+                                                height: 60px;
+                                                text-align: center;
+
+                                                img {
+                                                        height: 25px;
+                                                        width: 25px;
+                                                        margin: 18px auto;
+                                                }
+                                        }
+                                }
+
+                                dd {
+                                        line-height: 20px;
+                                        font-size: 12px;
+                                }
+                        }
+                }
+
+                .name {
+                        bottom: 70px;
+                }
+        }
+}
+
+@media (max-width: 300px) {
+        #FlowerBox {
+                .circle, .ring {
+                        height: 230px;
+                        width: 230px;
+                }
+
+                .circle {
+                        margin-top: -115px;
+                        margin-left: -115px;
+                }
+
+                .center {
+                        width: 80px;
+                        height: 80px;
+                        line-height: 80px;
+                }
+
+                .menuItem {
+                        width: 70px;
+                        height: 70px;
+                        margin-left: -30px;
+                        margin-top: -30px;
+
+                        dl {
+                                dt {
+                                        .icon {
+                                                width: 50px;
+                                                height: 50px;
+
+                                                img {
+                                                        height: 20px;
+                                                        width: 20px;
+                                                        margin: 15px auto;
+                                                }
+                                        }
+                                }
+
+                                dd {
+                                        line-height: 20px;
+                                        font-size: 12px;
+                                }
+                        }
+                }
+
+                .name {
+                        bottom: 50px;
+                }
+        }
+}
+
+.rolling3 {
+        animation: rolling3 10s infinite linear;
+        animation-fill-mode: both;
+}
+
+@keyframes rolling3 {
+        0% {
+                transform: rotate(0deg);
+        }
+
+        30% {
+                transform: rotate(250deg);
+        }
+
+        70% {
+                transform: rotate(180deg);
+        }
+
+        100% {
+                transform: rotate(180deg);
+        }
+}

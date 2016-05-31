@@ -1,0 +1,56 @@
+#header.login-header {
+        position: static;
+
+        > .wrapper {
+                background-color: #f8f8f8;
+
+                h2 {
+                        color: #444;
+                }
+        }
+}
+
+#content.login-content {
+        margin-top: 0;
+
+        .xx-form-box {
+                margin: 0 15px;
+        }
+
+        .box-row {
+                margin-bottom: 15px;
+                position: relative;
+        }
+
+        .auth-code-box {
+                position: relative;
+
+                .auth-btn {
+                        position: absolute;
+                        top: 4px;
+                        right: 4px;
+                        padding: 6px 8px;
+                }
+        }
+
+        .btn-voice-auth {
+                padding: 0 1px;
+                background-color: transparent;
+                color: #2196f3;
+                border-bottom: 1px #2196f3 solid;
+        }
+
+        .captcha-row {
+                padding-right: 160px;
+        }
+
+        .captcha-box {
+                position: absolute;
+                right: 0;
+                top: 3px;
+        }
+
+        #CaptchaImage {
+                vertical-align: middle;
+        }
+}

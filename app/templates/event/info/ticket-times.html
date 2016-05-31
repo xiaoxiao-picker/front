@@ -1,0 +1,34 @@
+<!-- models/event/register.scss -->
+<section class="ticket-box">
+    <button class="btn btn-close" role="button">
+        <span class="iconfont icon-close"></span>
+    </button>
+    <h4>
+	<div class="title">{{ticket.name}}</div>
+	<div>【抢票时间】</div>
+	</h4>
+    <ul class="times">
+        {{each ticket.ticketOpenTimes as time i}}
+        <li class="ellipsis {{time.state=='ONGOING'?'active':''}}">
+            <div class="date">
+                {{time.startDate | makedate:'MM/dd hh:mm'}} -- {{time.endDate | makedate:'MM/dd hh:mm'}}
+            </div>
+            <div>
+                <span class="remain">已抢：{{time.numberOfLimit-time.numberOfRemaining}}</span> &nbsp;
+                <span class="total">总数：{{time.numberOfLimit}}</span>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    <footer>
+        {{if ticket.hasRequested}}
+        <a class="btn btn-primary" href="#organization/{{organizationId}}/ticket/{{ticket.id}}/info?eventId={{eventId}}">查看我的电子票</a>
+        {{else if ticket.timeState.state == 'ONGOING'}}
+        <a class="btn btn-primary" href="#organization/{{organizationId}}/ticket/{{ticket.id}}/info?eventId={{eventId}}">立即抢票</a>
+        {{else if ticket.timeState.state == 'UPCOMING'}}
+        <button class="btn btn-primary">即将开始抢票</button>
+        {{else}}
+        <button class="btn btn-primary">抢票已结束</button>
+        {{/if}}
+    </footer>
+</section>

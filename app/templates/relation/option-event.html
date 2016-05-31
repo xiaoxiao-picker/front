@@ -1,0 +1,30 @@
+{{each events as event i}}
+<li class="event clearfix">
+	<a href="#organization/{{event.organization.id}}/event/{{event.id}}/info">
+		<img class="poster" src="{{event.thumbnailUrl | imageUrl:'@110w_150h_1e_1c'}}" onerror="this.src='./images/default/article.png'"/>
+		<section class="context">
+			<p class="category">{{event.category?event.category.name:"未分类"}}</p>
+			<h3 class="name mul-line two-line">{{event.name}}</h3>
+			<div class="description">
+				{{event.totalSignups}}
+				人报名
+				/
+				{{event.startDate | makedate:'MM月dd日 hh:mm'}}
+				至
+				{{event.endDate | makedate:'MM月dd日 hh:mm'}}
+				/
+				{{event.address}}
+			</div>
+		</section>
+	</a>
+	<!-- 标签 -->
+	<div class="bookmarks">
+		{{if event.totalVotes}}
+		<span class="bookmark bookmark-green">投</span>
+		{{/if}}
+		{{if event.totalTicketSources}}
+		<span class="bookmark bookmark-red">票</span>
+		{{/if}}
+	</div>
+</li>
+{{/each}}

@@ -1,0 +1,17 @@
+<li class="wall-comment clearfix">
+	<div class="avatar-wrapper">
+		<img class="avatar" src="{{user.portraitUrl}}@100w_100h_1c_1e"  onerror="this.src='/images/default/avatar.jpg'"/>
+	</div>
+	<div class="msg-container-info">
+		<h4>
+		<span class="nickname">{{user.nickname||"匿名"}}</span>
+		<span class="date">{{date | makedate:'yyyy-MM-dd hh:mm'}}</span>
+		</h4>
+		<section class="msg">
+
+		{{each text.split('\n') as desc i}}
+			<p>{{desc}}</p>
+		{{/each}}						
+		</section>
+	</div>
+</li>

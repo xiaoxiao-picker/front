@@ -1,0 +1,13 @@
+<section class="organization-info-container">
+	<header class="info-header">
+		<section class="back back-image" style="background-image:url({{orgInfo.thumbnailUrl}}), url('./images/header-bg.jpg');"></section>
+		<section class="front">
+			<img class="avatar" src="{{orgInfo.thumbnailUrl | imageUrl:'@70w_70h_1e_1c'}}" onerror="this.src='./images/default/org.jpg'">
+			<h3 class="ellipsis">{{orgInfo.name}}</h3>
+			<div class="type">{{orgInfo.orgType}}</div>
+		</section>
+	</header>
+	<section class="context">
+		{{#orgInfo.description}}
+	</section>
+</section>

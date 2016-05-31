@@ -1,0 +1,84 @@
+.apply-info, .apply-edit, .apply-success {
+	margin-bottom: 60px;
+}
+.apply-info {
+	.card-top {
+		padding: 50px 0;
+		margin: 0 15px;
+		border-bottom: 1px solid $default-border-color;
+
+		img {
+			display: block;
+			margin: auto;
+			width: 30%;
+		}
+	}
+	.card-body {
+		padding: 15px;
+
+		.title {
+			font-size: 16px;
+			text-align: center;
+			line-height: 35px;
+			color: #000;
+		}
+		.content {
+			color: $gray-title-color;
+			font-size: 12px;
+			line-height: 20px;
+		}
+	}
+}
+.success-body {
+	padding: 60px 0;
+	text-align: center;
+
+	&.blue {
+		color: blue;
+
+		.subTitle {
+			a {
+				color: blue;
+
+				&:hover {
+					color: $success-color;
+				}
+			}
+		}
+	}
+	&.green {
+		color: #22c064;
+
+		.subTitle {
+			a {
+				color: #22c064;
+
+				&:hover {
+					color: $success-color;
+				}
+			}
+		}
+	}
+	.title {
+		font-size: 18px;
+	}
+	.success-icon {
+		margin: 20px 0;
+
+		img {
+			height: 70px;
+		}
+	}
+	.subTitle {
+		margin: 20px 0;
+		color: #666;
+	}
+	.a-green {
+		padding: 5px 12px;
+		border: 1px solid #22c064;
+		border-radius: 3px;
+		color: #22c064;
+		font-size: 12px;
+		line-height: 15px;
+	}
+}

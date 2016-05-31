@@ -1,0 +1,39 @@
+{{each feedbacks as feedback i}}
+{{if feedback.admin}}
+<div class="chat-box left">
+	{{if feedback.createDate}}
+	<div class="date">
+		{{feedback.createDate | makedate:'yyyy/MM/dd hh:mm'}}
+	</div>
+	{{/if}}
+	<div class="chat-wrapper clearfix">
+		<img class="avatar" src="{{organization.logoUrl | imageUrl:'@30w_30h_1e_1c'}}" onerror="this.src='./images/default/org.jpg'">
+		<div class="content-box">
+			<i class="arrow arrow-out"></i>
+			<i class="arrow arrow-in"></i>
+			<div>
+				{{feedback.text}}
+			</div>
+		</div>
+	</div>
+</div>
+{{else}}
+<div class="chat-box right">
+	{{if feedback.createDate}}
+	<div class="date">
+		{{feedback.createDate | makedate:'yyyy/MM/dd hh:mm'}}
+	</div>
+	{{/if}}
+	<div class="chat-wrapper clearfix">
+		<img class="avatar" src="{{user.portraitUrl | imageUrl:'@30w_30h_1e_1c'}}" onerror="this.src='./images/default/avatar.jpg'">
+		<div class="content-box">
+			<i class="arrow arrow-out"></i>
+			<i class="arrow arrow-in"></i>
+			<div>
+				{{feedback.text}}
+			</div>
+		</div>
+	</div>
+</div>
+{{/if}}
+{{/each}}

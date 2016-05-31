@@ -1,0 +1,40 @@
+<section class="organization-info-container country-container">
+	<header class="info-header">
+		<section class="back back-image" style="background-image:url({{schoolInfo.schoolPost}}), url('./images/header-bg.jpg');"></section>
+		<section class="front">
+			<img class="avatar" src="{{schoolInfo.schoolLogo | imageUrl:'@70w_70h_1e_1c'}}" alt="" onerror="./images/default/avatar.jpg">
+			<h3 class="ellipsis">{{schoolInfo.school&&schoolInfo.school.name}}</h3>
+			{{if schoolInfo.schoolQrUrl}}
+			<button class="btn btn-xx-white btn-sm btn-attention" data-xx-action="attention">
+				<span>关注</span>
+			</button>
+			{{/if}}
+		</section>
+	</header>
+	<section class="context">
+		{{#schoolInfo.desc}}
+	</section>
+	<section class="options-box">
+		<div class="header">
+			<span><i class="iconfont icon-friend"></i>包含组织（{{wechatCount}}）</span>
+		</div>
+		<ul class="options clearfix">
+			{{each wechats as wechat i}}
+			<li class="clearfix" data-value="{{wechat.id}}" data-xx-action="showQRCode">
+				<img class="qrcode-img" src="{{wechat.qrUrl | imageUrl:'@55w_55h_1e_1c'}}" alt="" />
+				<div class="wrapper">
+					<p class="title ellipsis">{{wechat.name}}</p>
+					<p class="type">{{wechat.category}}</p>
+				</div>
+			</li>
+			{{/each}}
+		</ul>
+		{{if wechatCount > 4}}
+		<div class="footer">
+			<a href="#organization/{{orgId}}/exhibition/{{exhibitionId}}/wechats">
+				<span>查看全部组织<i class="iconfont icon-chevron-right"></i></span>
+			</a>
+		</div>
+		{{/if}}
+	</section>
+</section>

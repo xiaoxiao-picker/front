@@ -1,0 +1,48 @@
+{{each notifications as notification i}}
+<li class="notification-box clearfix">
+	<img class="avatar" src="{{notification.thumbnailUrl | imageUrl:'@35w_35h_1e_1c'}}" alt="" onerror="this.src='./images/default/avatar.jpg'">
+	<div class="info-wrapper">
+		<div class="content-box">
+			<!-- APPLY_AGREE -->
+			{{if notification.type == 'APPLY_AGREE'}}
+			<section>
+			<span>{{notification.name||'未命名组织'}}</span>
+			<span class="text-gray">同意了你的组织申请</span>
+			</section>
+			<!-- APPLY_REFUSE -->
+			{{else if notification.type == 'APPLY_REFUSE'}}
+			<section>
+			<span>{{notification.name||'未命名组织'}}</span>
+			<span class="text-gray">拒绝了你的组织申请</span>
+			</section>
+			<!-- COMMENT_REPLY -->
+			{{else if notification.type == 'COMMENT_REPLY'}}
+			<section>
+				<span>{{notification.name}}</span>
+				<span class="text-gray">回复了你的评论</span>
+			</section>
+			<section class="box-wrapper clearfix">
+				<img class="poster-img" src="{{notification.attach&&notification.attach.thumbnailUrl | imageUrl:'@75w_75h_1e_1c'}}" alt="" onerror="./images/default/event.jpg">
+				<div class="wrapper">
+					<div class="title ellipsis">
+						{{notification.attach&&notification.attach.name}}
+					</div>
+					<div class="text text-gray ellipsis">
+						{{notification.comment&&notification.comment.text}}
+					</div>
+				</div>
+			</section>
+			<!-- OTHER -->
+			{{else}}
+			<section>
+				<span>{{notification.text}}</span>
+			</section>
+			{{/if}}
+		</div>
+		<div class="date">
+			<span class="iconfont icon-time-fill"></span>
+			{{notification.createTime}}
+		</div>
+	</div>
+</li>
+{{/each}}

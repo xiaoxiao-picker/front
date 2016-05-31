@@ -1,0 +1,63 @@
+<section id="HomeMenu">
+	<div class="shadow-box"></div>
+	<div class="container">
+		<span class="btn-close">
+			<i class="iconfont icon-arrow-right"></i>
+		</span>
+		<header class="info-header back-image" style="background-image: url(./images/header-bg.jpg)">
+			<div class="front">
+				<a class="avatar-link" href="#organization/{{organization.id}}/user/zone">
+					<img class="avatar avatar-user-{{user.id}}" data-param="@70w_70h_1e_1c" src="{{user.portraitUrl | imageUrl:'@70w_70h_1e_1c'}}" onerror="this.src='./images/default/avatar.jpg'" />
+				</a>
+				<a class="name ellipsis" href="#organization/{{organization.id}}/user/zone">
+				{{user.nickname||user.name||user.phoneNumber||"匿名用户"}}
+				</a>
+			</div>
+		</header>
+		<ul class="menus">
+			<li class="menu">
+				<a href="#organization/{{organization.id}}/index">
+					<span class="icon" style="background: #ffb74e;">
+						<i class="iconfont icon-home"></i>
+					</span>
+					<span>首页</span>
+				</a>
+			</li>
+			<li class="menu">
+				<a href="#organization/{{organization.id}}/user/history">
+					<span class="icon" style="background: #42bd41;">
+						<i class="iconfont icon-alarm-clock-fill"></i>
+					</span>
+					<span>我的参与</span>
+				</a>
+			</li>
+			<li class="menu">
+				<a href="#organization/{{organization.id}}/user/notifications">
+					<span class="icon" style="background: #ef6058;">
+						<i class="iconfont icon-email"></i>
+					</span>
+					<span>通知中心</span>
+					<span class="count count-message-{{user.id}} hide">
+						0
+					</span>
+				</a>
+			</li>
+			<li class="menu">
+				<a href="#organization/{{organization.id}}/user/notices">
+					<span class="icon" style="background: #2196f3;">
+						<i class="iconfont icon-voice"></i>
+					</span>
+					<span>组织公告</span>
+				</a>
+			</li>
+			<li class="menu">
+				<a href="#organization/{{organization.id}}/user/feedback">
+					<span class="icon" style="background: #3ecfd4;">
+						<i class="iconfont icon-chat-fill"></i>
+					</span>
+					<span>意见反馈</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>

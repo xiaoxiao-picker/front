@@ -1,0 +1,179 @@
+#footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 500;
+
+        .btn {
+                line-height: 35px;
+        }
+
+        .tabs {
+                background: $theme-color;
+                height: 55px;
+
+                &.tab-2 {
+                        > li {
+                                width: 50%;
+                        }
+                }
+
+                &.tab-3 {
+                        > li {
+                                width: 33.333%;
+                        }
+                }
+
+                &.tab-4 {
+                        > li {
+                                width: 25%;
+                        }
+                }
+
+                &.tabs-5 {
+                        > li {
+                                width: 20%;
+                        }
+                }
+
+                > li {
+                        position: relative;
+                        float: left;
+                        text-align: center;
+                        height: 55px;
+                        padding-top: 8px;
+
+                        > a {
+                                color: rgba(255, 255, 255, 0.3);
+                        }
+
+                        &.active {
+                                > a {
+                                        color: rgba(255, 255, 255, 1);
+                                }
+                        }
+
+                        .title {
+                                line-height: 25px;
+                        }
+
+                        .iconfont {
+                                font-size: 18px;
+                        }
+                }
+
+                .tab-add {
+                        .icon {
+                                display: inline-block;
+                                margin-top: -35px;
+                                background-color: #2196f3;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                padding: 7px;
+
+                                .inner {
+                                        background-color: #fff;
+                                        border-radius: 50%;
+                                        padding: 16px;
+                                        border: 3px solid rgba(0, 142, 255, 0.5);
+
+                                        span {
+                                                color: #2196f3;
+                                                font-size: 23px;
+                                        }
+                                }
+                        }
+                }
+        }
+
+        .menu-options {
+                position: absolute;
+                bottom: 55px;
+                left: 50%;
+
+                > li {
+                        position: absolute;
+                        top: 0;
+                        left: -30px;
+                        padding: 10px;
+                        display: none;
+
+                        .btn {
+                                width: 40px;
+                                height: 40px;
+                                line-height: 38px;
+                        }
+
+                        &.menu-option-0 {
+                                animation: close-option-0 0.4s forwards;
+                        }
+
+                        &.menu-option-1 {
+                                animation: close-option-1 0.4s forwards;
+                        }
+
+                        &.open {
+                                &.menu-option-0 {
+                                        animation: open-option-0 0.4s forwards;
+                                }
+
+                                &.menu-option-1 {
+                                        animation: open-option-1 0.4s forwards;
+                                }
+                        }
+
+                        .iconfont {
+                                font-size: 14px;
+                        }
+                }
+        }
+}
+
+@keyframes close-option-0 {
+        0% {
+                opacity: 1;
+                transform: translate(0, -70px);
+        }
+
+        100% {
+                opacity: 0;
+                transform: translate(0, 0);
+        }
+}
+
+@keyframes close-option-1 {
+        0% {
+                opacity: 1;
+                transform: translate(0, -130px);
+        }
+
+        100% {
+                opacity: 0;
+                transform: translate(0, 0);
+        }
+}
+
+@keyframes open-option-0 {
+        0% {
+                opacity: 0;
+                transform: translate(0, 0);
+        }
+
+        100% {
+                opacity: 1;
+                transform: translate(0, -70px);
+        }
+}
+
+@keyframes open-option-1 {
+        0% {
+                opacity: 0;
+                transform: translate(0, 0);
+        }
+
+        100% {
+                opacity: 1;
+                transform: translate(0, -130px);
+        }
+}

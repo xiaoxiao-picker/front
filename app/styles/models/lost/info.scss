@@ -1,0 +1,91 @@
+.lost-info-container {
+        .base-info, .images-wrapper, .contact-info {
+                background: #fff;
+                padding: 15px;
+        }
+
+        .base-info {
+                border-bottom: 1px solid $default-border-color;
+                margin-bottom: 15px;
+
+                h3 {
+                        font-size: 18px;
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid $default-border-color;
+                }
+
+                .msg-content {
+                        padding-top: 15px;
+                }
+
+                .msg-wrapper {
+                        margin-bottom: 10px;
+                        line-height: 18px;
+
+                        .inner-title {
+                                float: left;
+                                color: $color-c2;
+                        }
+
+                        .inner-content {
+                                margin-left: 75px;
+                        }
+                }
+        }
+
+        .images-wrapper {
+                border-top: 1px solid $default-border-color;
+                border-bottom: 1px solid $default-border-color;
+                margin-bottom: 15px;
+
+                .images {
+                        margin: -5px;
+
+                        > img {
+                                float: left;
+                                display: block;
+                                border-radius: $default-border-radius;
+                                margin: 5px;
+                        }
+                }
+        }
+
+        .contact-info {
+                position: relative;
+                border-top: 1px solid $default-border-color;
+                border-bottom: 1px solid $default-border-color;
+
+                h4 {
+                        padding-bottom: 15px;
+                        margin-bottom: 15px;
+                        border-bottom: 1px solid $default-border-color;
+                }
+
+                .inner-title {
+                        color: $color-c2;
+                }
+
+                > section {
+                        margin-bottom: 10px;
+                }
+
+                .result-img {
+                        position: absolute;
+                        top: 60px;
+                        right: 15px;
+                        width: 80px;
+                }
+        }
+
+        .buttons {
+                margin-top: 20px;
+
+                .lost-result {
+                        padding: 10px;
+                        text-align: center;
+                        color: $theme-color;
+                        border: 1px dashed $theme-color;
+                        background-color: rgba(33, 150, 243, 0.3);
+                }
+        }
+}

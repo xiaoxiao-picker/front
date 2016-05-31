@@ -1,0 +1,33 @@
+// 平铺轮播图
+// templates/organization/templates/swiper-tile.html
+.swiper-tile-box {
+	overflow-y: auto;
+
+	// 菜单
+	.menu {
+		position: relative;
+		margin-bottom: 5px;
+
+		.wrapper {
+			width: 100%;
+			text-align: center;
+		}
+		.menu-content {
+			font-weight: bold;
+			width: 50%;
+			padding: 15px;
+			color: #fff;
+		}
+		.icon-wrapper {
+			margin-bottom: 5px;
+
+			.icon {
+				width: 36px;
+				height: 36px;
+			}
+			.name {
+				white-space: nowrap;
+			}
+		}
+	}
+}

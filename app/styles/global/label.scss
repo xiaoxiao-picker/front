@@ -1,0 +1,41 @@
+.label {
+	border-radius: $default-border-radius;
+	position: relative;
+	padding: 4px 8px;
+	font-size: 14px;
+	color: #fff;
+	&.label-sm {
+		padding: 2px 6px;
+		font-size: 12px;
+	}
+	&.label-lg {
+		padding: 6px 12px;
+		font-size: 14px;
+	}
+	&.label-6-12 {
+		border-radius: 12px;
+		padding: 5px 12px;
+	}
+	&.label-primary {
+		background-color: $primary-color;
+	}
+	&.label-success {
+		background-color: $success-color;
+	}
+	&.label-info {
+		background-color: $info-color;
+	}
+	&.label-warning {
+		background-color: $warning-color;
+	}
+	&.label-red {
+		background-color: $red-color;
+	}
+	&.label-orange {
+		background-color: $orange-color;
+	}
+	&.label-disabled {
+		background: #E9E9E9;
+		color: #fff;
+	}
+}

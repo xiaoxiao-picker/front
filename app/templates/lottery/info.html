@@ -1,0 +1,80 @@
+<section class="lottery-info-container">
+    <div class="info-header">
+        <div>
+            <p>
+                <span>抽奖名称：</span>
+                <span>{{lottery.name}}</span>
+            </p>
+            <p>
+                <span>抽奖时间：</span>
+                <span>{{lottery.startDate | makedate:'yyyy.MM.dd'}} - {{lottery.endDate | makedate:'yyyy.MM.dd'}}</span>
+            </p>
+            <p>
+                <span>获奖总数：</span>
+                <span>{{awards.length}}次</span>
+            </p>
+            <p>
+                <span>登记信息：</span> 
+                {{if lottery.hasSignUp}}
+                <span class="text-green">已填写</span>
+                {{else}}
+                <span class="text-red">未填写</span> 
+                {{/if}}
+                {{if lottery.hasSignUp}}
+                <a class="link-green underline" href="#organization/{{orgId}}/lottery/{{lottery.id}}/result">查看中奖登记表</a>
+                {{else}}
+                <a class="link-green underline" href="#organization/{{orgId}}/lottery/{{lottery.id}}/signup">编辑中奖登记表</a>
+                {{/if}}
+            </p>
+        </div>
+        <div>
+            <h3>领奖方式/联系信息</h3>
+            <p>
+                <span>联系人：</span>
+                <span>{{lottery.contactMan||'暂无'}}</span>
+            </p>
+            <p>
+                <span>联系方式：</span>
+                <span>{{lottery.contactPhoneNumber||'暂无'}}</span>
+            </p>
+            <p>
+                <span>联系地址：</span>
+                <span>{{lottery.contactLocation||'暂无'}}</span>
+            </p>
+        </div>
+    </div>
+    <table class="awards">
+        <thead>
+            <tr>
+                <th>获奖时间</th>
+                <th>所获奖项</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{each awards as award i}}
+            <tr>
+                <td>
+                    {{award.createDate | makedate:'yyyy/MM/dd hh:mm'}}
+                </td>
+                <td>
+                    <img src="{{award.portraitUrl | imageUrl:'@75w_60h_1e_1l'}}">
+                    <h4>{{award.name}}({{award.description}})</h4>
+                    {{if award.canJump}}
+                    <a class="link-green underline" href="{{award.jumpUrl}}">点击奖品链接</a>
+                    {{/if}}
+                </td>
+            </tr>
+            {{/each}} 
+            {{if awards.length==0}}
+            <tr>
+                <td colspan="2">暂无中奖</td>
+            </tr>
+            {{/if}}
+        </tbody>
+    </table>
+</section>
+
+<footer id="footer">
+    <a class="btn btn-large btn-xx-theme" href="#organization/{{orgId}}/lottery/{{lottery.id}}/draw"><span>去大转盘</span></a>
+</footer>
+

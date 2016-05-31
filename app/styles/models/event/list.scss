@@ -1,0 +1,69 @@
+body.events {
+        background: #fff;
+}
+
+.event-list-container {
+        margin-bottom: 60px;
+}
+
+#EventsContainer, .search-events-container {
+        padding: 0px 15px;
+
+        .event {
+                padding: 15px 0;
+                border-bottom: 1px solid $default-border-color;
+                position: relative;
+
+                &:hover {}
+
+                > a {
+                        display: block;
+                        height: 150px;
+                }
+        }
+
+        .poster {
+                float: left;
+                width: 110px;
+                height: 150px;
+                border-radius: $default-border-radius;
+        }
+
+        .context {
+                margin-left: 120px;
+                position: relative;
+        }
+
+        .category {
+                padding: 10px 0 5px;
+                color: $color-c2;
+        }
+
+        .name {
+                margin: 10px 0;
+                font-size: 15px;
+                line-height: 20px;
+                max-height: 40px;
+                word-break: break-all;
+        }
+
+        .description {
+                margin: 12px 0;
+                color: $color-c2;
+        }
+
+        .bookmarks {
+                position: absolute;
+                right: 0px;
+                top: 15px;
+
+                .bookmark {
+                        margin-left: 5px;
+                }
+        }
+}
+
+.search-events-container {
+        padding: 0;
+        background: #fff;
+}

@@ -1,0 +1,33 @@
+.award-list {
+	.award-item-wrapper {
+		margin: 0 15px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid $default-border-color;
+		.item-header {
+			position: relative;
+			.title {
+				margin-right: 70px;
+				font-size: 16px;
+				line-height: 35px;
+				height: 35px;
+				overflow: hidden;
+			}
+			.date {
+				position: absolute;
+				right: 0;
+				top: 0;
+				text-align: right;
+				font-size: 12px;
+				line-height: 35px;
+				color: $gray-title-color;
+			}
+		}
+		.poster {
+			border-radius: 3px;
+			width: 100%;
+			height: 185px;
+			overflow: hidden;
+			background-size: 100%;
+		}
+	}
+}

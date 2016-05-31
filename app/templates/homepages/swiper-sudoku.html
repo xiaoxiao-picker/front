@@ -1,0 +1,21 @@
+<!-- 背景音乐 -->
+{{include './back-music'}}
+<div id="PAGECONTAINER" class="swiper-sudoku-box back-image" style="{{if json.backColor}}background-color:{{json.backColor}};{{else if json.backImage}}background-image:url({{json.backImage}}){{/if}}">
+	{{include './swiper'}}
+	<section>
+		<div class="menus clearfix">
+			{{each menus as menu i}}
+			<div class="menu">
+				<a href="{{menu.url}}">
+					<div class="icon-wrapper" style="{{if menu.backColor}}background-color:{{menu.backColor}};{{/if}}">
+						<img class="icon" src="{{menu.icon}}" />
+					</div>
+					<p class="name ellipsis">
+						{{menu.name}}
+					</p>
+				</a>
+			</div>
+			{{/each}}
+		</div>
+	</section>
+</div>

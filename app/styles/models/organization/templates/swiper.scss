@@ -1,0 +1,50 @@
+.swiper-container {
+	.swiper-slide {
+		a {
+			display: block;
+			height: 100%;
+		}
+		.poster {
+			width: 100%;
+			height: 200px;
+			display: block;
+		}
+		.name {
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			color: #fff;
+			position: absolute;
+			background-color: rgba(0, 0, 0, 0.5);
+			height: 25px;
+			line-height: 25px;
+			overflow: hidden;
+			padding: 0 10px;
+
+			span {
+				font-size: 12px;
+			}
+		}
+	}
+	.swiper-pagination-bullet {
+		opacity: 1;
+	}
+}
+.swiper-pagination-bullet {
+	background-color: transparent !important;
+	border: 2px solid #fff;
+	height: 10px !important;
+	width: 10px !important;
+	margin: 0 3px !important;
+
+	&.swiper-pagination-bullet-active {
+		background-color: #fff !important;
+	}
+}
+.swiper-container-horizontal {
+	>.swiper-pagination {
+		text-align: right;
+		bottom: 5px !important;
+		padding: 0 5px;
+	}
+}

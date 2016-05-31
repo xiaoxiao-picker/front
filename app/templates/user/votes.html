@@ -1,0 +1,26 @@
+
+<!--  -->
+<!--用户已投过的所有投票 模板-->
+<header class="xx-inner-header">
+	<nav class="header-wrapper">
+		<div class="header-nav left">
+			<a class="btn btn-xx-green btn-xx-circle height-30 line-30" href="javascript:void(0);" data-xx-action="goBack">
+				<span class="fa fa-angle-left font-18"></span>
+			</a>
+		</div>
+		<h2>我的投票</h2>
+	</nav>
+</header>
+<div class="inner-body">
+	<div class="event-list clearfix">{{include '../event/list/body_1'}}</div>
+</div>
+{{if hasMore}}
+<div class="more-wrapper">
+	<button data-xx-action="loadMore" class="btn btn-large btn-xx-success" data-text-label="span" style="background-color: transparent">
+		<span class="inside-loading">
+			<i class="fa fa-spinner rolling font-18"></i>
+		</span>
+		<span class="inside-text">点击加载更多</span>
+	</button>
+</div>
+{{/if}}

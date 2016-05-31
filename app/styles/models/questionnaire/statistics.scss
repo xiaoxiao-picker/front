@@ -1,0 +1,35 @@
+.questionnaire-statistics-container {
+    .choice-box {
+        padding: 0 15px;
+        background: #fff;
+        margin-bottom: 15px;
+        border-top: 1px solid $default-border-color;
+        border-bottom: 1px solid $default-border-color;
+    }
+    h4 {
+        line-height: 20px;
+        padding: 15px 0 10px;
+    }
+    .subOptions {
+        >li {
+            margin-bottom: 10px;
+        }
+        .name {
+            line-height: 30px;
+        }
+        .percent {
+            line-height: 20px;
+            background: $body-background-color;
+            color: $color-c2;
+            .progress {
+                float: left;
+                display: block;
+                height: 20px;
+                min-width: 1px;
+                width: 1px;
+                background-color: $theme-color;
+                transition: all 1s;
+            }
+        }
+    }
+}

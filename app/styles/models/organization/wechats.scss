@@ -1,0 +1,27 @@
+body.exhibition-country-wechats {
+	background: #fff;
+}
+.exhibition-wechats-container {
+	#Wechats {
+		padding: 0 15px;
+	}
+	.wechat-box {
+		padding: 15px 0;
+		border-bottom: 1px solid $default-border-color;
+		cursor: pointer;
+		.qrcode-img {
+			float: left;
+			width: 55px;
+			height: 55px;
+			display: block;
+		}
+		.wrapper {
+			margin-left: 65px;
+			padding-right: 5px;
+
+			.title {
+				line-height: 30px;
+			}
+		}
+	}
+}

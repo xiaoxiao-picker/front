@@ -1,0 +1,25 @@
+{{each sources as source i}}
+<li class="row-wrapper">
+	<span class="remark {{source.color}}"></span>
+	<div class="row-box">
+		<a href="#organization/{{orgId}}/lottery/{{source.id}}/info">
+			<header class="box-header">
+				获得了
+				<span>幸运大转盘奖品</span>
+			</header>
+			<section class="box-body clearfix">
+				<img class="poster-img" src="" alt="" onerror="this.src='./images/lottery/default.png'">
+				<div class="info-wrapper">
+					<div class="title ellipsis">
+						{{source.name}}
+					</div>
+				</div>
+			</section>
+			<footer class="box-footer">
+				<span class="iconfont icon-time-fill"></span>
+				{{source.createTime}}
+			</footer>
+		</a>
+	</div>
+</li>
+{{/each}}

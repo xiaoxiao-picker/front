@@ -1,0 +1,17 @@
+<section id="ArticleContainer" class="article-info-container">
+	<div class="article-info">
+		<header class="info-header">	    
+			<h3 class="title">{{articleInfo.name}}</h3>
+			<p class="publish-info">
+				<span>{{articleInfo.organization.name}}</span>
+				<span>发布于</span>
+				<span>{{articleInfo.createDate | makedate:'yyyy-MM-dd hh:mm'}}</span>
+				<span>{{articleInfo.totalViews}}浏览</span>
+			</p>
+	 	</header>
+	 	<div class="article-content  user-select">
+			{{#articleInfo.text}}
+		</div>
+	</div> 
+	<section id="CommentsContainer"></section>
+</section>

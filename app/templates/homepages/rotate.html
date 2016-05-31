@@ -1,0 +1,52 @@
+<!-- 天女散花 -->
+
+<!-- 背景音乐 -->
+{{include './back-music'}}
+
+<div id="FlowerBox" class="image-back" style="{{if json.backColor}}background-color:{{json.backColor}};{{else if json.backImage}}background-image:url({{json.backImage}}){{/if}}">
+	<div class="wrapper">
+		<div class="circle --rolling3">
+			<div class="ring">
+				{{each menus as menu i}}
+				{{if i > 2}}
+				<a href="{{menu.url}}" class="menuItem">
+					<dl>
+						<dt>
+						<div class="icon back-image" style="{{if menu.backImage}}background-image:url({{menu.backImage}});{{/if}}">
+							<div style="{{if menu.backColor}}background-color:{{menu.backColor}};{{/if}}">
+								<img src="{{menu.icon}}" />
+							</div>
+						</div>
+						</dt>
+						<dd>{{menu.name}}</dd>
+					</dl>
+				</a>
+				{{/if}}
+				{{/each}}
+			</div>
+			<div class="center" id="CONTROLLER">
+				<img src="{{organization.logoUrl | imageUrl:'@300w_300h_1e_1c'}}" onerror="this.src='./../images/default/org.jpg';" alt="{{organization.name}}" />
+			</div>
+			<h4 class="name">{{organization.name}}</h4>
+		</div>
+	</div>
+	<div class="tips">点击LOGO有惊喜哦！</div>
+</div>
+<nav class="home-footer-nav">
+	<ul class="footer-nav-tabs">
+		{{each menus as menu i}}
+		{{if i < 3}}
+		<li class="col-4">
+			<a href="{{menu.url}}">
+				<div class="nav-icon back-image" style="{{if menu.backImage}}background-image:url({{menu.backImage}});{{/if}}">
+					<div style="{{if menu.backColor}}background-color:{{menu.backColor}};{{/if}}">
+						<img src="{{menu.icon}}" />
+					</div>
+				</div>
+				<p class="title">{{menu.name}}</p>
+			</a>
+		</li>
+		{{/if}}
+		{{/each}}
+	</ul>
+</nav>

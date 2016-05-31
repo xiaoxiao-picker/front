@@ -1,0 +1,49 @@
+<section class="vote-option-container" id="VoteOption">
+	<header class="option-info">
+		<section class="img-wrapper">
+			<img src="{{option.imgUrl}}" alt="{{option.name}}" data-xx-action="previewImage" />
+		</section>
+		<section class="option-title">
+			<h4>{{option.name}}</h4>
+			<div class="count">
+				<span class="text-red font-18" id="TotalResult">{{option.totalVotes}}</span>
+				<span>票</span>
+			</div>
+		</section>
+		<section class="option-desc">
+			<div class="option-terse">
+				{{each option.description&&option.description.split('\n') as desc i}}
+				<p>{{desc}}</p>
+				{{/each}}
+			</div>
+
+			{{if option.videoUrl}}
+			<div class="option-showreel">
+				<a href="{{option.videoUrl}}" target="_blank" class="btn btn-primary btn-large">点击查看作品</a>
+			</div>
+			{{/if}}
+		</section>
+		<section class="buttons">
+			{{if vote.state=="NOTSTART"}}
+			<a href="javascript:void(0);" data-xx-action="goBack" class="btn btn-xx-gray btn-xx-large">投票尚未开始！</a>
+			{{else if vote.state=="OVER"}}
+			<a href="javascript:void(0);" data-xx-action="goBack" class="btn btn-xx-gray btn-xx-large">投票已结束！</a>
+			{{else if vote.remainVote==0}}
+			<a href="javascript:void(0);" data-xx-action="goBack" class="btn btn-xx-gray btn-xx-large">当前投票已用完！</a>
+			{{else if vote.compulsory}}
+			<a href="javascript:void(0);" data-xx-action="goBack" class="btn btn-xx-gray btn-xx-large">必须选满{{vote.tickets}}人才能投票！</a>
+			{{else}}
+			<button class="btn btn-xx-theme btn-xx-large btn-vote {{if !vote.repeatable&&option.checked}}disabled{{/if}}" data-xx-action="vote">
+				<span class="inside-loading">
+					<i class="iconfont icon-loading rolling"></i>
+				</span>
+				<span class="inside-text">
+					<span class="iconfont icon-favorite-fill"></span>
+					{{if option.checked}}已支持{{else}}支持{{/if}}
+				</span>
+			</button>
+			{{/if}}
+		</section>
+	</header>
+	<section id="CommentsContainer"></section>
+</section>

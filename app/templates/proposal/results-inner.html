@@ -1,0 +1,14 @@
+<div class="proposal-list-container" style="margin-bottom: 0;">
+	{{each proposals as proposal i}}
+	<div class="proposal-user-box {{proposal.proposalState=='SOLVED' ? 'complete' : ''}}">
+		<a href="#organization/{{orgId}}/proposal/{{proposal.id}}/info">
+			<div class="title ellipsis">{{proposal.title}}</div>
+			<div class="date">
+				<span class="iconfont icon-time-fill"></span>
+				<span>{{proposal.createTime}}</span>
+			</div>
+			<span class="remark">已解决</span>
+		</a>
+	</div>
+	{{/each}}
+</div>

@@ -1,0 +1,57 @@
+<section class="container">
+	<header class="wall-info">
+		<div class="title-bar">
+			<div class="wall">
+				<!-- <img class="avatar" src="{{org.logoUrl | imageUrl:'@100w_100h_1e_1c'}}" onerror="this.src='/images/default/org.jpg';" /> -->
+				<h4 class="wall-title title ellipsis {{if wall.title.length>10}}multiple{{else}}single{{/if}}">{{wall.title}}</h4>
+				<h4 class="wall-title message ellipsis {{if qrcodeMessage.length>10}}multiple{{else}}single{{/if}}">{{qrcodeMessage}}</h4>
+			</div>
+			<img class="wall-qrcode" src="{{qrcodeURL}}" data-xx-action="showQRCode" />
+		</div>
+	</header>
+	<section class="comment-box" id="COMMENTBOX">
+		<ul class="comment-list" id="COMMENTLIST">
+			<!-- app/templates/wall/inner-message -->
+		</ul>
+	</section>
+	<footer class="footer">
+		<section class="notice-container">
+			<div class="icon iconfont icon-voice"></div>
+			<div class="notice">
+				<span>{{wall.notice}}</span>
+			</div>
+		</section>
+		<section class="tools-container">
+			<div class="tool-box">
+				<i class="ic iconfont icon-message" data-xx-action="showMessage"></i>
+				<div class="tips"> 返回消息 </div>
+			</div>
+			<div class="tool-box">
+				<i class="ic iconfont icon-quanping" data-xx-action="fullScreen"></i>
+				<div class="tips"> 全屏（F11） </div>
+			</div>
+			<div class="tool-box">
+				<i class="ic iconfont icon-skin" data-xx-action="selectWallTheme"></i>
+				<div class="tips"> 风格 </div>
+			</div>
+			<div class="tool-box">
+				<i class="ic iconfont icon-gift" data-xx-action="openLottery"></i>
+				<div class="tips"> 幸运星 </div>
+			</div>
+			
+			<div class="tool-box">
+				<i class="ic iconfont icon-wheel" data-xx-action="relatedLottery"></i>
+				<div class="tips tips-lottery"> 抽奖 </div>
+			</div>
+			<div class="tool-box">
+				<i class="ic iconfont icon-ranking" data-xx-action="checkVoteRank"></i>
+				<div class="tips tips-lottery"> 投票 </div>
+			</div>
+			<div class="tool-box">
+				<i class="ic iconfont icon-sponsor" data-xx-action="showSponsor"></i>
+				<div class="tips"> 赞助商 </div>
+			</div>
+		</section>
+		
+	</footer>
+</section>

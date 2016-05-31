@@ -1,0 +1,43 @@
+.image-uploader-box{
+	margin: 30px 15px auto;
+	border-radius:2px;
+	background-color:#fff;
+	box-shadow: 1px 1px 3px 1px rgba(0,0,0,.1);
+	text-align: center;
+	>header{
+		position: relative;
+		.btn-close{
+			position: absolute;
+			right:-10px;
+			top:-10px;
+		}h4{
+		text-align: center;
+		font-size:18px;
+		padding:10px ;
+	}
+	}
+	>footer{
+		margin-top: 5px;
+		padding: 10px;
+		.btnUpload{
+			width:100%;
+		}
+	}
+	>header,>footer{
+		background-color:#eee;
+	}
+
+
+	.image-box{
+		overflow:hidden;
+		margin-top: 5px;
+		#preview{
+			max-width:100%;
+		}
+		.jcrop-holder{
+			margin:0 auto;
+		}
+	}
+
+	
+}

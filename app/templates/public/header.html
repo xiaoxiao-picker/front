@@ -1,0 +1,14 @@
+<div class="wrapper">
+	<div class="header-nav left">
+		<a class="btn-back" href="javascript:void(0);" data-xx-action="goBack">
+			<span class="iconfont icon-arrow-left"></span>
+		</a>
+	</div>
+	<div class="header-nav right" id="userAvatar">
+		<img data-xx-action="showHomeMenu" class="avatar avatar-user-{{user.id}}" data-param="@70w_70h_1e_1c" src="{{user.portraitUrl | imageUrl:'@70w_70h_1e_1c'}}" onerror="this.src='./images/default/avatar.jpg'" />
+	</div>
+	<h2 class="ellipsis">
+		{{#title}}
+	</h2>
+</div>
+{{include './loading'}}

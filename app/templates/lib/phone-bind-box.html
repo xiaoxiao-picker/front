@@ -1,0 +1,48 @@
+<!-- lib/bind-box.scss -->
+<section class="phone-bind-box bind-box">
+	<button class="btn btn-close">
+	<span class="iconfont icon-close"></span>
+	</button>
+	<header class="box-header">
+		<h3>{{title}}</h3>
+	</header>
+	<div class="box-content">
+		<div class="box-row">
+			<input type="tel" name="bind.phoneNumber" class="xx-input col-12 username" placeholder="请输入手机号码" value="{{value}}" />
+		</div>
+		<div class="box-row">
+			<input type="text" id="Captcha" class="xx-input col-12 captcha" placeholder="请输入图片中的字符串" />
+			<img id="CaptchaImage" src="" class="btn-captcha-refresh" />
+		</div>
+		<div class="box-row">
+			<input type="text" name="bind.authCode" class="xx-input col-12 authcode" placeholder="请输入验证码" />
+			<button class="btn btn-primary btn-auth btn-auth-code" data-captcha-type="message">
+			<span class="inside-text">获取验证码</span>
+			<span class="inside-loading">
+				正在发送
+				<span class="iconfont icon-loading rolling"></span>
+			</span>
+			<span id="Waiting" class="inside-else"></span>
+			</button>
+		</div>
+		<div class="box-row">
+			<span>*由于通信运营商的限制政策，请无法收到【短信验证码】的用户尝试</span>
+			<button class="btn-voice-auth btn-auth-code" data-captcha-type="voice" >
+				<span class="inside-text">获取语音验证码</span>
+				<span class="inside-loading"> 
+					正在请求
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span id="Waiting" class="inside-else"></span>
+			</button>
+		</div>
+	</div>
+	<footer class="box-footer">
+		<button class="btn btn-primary btn-confirm">
+		<span class="inside-text">立即绑定</span>
+		<span class="inside-loading">
+			<span class="iconfont icon-loading rolling"></span>
+		</span>
+		</button>
+	</footer>
+</section>

@@ -1,0 +1,31 @@
+body.vote-statistics {
+	background: #fff;
+}
+.vote-statistics-container {
+	#StatisticsList {
+		padding: 15px 15px 0;
+	}
+	.option-box {
+		margin-bottom: 15px;
+		h4 {
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 30px;
+		}
+		.percent {
+			line-height: 20px;
+			background: $body-background-color;
+			color: $color-c2;
+			.progress {
+				float: left;
+				display: block;
+				height: 20px;
+				min-width: 1px;
+				width: 1px;
+				background-color: $theme-color;
+				transition: all 1s;
+			}
+		}
+	}
+	
+}

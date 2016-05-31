@@ -1,0 +1,29 @@
+<!-- 单行文本编辑 -->
+<section class="form-container textbox">
+	<div class="form-box">
+		<!-- <header role="header" class="form-header">
+			<h3>{{title}}</h3>
+		</header> -->
+		<section role="body" class="form-body">
+			{{if type=="TEXTAREA"}}
+			<textarea class="xx-input" placeholder="{{placeholder}}" rows="5">{{value}}</textarea>
+			{{else if type=="TEXT"}}
+			<input type="text" class="xx-input" value="{{value}}" placeholder="{{placeholder}}" />
+			{{/if}}
+		</section>
+		<footer role="footer" class="form-footer clearfix">
+			<button class="btn btn-yes">
+				<span class="inside-loading"> 
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span class="inside-text">{{yesText}}</span>
+			</button>
+			<button class="btn btn-no">
+				<span class="inside-loading"> 
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span class="inside-text">{{noText}}</span>
+			</button>
+		</footer>
+	</div>
+</section>

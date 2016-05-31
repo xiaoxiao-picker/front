@@ -1,0 +1,45 @@
+<footer id="footer">
+	<ul class="tabs tabs-5" id="TabsFooter">
+		<li class="tab {{if currentTab=="UNSOLVED"}}active{{/if}}">
+			<a href="#organization/{{orgId}}/proposals?status=UNSOLVED&title={{title}}">
+				<div class="icon">
+					<span class="iconfont icon-alarm-clock-fill"></span>
+				</div>
+				<span class="title">待解决</span>
+			</a>
+		</li>
+		<li class="tab {{if currentTab=="SOLVED"}}active{{/if}}">
+			<a href="#organization/{{orgId}}/proposals?status=SOLVED&title={{title}}">
+				<div class="icon">
+					<span class="iconfont icon-light-fill"></span>
+				</div>
+				<span class="title">已解决</span>
+			</a>
+		</li>
+		<li class="tab tab-add">
+			<a href="javascript:void(0);" data-xx-action="add">
+				<div class="icon">
+					<div class="inner">
+						<span class="iconfont icon-add2"></span>
+					</div>
+				</div>
+			</a>
+		</li>
+		<li class="tab">
+			<a href="javascript:void(0);" data-xx-action="search">
+				<div class="icon">
+					<span class="iconfont icon-search"></span>
+				</div>
+				<span class="title">搜索</span>
+			</a>
+		</li>
+		<li  class="tab {{if currentTab=="USER"}}active{{/if}}">
+			<a href="#organization/{{orgId}}/proposals?status=USER&title={{title}}">
+				<div class="icon">
+					<span class="iconfont icon-me-fill"></span>
+				</div>
+				<span class="title">我的</span>
+			</a>
+		</li>
+	</ul>
+</footer>

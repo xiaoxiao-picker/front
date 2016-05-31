@@ -1,0 +1,23 @@
+<section class="lottery-modal awards-modal">
+	<div class="card-box">
+		<span class="btn-modal-close"><i class="close-circle"></i></span>
+		<div class="wrapper">
+			<header class="box-header">
+				<img src="./images/lottery/jxsz-title.png">
+			</header>
+			<ul class="awards clearfix">
+				{{each awards as award i}}
+				<li>
+					<div class="image-wrapper">
+						<img src="{{award.portraitUrl}}">
+					</div>
+					<p class="ellipsis">
+					{{award.name}}
+					</p>
+					<p>{{award.description}}</p>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</section>

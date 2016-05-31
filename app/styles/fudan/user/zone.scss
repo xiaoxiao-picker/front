@@ -1,0 +1,44 @@
+.userzone {
+	.buttons-left {
+		position: absolute;
+		left: 20px;
+		top: 20px;
+	}
+	.buttons-right {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		.QRCode {
+			background-color: transparent;
+			border:none;
+			outline: none;
+			color: #fff;
+			cursor: pointer;
+			.fa {
+				font-size: 40px;
+			}
+			&:hover {
+				color: #00ffff;
+			}
+		}
+	}
+}
+
+.userinfo-cell {
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	font-size: 14px;
+	background-color: #fff;
+	border-bottom: 1px solid $default-border-color;
+	.content {
+		float: right;
+		text-align: right;
+		color: #666;
+		width: 60%;
+	}
+}
+.userinfo-sepacer {
+	height: 20px;
+	background-color: #f2f5f8;
+}

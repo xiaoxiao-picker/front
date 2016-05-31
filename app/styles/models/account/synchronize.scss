@@ -1,0 +1,13 @@
+.sync-box {
+	text-align: center;
+	color: $color-c2;
+	margin-top: 150px;
+	>img {
+		width: 30%;
+		display: block;
+		margin: auto;
+	}
+	>p {
+		padding-top: 40px;
+	}
+}

@@ -1,0 +1,24 @@
+{{if signup.state == 'REFUSE'}}
+<div class="feedback">
+    <h4>
+    	<span class="iconfont icon-comment-fill"></span>
+    	拒绝理由说明
+    </h4>
+    <div>
+        <p>{{signup.response}}</p>
+    </div>
+</div>
+{{/if}}
+<section id="VoteSignup">
+    <!--  './../public/require/fields'	 -->
+</section>
+{{if signup.state != 'APPROVE'}}
+<footer id="footer">
+    <button class="btn btn-primary btn-large" data-xx-action="signup">
+        <span class="inside-loading">
+		<span class="iconfont icon-loading rolling"></span>
+        </span>
+        <span class="inside-text">{{if signup.state}}修改信息并重新报名{{else}}提交报名信息{{/if}}</span>
+    </button>
+</footer>
+{{/if}}

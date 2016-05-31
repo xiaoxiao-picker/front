@@ -1,0 +1,60 @@
+<!-- 个人简历模板 -->
+<div class="user-resume-container">
+	<!-- 基础信息 -->
+	<section class="section base-info">
+		<header class="top-bg back-image">
+			<img class="avatar user-avatar user-avatar-{{user.id}}" src="{{user.portraitUrl | imageUrl:'@100w_100h_1c_1e'}}" onerror="this.src='./images/default/avatar.jpg';" alt="{{user.name||user.phoneNumber}}" />
+		</header>
+		<section class="info-body">
+			<h3>{{user.name||user.phoneNumber}}</h3>
+			<div class="info">
+				<span> <i class="iconfont icon-home"></i>
+					{{user.school||"暂无"}}
+				</span>
+				<span> <i class="iconfont icon-friend"></i>
+					{{["保密","男","女"][user.gender]}}
+				</span>
+			</div>
+			<div  class="info">
+				<span>
+					<i class="iconfont icon-phone"></i>
+					{{user.phoneNumber}}
+				</span>
+				<span>
+					<i class="iconfont icon-email"></i>
+					{{user.email||"暂无"}}
+				</span>
+			</div>
+		</section>
+	</section>
+	<!-- 活动历史 -->
+	<section id="EventsBox" class="section events">
+		<header class="awesome-header">
+			<div class="line"></div>
+			<h3  class="title">
+			<span>活动历史</span>
+			</h3>
+		</header>
+	<section id="EventsContainer">{{include './events'}}</section>
+</section>
+<!-- 获奖记录 -->
+<!-- <section id="AwardBox" class="section awards">
+		<header class="awesome-header">
+				<div class="line"></div>
+				<h3  class="title">
+					<span>获奖记录</span>
+				</h3>
+		</header>
+	<section id="AwardsContainer">{{include './awards'}}</section>
+</section> -->
+<!-- 第二课堂简历 -->
+<section id="EBox" class="section Es">
+<header class="awesome-header">
+	<div class="line"></div>
+	<h3  class="title">
+	<span>第二课堂简历</span>
+	</h3>
+</header>
+<section id="EContainer">{{include './e'}}</section>
+</section>
+</div>

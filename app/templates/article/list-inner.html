@@ -1,0 +1,20 @@
+{{each articles as article i}}
+<li class="card-box article-box">
+	<a href="#organization/{{organizationId}}/article/{{article.id}}/info">
+		<div class="box-header">
+			<img src="{{article.thumbnailUrl | imageUrl:'@315w_200h_1e_1c'}}" alt="" onerror="./images/default/article.jpg">
+			<div class="front">
+				<span class="category">{{article.categoryId | articleCategoryFilter}}</span>
+				<div class="total-box clearfix">
+					<span>{{article.totalViews||"0"}} 浏览</span>
+					<span>{{article.totalComments||"0"}} 评论</span>
+				</div>
+			</div>
+		</div>
+		<div class="box-footer">
+			<div class="title ellipsis">{{article.name}}</div>
+			<div class="terse ellipsis">{{article.terse}}</div>
+		</div>
+	</a>
+</li>
+{{/each}}

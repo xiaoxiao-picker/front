@@ -1,0 +1,59 @@
+//
+.option-wrapper {
+	width: 100%;
+	height: 190px;
+	position: relative;
+	.back, .front {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	.back {
+		z-index: 1;
+	}
+	.front {
+		z-index: 2;
+		&.front-03{
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+		.avatar {
+			width: 100px;
+			height: 100px;
+			margin: 70px auto 0;
+			border-radius: 50%;
+			border: 2px solid #fff;
+		}
+		.info-name {
+			text-align: center;
+			font-size: 16px;
+			color: #fff;
+			margin-top: 20px;
+		}
+	}
+}
+//
+.inner-loading {
+	text-align: center;
+	padding: 10px 0 0;
+}
+
+
+// 列表页 更多按钮
+.list-container {
+	.xx-empty-wrapper {
+		display: none;
+	}
+	.xx-more-wrapper {
+		padding:0;
+		margin-bottom:20px;
+		display: block;
+	}
+	&.complate {
+		.xx-empty-wrapper {
+			display: block;
+		}
+		.xx-more-wrapper {
+			display: none;
+		}
+	}
+}

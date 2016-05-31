@@ -1,0 +1,37 @@
+<div class="article-list-container">
+	<ul id="ArticlesContainer">
+		{{include './list-inner'}}
+	</ul>
+	<!-- more -->
+	{{include './../public/list-more'}}
+	<footer id="footer">
+		<ul class="tabs {{if hasRelation}}tab-3{{else}}tab-2{{/if}}" id="TabsFooter">
+			<li class="active">
+				<a href="#organization/{{organizationId}}/articles">
+					<div class="icon">
+						<span class="iconfont icon-list"></span>
+					</div>
+					<span class="title">文章列表</span>
+				</a>
+			</li>
+			{{if hasRelation}}
+			<li >
+				<a href="#organization/{{organizationId}}/relation/articles">
+					<div class="icon">
+						<span class="iconfont icon-people"></span>
+					</div>
+					<span class="title">关联组织文章</span>
+				</a>
+			</li>
+			{{/if}}
+			<li >
+				<a href="javascript:void(0);" data-xx-action="search">
+					<div class="icon">
+						<span class="iconfont icon-search"></span>
+					</div>
+					<span class="title">搜索</span>
+				</a>
+			</li>
+		</ul>
+	</footer>
+</div>

@@ -1,0 +1,133 @@
+.wall-add-message-box {
+        .content-body {
+                margin: 60px 10px 0;
+                border-radius: $default-border-radius;
+                background-color: rgba(255, 255, 255, 0.5);
+                box-shadow: 2.5px 4.3px 5px 0px rgba(0, 0, 0, 0.1);
+
+                .wall-header {
+                        background-color: #FFF;
+                        line-height: 70px;
+                        position: relative;
+
+                        .org-avatar {
+                                width: 50px;
+                                height: 50px;
+                                top: 10px;
+                                left: 10px;
+                                position: absolute;
+                        }
+
+                        .avatar {
+                                border-radius: 50%;
+                                box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+                        }
+
+                        .wall-title {
+                                display: inline-block;
+                                height: 40px;
+                                vertical-align: middle;
+                                color: #00AEFD;
+                                word-break: break-all;
+                                line-height: 1.4em;
+                                margin-left: 80px;
+                        }
+                }
+
+                .wall-comments {
+                        overflow: auto;
+                        margin-top: 10px;
+                        padding: 0 10px;
+
+                        .wall-comment {
+                                margin: 10px 0;
+                                padding: 10px 0px;
+                                border-radius: $default-border-radius;
+                                background-color: rgba(255, 255, 255, 0.8);
+                                box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.1);
+                                animation: none;
+
+                                .avatar-wrapper {
+                                        float: left;
+                                        padding: 0px 10px;
+                                        text-align: center;
+
+                                        .avatar {
+                                                width: 50px;
+                                                height: 50px;
+                                                border: 3px solid #FFF;
+                                        }
+                                }
+
+                                .msg-container-info {
+                                        margin-left: 70px;
+
+                                        > h4 {
+                                                line-height: 30px;
+                                                position: relative;
+
+                                                .nickname {
+                                                        font-size: 14px;
+                                                        color: #888;
+                                                }
+
+                                                .date {
+                                                        font-size: 14px;
+                                                        position: absolute;
+                                                        top: 0px;
+                                                        right: 10px;
+                                                        color: #999;
+                                                }
+                                        }
+
+                                        .msg p {
+                                                font-size: 16px;
+                                                line-height: 20px;
+                                                margin-bottom: 5px;
+                                                color: #555;
+                                                padding-right: 10px;
+                                        }
+                                }
+                        }
+                }
+
+                .wall-total {
+                        font-size: 14px;
+                        line-height: 40px;
+                        text-align: center;
+                        background-color: rgba(255, 255, 255, 0.5);
+                }
+        }
+
+        .content-footer {
+                margin: 10px 10px 0;
+                padding: 10px;
+                text-align: center;
+                border-radius: $default-border-radius;
+                background-color: rgba(255, 255, 255, 0.9);
+                box-shadow: 2.5px 4.3px 5px 0px rgba(0, 0, 0, 0.3);
+
+                > a {
+                        text-decoration: none;
+                        color: #444;
+                        outline: 0px none;
+
+                        .plus {
+                                font-size: 16px;
+                                line-height: 30px;
+                                width: 30px;
+                                height: 30px;
+                                margin-right: 10px;
+                                color: #FFF;
+                                border-radius: $default-border-radius;
+                                background-color: #5BD18B;
+
+                                > span {
+                                        font-size: 18px;
+                                        vertical-align: middle;
+                                        color: #5BD18B;
+                                }
+                        }
+                }
+        }
+}

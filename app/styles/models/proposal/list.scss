@@ -1,0 +1,171 @@
+.proposal-list-container {
+        margin-bottom: 55px;
+
+        .inner-header-tabs {
+                text-align: center;
+
+                .btn-tab {
+                        color: $color-c5;
+                        background-color: transparent;
+                        width: 70px;
+                        line-height: 30px;
+                        font-size: 14px;
+                        border-radius: 15px;
+                        margin: 10px;
+
+                        &.active {
+                                background-color: $color-c5;
+                                color: #fff;
+                        }
+                }
+        }
+
+        .proposal-user-box {
+                position: relative;
+                padding: 0 15px;
+                background: #fff;
+                border-bottom: 1px solid $default-border-color;
+
+                &.complete {
+                        .title, .date {
+                                color: $color-c2;
+                        }
+
+                        .remark {
+                                display: block;
+                        }
+                }
+
+                > a {
+                        display: block;
+                }
+
+                .title {
+                        font-size: 15px;
+                        padding: 12px 0 5px;
+                }
+
+                .date {
+                        color: $color-c2;
+                        font-size: 12px;
+                        padding-bottom: 12px;
+
+                        .material-icons {
+                                font-size: 14px !important;
+                        }
+                }
+
+                .remark {
+                        position: absolute;
+                        top: 20px;
+                        right: 15px;
+                        display: block;
+                        background: $color-c2;
+                        color: #fff;
+                        border-radius: 10px;
+                        padding: 3px 6px;
+                        display: none;
+                }
+        }
+
+        .proposal-box {
+                padding: 0 15px;
+                margin-bottom: 15px;
+                background: #fff;
+                box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+
+                .top-flag {
+                        color: $theme-color;
+                }
+        }
+
+        .box-header {
+                padding: 15px 0;
+
+                .avatar {
+                        float: left;
+                        height: 40px;
+                        width: 40px;
+                }
+
+                .msg {
+                        margin-left: 50px;
+                        color: $color-c2;
+
+                        .title {
+                                font-size: 16px;
+                                line-height: 25px;
+                                color: $color-c1;
+                        }
+
+                        .name {
+                                float: left;
+                                max-width: 150px;
+                                margin-right: 5px;
+                                font-size: 12px;
+                                line-height: 20px;
+                        }
+
+                        .date {
+                                float: left;
+                                font-size: 12px;
+                                line-height: 20px;
+                        }
+
+                        .user {
+                                height: 25px;
+                        }
+
+                        .category {
+                                display: inline-block;
+                                padding: 1px 5px;
+                                border: 1px solid $theme-color;
+                                color: $theme-color;
+                                border-radius: 10px;
+                                font-size: 12px;
+                                margin-left: 10px;
+                                float: left;
+                        }
+                }
+        }
+
+        .box-body {
+                border-bottom: 1px solid $default-border-color;
+
+                .text {
+                        color: #818181;
+                        margin-bottom: 15px;
+                        line-height: 20px;
+                }
+
+                .images-wrapper {
+                        margin: 0 -5px 10px;
+
+                        > img {
+                                float: left;
+                                display: block;
+                                height: 75px;
+                                width: 75px;
+                                border-radius: $default-border-radius;
+                                margin: 5px;
+                        }
+                }
+        }
+
+        .box-footer {
+                padding: 15px 0;
+
+                .material-icons {
+                        font-size: 16px !important;
+                }
+
+                .btn-praise {
+                        color: $color-c2;
+                }
+
+                .btn-mood {
+                        color: $color-c2;
+                        margin-right: 10px;
+                }
+        }
+}

@@ -1,0 +1,42 @@
+<section class="wall-add-message-box">
+	<div class="content-body">
+		<header class="wall-header">
+			{{if wall.org&&wall.org.logoUrl}}
+			<img class="org-avatar avatar" src="{{wall.org.logoUrl}}@100w_100h_1c_1e" /> {{/if}}
+			<span class="wall-title">{{wall.title}}</span>
+		</header>
+		<ul id="WALLCOMMENTS" class="wall-comments" style="height:394px;">
+			{{each messages as message i}}
+			<li class="wall-comment clearfix">
+				<div class="avatar-wrapper">
+					<img class="avatar" src="{{user.portraitUrl}}@100w_100h_1c_1e" onerror="this.src='/images/default/avatar.jpg'" />
+				</div>
+				<div class="msg-container-info">
+					<h4>
+					<span class="nickname">{{user.nickname||"匿名"}}</span>
+					<span class="date">{{message.createDate | makedate:'yyyy-MM-dd hh:mm'}}</span>
+					</h4>
+					<section class="msg">
+						{{each message.text.split('\n') as desc i}}
+						<p>{{desc}}</p>
+						{{/each}}
+						<!-- <p>{{message.text}}</p> -->
+					</section>
+				</div>
+			</li>
+			{{/each}}
+		</ul>
+		<footer class="wall-total">
+			你已经发了
+			<span id="COMMENTNUMBER">{{count}}</span> 条上墙消息
+		</footer>
+	</div>
+	<footer class="content-footer">
+		<a data-xx-action="makeTextForm" href="javascript:void(0);" style="display: block;">
+			<span>
+				<i class="plus iconfont icon-add"></i>
+			</span>
+			<span>添加一条你的上墙消息</span>
+		</a>
+	</footer>
+</section>

@@ -1,0 +1,184 @@
+body.lottery-draw {
+    #content {
+        margin-top: 0;
+    }
+}
+
+.lottery-draw-container {
+    position: relative;
+    .header-box {
+        position: relative;
+        .bg-image {
+            display: block;
+            width: 100%;
+        }
+        .front {
+            color: #fff;
+            text-align: center;
+        }
+        .icon {
+            margin: 15px 10% 0;
+            width: 80%;
+        }
+    }
+    .img-snow {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    .wrapper {
+        background-image: url('./../images/lottery/red-bg.png');
+        background-repeat: repeat-y;
+        background-size: 100%;
+        width: 100%;
+        padding-top: 1px;
+    }
+    .wheel-box {
+        position: relative;
+        width: 90%;
+        margin: -35px 5% 0;
+        border: 4px solid rgba(211, 48, 69, 0.9);
+        background: #ffd04a;
+        border-radius: 50%;
+    }
+    canvas {
+        margin: 6%;
+        border: 4px solid #eea951;
+        border-radius: 50%;
+        width: 88%;
+    }
+    .img-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: block;
+    }
+    .img-deer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30%;
+    }
+    .button-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+    }
+    .btn-lottery {
+        position: relative;
+        display: block;
+        margin-left: -50%;
+        margin-top: -50%;
+        height: 100%;
+        width: 100%;
+        background-color: #fa425a;
+        border-radius: 50%;
+        box-shadow: 0px -7px 0px 0px rgba(0, 0, 0, 0.2) inset;
+        border: 8px solid #ffd04a;
+        cursor: pointer;
+        background-image: url('./../images/lottery/btn-start.png');
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        &.disable {
+            background-color: #afafaf;
+            .arrow-top::before {
+                border-bottom-color: #afafaf;
+            }
+        }
+        .arrow-top {
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: -50%;
+                content: " ";
+                width: 0;
+                height: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 30px solid #fa425a;
+            }
+        }
+        >img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 50%;
+            display: block;
+            margin: auto;
+        }
+    }
+    .box-footer {
+        padding: 0 5%;
+        .buttons-wrapper {
+            position: relative;
+            .img-tree {
+                position: absolute;
+                top: -45px;
+                left: 5px;
+                height: 60px;
+            }
+            .img-person {
+                position: absolute;
+                top: -90px;
+                right: 5px;
+                height: 110px;
+            }
+        }
+        .buttons {
+            margin: 10px -5% 20px;
+            >li {
+                float: left;
+                width: 50%;
+                .btn-icon {
+                    width: 84%;
+                    display: block;
+                    margin: auto;
+                    cursor: pointer;
+                }
+            }
+        }
+        .rule-box {
+            position: relative;
+            padding-bottom: 30px;
+            .remain {
+                position: absolute;
+                top: 22px;
+                right: 20px;
+                font-size: 12px;
+                color: #fa425a;
+            }
+            >img {
+                display: block;
+                width: 100%;
+            }
+            .content {
+                background: #ffe5c9;
+                padding: 15px 15px 50px;
+                min-height: 200px;
+            }
+            h3 {
+                color: #fa425a;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 13px;
+                color: #6c120b;
+                line-height: 18px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

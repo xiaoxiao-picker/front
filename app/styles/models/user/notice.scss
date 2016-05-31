@@ -1,0 +1,29 @@
+.user-notices-container {
+	.notice-box {
+		padding: 0 15px;
+		margin-bottom: 15px;
+		background: #fff;
+		box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+	}
+	.box-header {
+		padding: 15px 0;
+		border-bottom: 1px solid $default-border-color;
+	}
+	.box-footer {
+		color: $color-c2;
+		padding: 15px 0;
+	}
+	h4 {
+		font-size: 16px;
+		line-height: 25px;
+		margin-bottom: 5px;
+	}
+	.text {
+		line-height: 20px;
+	}
+	.org-name {
+		float: left;
+		max-width: 150px;
+		margin-right: 10px;
+	}
+}

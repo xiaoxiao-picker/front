@@ -1,0 +1,69 @@
+.vote-option-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+
+        .btn-close {
+                top: 5px;
+                right: 5px;
+        }
+
+        .option-info {
+                padding: 15px;
+                background: #fff;
+                border-bottom: 1px solid $default-border-color;
+
+                .img-wrapper {
+                        > img {
+                                width: 100%;
+                        }
+                }
+
+                .option-title, .option-desc {
+                        padding: 15px 0;
+                }
+
+                .option-title {
+                        position: relative;
+                        border-bottom: 1px solid $default-border-color;
+
+                        h4 {
+                                font-size: 18px;
+                                line-height: 20px;
+                                margin-right: 60px;
+                        }
+
+                        .count {
+                                position: absolute;
+                                bottom: 13px;
+                                right: 0;
+                        }
+                }
+
+                .buttons {
+                        padding: 5px 0;
+                }
+
+                .btn-vote {
+                        box-shadow: 0 2px 3px 0 rgba(4, 0, 0, 0.24);
+
+                        &.disabled {
+                                background: $color-c2;
+                        }
+                }
+        }
+
+        .comments-container {
+                border-bottom: 1px solid $default-border-color;
+        }
+
+        .option-showreel {
+                margin-top: 20px;
+
+                > a {
+                        color: #fff;
+                }
+        }
+}

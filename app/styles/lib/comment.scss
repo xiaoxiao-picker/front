@@ -1,0 +1,126 @@
+body.comment-list {
+        background: #fff;
+}
+
+.comments-container {
+        &.inner {
+                padding: 0 15px;
+                background: #fff;
+
+                .comment-box {
+                        margin: 0;
+                        margin-bottom: -1px;
+                        border: none;
+
+                        .info-wrapper {
+                                border-bottom: 1px solid $default-border-color;
+                        }
+
+                        &:last-child {
+                                .info-wrapper {
+                                        border: none;
+                                }
+                        }
+                }
+        }
+
+        .comment-header {
+                position: relative;
+                background: #fff;
+                border-bottom: 1px solid $default-border-color;
+
+                h4 {
+                        padding: 20px 0 15px;
+                        color: $color-c2;
+                        font-weight: normal;
+                }
+
+                .btn-comment {
+                        position: absolute;
+                        top: 5px;
+                        right: 0;
+                        display: block;
+                        padding: 10px;
+
+                        .iconfont {
+                                font-size: 20px;
+                        }
+                }
+        }
+
+        .comment-footer {
+                border-top: 1px solid $default-border-color;
+                text-align: center;
+                background: #fff;
+
+                > a {
+                        display: block;
+                        padding: 20px 0;
+                        color: $color-c2;
+                }
+        }
+
+        .comment-box {
+                margin: 0 15px;
+                border-bottom: 1px solid $default-border-color;
+
+                .avatar {
+                        float: left;
+                        width: 30px;
+                        height: 30px;
+                        margin: 20px 0 15px;
+                }
+
+                .info-wrapper {
+                        position: relative;
+                        margin-left: 45px;
+                        padding: 20px 0 15px;
+                }
+
+                .name {
+                        color: $color-c2;
+                        margin-bottom: 8px;
+                        max-width: 200px;
+                }
+
+                .text {
+                        line-height: 20px;
+                        padding-bottom: 10px;
+                }
+
+                .date {
+                        position: absolute;
+                        top: 20px;
+                        right: 0;
+                        color: $color-c2;
+                }
+
+                .options {
+                        .material-icons {
+                                font-size: 16px !important;
+                        }
+
+                        > li {
+                                float: right;
+                                line-height: 24px;
+
+                                > a {
+                                        padding: 0 20px;
+                                        font-size: 14px;
+                                }
+
+                                .btn-remove {
+                                        border-right: 1px solid $default-border-color;
+                                }
+
+                                .btn-praise {
+                                        color: $color-c2;
+
+                                        &.active {
+                                                color: $theme-color;
+                                        }
+                                }
+                        }
+                }
+        }
+}

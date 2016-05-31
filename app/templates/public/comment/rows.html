@@ -1,0 +1,35 @@
+{{each comments as comment i}}
+<div class="comment-box">
+	<img class="avatar" src="{{comment.user.portraitUrl | imageUrl:'@30w_30h_1e_1c'}}" alt="" onerror="this.src='./images/default/avatar.jpg'">
+	<div class="info-wrapper">
+		<div class="name ellipsis">{{comment.user.nickname||comment.user.phoneNumber||'匿名'}}</div>
+		<div class="text">
+		{{if comment.targetUser}}
+		<span class="text-gray">@{{comment.targetUser.nickname||comment.targetUser.phoneNumber||'匿名'}}：</span>
+		{{/if}}
+		{{comment.text}}
+		</div>
+		<span class="date">{{comment.createTime}}</span>
+		<ul class="options clearfix">
+			<li>
+				<a class="btn-praise {{comment.praised ? 'active' : ''}}" href="javascript:void(0);" data-value="{{i}}">
+					<span class="iconfont icon-thumb-up"></span>
+					<span class="praise-count">{{comment.totalPraises}}</span>
+				</a>
+			</li>
+			<li>
+				<a class="btn-reply" href="javascript:void(0);" data-value="{{i}}">
+					<span>回复</span>
+				</a>
+			</li>
+			{{if comment.canRemove}}
+			<li>
+				<a class="btn-remove text-red" href="javascript:void(0);" data-value="{{i}}">
+					<span>删除</span>
+				</a>
+			</li>
+			{{/if}}
+		</ul>
+	</div>
+</div>
+{{/each}}

@@ -1,0 +1,55 @@
+<!-- 通过手机号码登陆 -->
+<!-- global/header.scss -->
+<header id="header" class="login-header">
+	<div class="wrapper">
+		<h2>手机授权</h2>
+	</div>
+</header>
+<section id="content" class="login-content">
+	<div class="xx-form-box">
+		<div class="box-body">
+			<div class="box-row">
+				<input type="tel" id="UserName" class="xx-input col-12 username" placeholder="请输入你的手机号码" />
+			</div>
+			<div class="box-row captcha-row">
+				<input type="text" id="Captcha" class="xx-input col-12 captcha" placeholder="输入图片中的字符串" />
+				<div class="captcha-box">
+					<img id="CaptchaImage" src="">
+					<a href="javascript:void(0)" data-xx-action="refresh">换一张？</a>
+				</div>
+			</div>
+			<div class="box-row auth-code-box">
+				<input type="text" id="AuthCode" class="xx-input col-12 authcode" placeholder="输入数字动态密码" />
+				
+				<button class="btn btn-primary auth-btn" data-xx-action="getAuthCode" data-captcha-type="message" >
+					<span class="inside-text">获取动态密码</span>
+					<span class="inside-loading"> 
+						正在发送
+						<span class="iconfont icon-loading rolling"></span>
+					</span>
+					<span id="Waiting" class="inside-else"></span>
+				</button>
+			</div>
+			<div class="box-row">
+				<span>*由于通信运营商的限制政策，请无法收到【短信密码】的用户尝试</span>
+				<button class="btn-voice-auth" data-xx-action="getAuthCode" data-captcha-type="voice" >
+					<span class="inside-text">获取语音密码</span>
+					<span class="inside-loading"> 
+						正在请求
+						<span class="iconfont icon-loading rolling"></span>
+					</span>
+					<span id="Waiting" class="inside-else"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="xx-form-box" style="border: none;margin-top: 20px;">
+		<button class="btn btn-xx-large btn-primary" data-xx-action="login">
+		<span class="inside-loading"> <span class="iconfont icon-loading rolling"></span>
+		</span>
+		<span class="inside-text">
+			<i class="iconfont icon-done font-16"></i>
+		</span>
+		</button>
+	</div>
+</section>

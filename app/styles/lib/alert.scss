@@ -1,0 +1,170 @@
+.ly-message-box-container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 2000;
+	background-color: #000;
+	background-color: rgba(0, 0, 0, .5);
+	top: 0;
+	left: 0;
+	animation: alertDisplay .2s ease-in-out 1 alternate;
+	animation-fill-mode: both;
+
+	&.ly-tips-container {
+		// position: absolute;
+	}
+	.ly-message-box {
+		width: 300px;
+		height: auto;
+		margin: 150px auto 30px;
+		padding: 0;
+		background-color: #fff;
+		border-radius: $default-border-radius;
+		font-size: 14px;
+		overflow: hidden;
+
+		// 特效组
+		&.scale {
+			animation: alertScale .3s ease-in-out 1 alternate;
+			animation-fill-mode: both;
+		}
+		&.rotate {
+			animation: alertRotate .6s ease-in-out 1 alternate;
+			animation-fill-mode: both;
+		}
+		.ly-message-box-header {
+			border-bottom: 1px solid $default-border-color;
+			font-size: 16px;
+			background-color: #393B3C;
+			text-align: center;
+			color: #fff;
+			padding: 10px 0;
+			display: none;
+		}
+		.ly-message-box-body {
+			min-height: 100px;
+			height: auto;
+			padding: 20px 20px 0;
+			color: #393B3C;
+			text-align: center;
+			font-size: 16px;
+			overflow: hidden;
+
+			&.success-body {
+				color: $success-color;
+			}
+			&.error-body {
+				color: $red-color;
+			}
+			.ly-message-content {
+				line-height: 20px;
+				padding: 20px 0;
+			}
+			img {
+				width: 99px;
+				height: 108px;
+			}
+			&.tips {
+				border-radius: $default-border-radius;
+				position: relative;
+				padding: 0;
+				background-color: #f2f2f2;
+				overflow: visible;
+
+				.ly-message-content {
+					padding: 0;
+				}
+				.image {
+					border: 2px solid #ccc;
+					border-radius: $default-border-radius;
+				}
+				.buttons {
+					position: absolute;
+					right: -10px;
+					top: -10px;
+
+					button.close {
+						width: 30px;
+						height: 30px;
+						line-height: 30px;
+						text-align: center;
+						background-color: $red-color;
+						color: #fff;
+						border-radius: 50%;
+						box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, .2);
+					}
+				}
+			}
+		}
+		.ly-message-box-footer {
+			.ly-btn {
+				border: 0;
+				outline: none;
+				cursor: pointer;
+				margin: 0 auto;
+				color: #fff;
+				line-height: 45px;
+
+				span {
+					font-size: 18px;
+				}
+				&.ly-btn-success {
+					background-color: $color-c5;
+				}
+				&.ly-btn-error {
+					background-color: $color-c5;
+				}
+				&:hover {
+					&.ly-btn-success {
+						background-color: #1C88DF;
+					}
+					&.ly-btn-error {
+						background-color: #1C88DF;
+					}
+				}
+				&.ly-btn-yes {
+				}
+				&.ly-btn-no {
+				}
+				&.width-p-100 {
+					width: 100%;
+				}
+				&.width-p-50 {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+// 遮罩层
+@keyframes alertDisplay {
+	from {
+		background-color: rgba(0, 0, 0, 0);
+	}
+	to {
+		background-color: rgba(0, 0, 0, .5);
+	}
+}
+@keyframes alertScale {
+	0% {
+		opacity: .5;
+		transform: scale(0.1, 0.1);
+	}
+	85% {
+		transform: scale(1.1, 1.1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1, 1);
+	}
+}
+@keyframes alertRotate {
+	from {
+		opacity: .5;
+		transform: rotate(360deg);
+	}
+	to {
+		opacity: 1;
+		transform: rotate(0deg);
+	}
+}

@@ -1,0 +1,47 @@
+{{each losts as lost i}}
+<section class="lost-wrapper">
+	<span class="remark {{lost.color}}"></span>
+	<section class="card-box lost-box">
+		<a href="#organization/{{orgId}}/lost/{{lost.id}}/info?status={{lost.type}}">
+			<header class="base-info">
+				{{if lost.picUrls.length}}
+				<section class="images-wrapper clearfix">
+					{{each lost.picUrls as url i}}
+					<img src="{{url | imageUrl:'@75w_75h_1e_1c'}}" alt="">
+					{{/each}}
+				</section>
+				{{/if}}
+				<h4 class="ellipsis">{{lost.title}}</h4>
+				<div class="content">{{lost.text}}</div>
+			</header>
+			<footer class="extend-info">
+				<ul class="options clearfix">
+					<li>
+						<span class="iconfont icon-time-fill"></span>
+						{{lost.eventDate | makedate:'yyyy-MM-dd hh:mm'}}
+					</li>
+					<li>
+						<span class="iconfont icon-location"></span>
+						{{lost.location}}
+					</li>
+				</ul>
+			</footer>
+			<span class="arrow-right">
+				<i class="iconfont icon-chevron-right"></i>
+			</span>
+			{{if currentTab == 'USER'}}
+				{{if lost.type == 'LOST'}}
+				<div class="tag green"><span>领</span></div>
+				{{else}}
+				<div class="tag red"><span>寻</span></div>
+				{{/if}}
+			{{/if}}
+			{{if lost.isCompleted}}
+			<div class="lost-result">
+				{{{FIND:"已找到",LOST:"已归还"}[lost.type]}}
+			</div>
+			{{/if}}
+		</a>
+	</section>
+</section>
+{{/each}}

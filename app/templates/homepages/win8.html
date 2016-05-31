@@ -1,0 +1,46 @@
+<!-- Windows8风格 -->
+
+<!-- 背景音乐 -->
+{{include './back-music'}}
+
+<!--  -->
+<div id="WindowsBox" class="image-back" style="{{if json.backColor}}background-color:{{json.backColor}};{{else if json.backImage}}background-image:url({{json.backImage}}){{/if}}">
+	<div class="wrapper">
+		<div class="org-info-wrapper clearfix">
+			<img src="{{organization.info.logoUrl | imageUrl:'@300w_300h_1e_1c'}}" onerror="this.src='./../images/default/org.jpg';" />
+			<div class="org-info">
+				<div class="title">{{organization.info.name}}</div>
+				<div class="items-wrapper clearfix">
+					<div class="item">
+						<h4>现有成员</h4>
+						<div>{{organization.extend.memberCount}}</div>
+						<div class="item-divider"></div>
+					</div>
+					<div class="item">
+						<h4>历史活动</h4>
+						<div>{{organization.extend.eventCount}}</div>
+						<div class="item-divider"></div>
+					</div>
+					<div class="item">
+						<h4>微信粉丝</h4>
+						<div>{{organization.extend.wechatFollowerCount}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menus clearfix">
+			{{each menus as menu i}}
+			<a href="{{menu.url}}">
+				<div class="menu-item-wrapper  {{menu.className}} clearfix" >
+					<div class="back-image" style="{{if menu.backImage}}background-image:url({{menu.backImage}});{{/if}}">
+						<div class="menuItem " style="{{if menu.backColor}}background-color:{{menu.backColor}};{{/if}}">
+							<img class="menu-icon" src="{{menu.icon}}" />
+							<p class="menu-name ellipsis">{{menu.name}}</p>
+						</div>
+					</div>
+				</div>
+			</a>
+			{{/each}}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+.pub-tickets {
+	.pub-ticket {
+		position: relative;
+		margin: 0 10px;
+		padding: 10px 0;
+		border-bottom: 1px solid $default-border-color;
+		.avatar-wrapper {
+			width: 100px;
+			float: left;
+			.avatar {
+				width: 60px;
+				height: 60px;
+				margin: 0 auto;
+			}
+		}
+		.info-wrapper {
+			width: auto;
+			margin-left: 100px;
+			padding: 0 10px;
+			.info-main {
+				font-size: 14px;
+				font-weight: bold;
+				margin-bottom: 5px;
+				height: 30px;
+				line-height: 30px;
+				overflow: hidden;
+			}
+			.info-sub {
+				font-size: 12px;
+			}
+		}
+	}
+}

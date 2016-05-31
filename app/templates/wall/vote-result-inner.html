@@ -1,0 +1,38 @@
+<ul class="left">
+	{{each options as option i}}
+	{{if options.length > i*2}}
+	<li class="option rank-{{i+1}} clearfix">
+		<div class="rank">{{i>2?i+1:""}}</div>
+		<div class="detail">
+			<header class="option-name ellipsis">
+				<span>【{{option.totalVotes}}票】</span>
+				<span>{{option.name}}</span>
+			</header>
+			<div class="progress-bar">
+				<!-- <span id="{{option.id}}" class="value" style="width:{{option.totalVotes*100/totalCount}}%;"></span> -->
+				<span id="{{option.id}}" class="value" style="width:0;"></span>
+			</div>
+		</div>
+	</li>
+	{{/if}}
+	{{/each}}
+</ul>
+<ul class="right">
+	{{each options as option i}}
+	{{if  i*2 >= options.length}}
+	<li class="option rank-{{i+1}} clearfix">
+		<div class="rank">{{i>2?i+1:""}}</div>
+		<div class="detail">
+			<header class="option-name ellipsis">
+				<span>【{{option.totalVotes}}票】</span>
+				<span>{{option.name}}</span>
+			</header>
+			<div class="progress-bar">
+				<!-- <span id="{{option.id}}" class="value" style="width:{{option.totalVotes*100/totalCount}}%;"></span> -->
+				<span id="{{option.id}}" class="value" style="width:0;"></span>
+			</div>
+		</div>
+	</li>
+	{{/if}}
+	{{/each}}
+</ul>

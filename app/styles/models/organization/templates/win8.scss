@@ -1,0 +1,121 @@
+#WindowsBox {
+	overflow: auto;
+
+	.wrapper {
+		padding: 15px;
+
+		.org-info-wrapper {
+			background-color: rgba(255, 255, 255, .8);
+			margin-bottom: 7.5px;
+			height: 120px;
+			overflow: hidden;
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+
+			img {
+				float: left;
+				height: 120px;
+				width: 120px;
+				overflow: hidden;
+			}
+			.org-info {
+				margin-left: 120px;
+
+				.title {
+					height: 50px;
+					line-height: 50px;
+					overflow: hidden;
+					font-size: 16px;
+					font-weight: bold;
+					padding: 0 20px;
+				}
+				.items-wrapper {
+					border-top: 1px solid $default-border-color;
+					padding-top: 5px;
+
+					.item {
+						position: relative;
+						float: left;
+						width: 33.333%;
+						text-align: center;
+						line-height: 30px;
+						color: $gray-title-color;
+
+						h4 {
+							font-size: 12px;
+							font-weight: normal;
+						}
+						.item-divider {
+							position: absolute;
+							height: 20px;
+							width: 1px;
+							background-color: $gray-title-color;
+							right: 0;
+							top: 16px;
+						}
+					}
+				}
+			}
+		}
+		.menus {
+			margin: 0 -7.5px;
+
+			.menu-item-wrapper {
+				float: left;
+				padding: 7.5px;
+
+				.menuItem {
+					position: relative;
+					height: 90px;
+					line-height: 90px;
+					width: 100%;
+					color: #fff;
+					text-align: center;
+					padding: 0px 5px;
+					border: 1px solid rgba(255, 255, 255, .7);
+
+					.menu-icon, .menu-name {
+						vertical-align: middle;
+					}
+					.menu-icon {
+						height: 36px;
+						width: 36px;
+					}
+					.menu-name {
+						font-size: 14px;
+						display: inline-block;
+						line-height: 18px;
+					}
+				}
+				&.times1 {
+					width: 33.3333%;
+
+					.menuItem {
+						line-height: 70px;
+
+						.menu-name {
+							display: block;
+							line-height: 18px;
+							position: absolute;
+							width: 100%;
+							bottom: 5px;
+							left: 0;
+							padding: 0 5px;
+						}
+					}
+				}
+				&.times2 {
+					width: 66.6666666%;
+
+					.menuItem {
+					}
+				}
+				&.times3 {
+					width: 100%;
+
+					.menuItem {
+					}
+				}
+			}
+		}
+	}
+}

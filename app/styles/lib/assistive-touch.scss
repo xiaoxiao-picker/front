@@ -1,0 +1,108 @@
+.assistive-touch-conatiner {
+	position: relative;
+
+	&.active {
+		.shadow {
+			display: block;
+		}
+	}
+	.shadow {
+		display: none;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		background-color: #fff;
+		background-color: rgba(232, 235, 237, 0.9);
+		z-index: 1000;
+	}
+	.assistive-touch {
+		position: fixed;
+		z-index: 1100;
+		width: 75px;
+		background-color: transparent;
+		text-align: center;
+		user-select: none;
+		apple-user-select: none;
+	}
+	.avatar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 50%;
+		border: 5px solid transparent;
+		box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+		background-color: rgba(255, 255, 255, .5);
+		z-index: 9999;
+		outline: 0;
+
+		img {
+			width: 65px;
+			height: 65px;
+			border-radius: 50%;
+			transition: .4s ease;
+			display: block;
+		}
+		.mark {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 12px;
+			background-color: $red-color;
+			color: #fff;
+			padding: 3px 6px;
+			border-radius: 9px;
+		}
+	}
+	.menus {
+		top: 12.5px;
+		left: 14.5px;
+		position: absolute;
+
+		.menu {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: .3s
+		}
+
+		.inner-menu{
+			position:relative;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			color: $success-color;
+			background-color: #fff;
+			box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+
+			.icon{
+				display: inline-block;
+				text-align: center;
+				margin: 10px;
+				font-size: 30px;
+				transition: .4s ease
+			}
+			.mark{
+				position: absolute;
+				top: 3px;
+				left: 22px;
+				font-size: 12px;
+				background-color: $red-color;
+				color: #fff;
+				padding: 2px 5px;
+				border-radius: 8px;
+			}
+		}
+	}
+}
+.menuMove {
+	transition: all .5s;
+}
+
+
+
+.btn-rotate .menus span {
+	transform: rotate(-135deg)
+}

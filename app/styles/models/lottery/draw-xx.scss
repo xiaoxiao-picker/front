@@ -1,0 +1,150 @@
+body.lottery-draw {
+    background: #e03f37;
+    #content {
+        margin-top: 0;
+    }
+}
+
+.lottery-draw-xx-container {
+    position: relative;
+    .header-img {
+    	display: block;
+    	width: 100%;
+    }
+    .options-wrapper {
+        padding: 0 5%;
+        margin-bottom: 15px;
+        .remain {
+            color: #ffd202;
+            font-weight: bold;
+            line-height: 30px;
+        }
+        .buttons {
+            float: right;
+            margin: 0 -5px;
+        }
+    }
+    .btn-icon {
+        padding: 5px 15px;
+        border-radius: 20px;
+        color: #ba2e27;
+        background: #ffb502;
+        margin: 0 5px;
+        border: 2px solid #c73831;
+    }
+    .wheel-box {
+        position: relative;
+        width: 90%;
+        margin: 0 5%;
+        border: 4px solid #c33732;
+        background: #ffd04a;
+        border-radius: 50%;
+    }
+    canvas {
+        margin: 6%;
+        border: 4px solid #eea951;
+        border-radius: 50%;
+        width: 88%;
+    }
+    .img-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: block;
+    }
+    .button-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+    }
+    .btn-lottery {
+        position: relative;
+        display: block;
+        margin-left: -50%;
+        margin-top: -50%;
+        height: 100%;
+        width: 100%;
+        background-color: #fa425a;
+        border-radius: 50%;
+        box-shadow: 0px -7px 0px 0px rgba(0, 0, 0, 0.2) inset;
+        border: 8px solid #ffd04a;
+        cursor: pointer;
+        background-image: url('./../images/lottery/btn-start.png');
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        &.disable {
+            background-color: #afafaf;
+            .arrow-top::before {
+                border-bottom-color: #afafaf;
+            }
+        }
+        .arrow-top {
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            &::before {
+                position: absolute;
+                top: 0;
+                left: -50%;
+                content: " ";
+                width: 0;
+                height: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 30px solid #fa425a;
+            }
+        }
+        >img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 50%;
+            display: block;
+            margin: auto;
+        }
+    }
+    .rule-box {
+        margin: 40px 5% 20px;
+        border: 25px solid transparent;
+        border-image: url('./../images/lottery/xiaoxiao/rule-border.png') 50 50 50 50 round;
+        .box-header {
+        	position: relative;
+        	>img {
+        		position: absolute;
+        		display: block;
+        		width: 100%;
+        		left: 0;
+        		bottom: 0;
+        	}
+        }
+        .content {
+            color: #fff;
+            padding-top: 15px;
+        }
+        h3 {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 13px;
+            line-height: 18px;
+            margin-bottom: 5px;
+        }
+    }
+    .link-xiaoxiao {
+        display: block;
+        margin: 20px 5%;
+        >img {
+            display: block;
+            width: 100%;
+        }
+    }
+}

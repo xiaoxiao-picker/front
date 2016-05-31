@@ -1,0 +1,30 @@
+<section class="vote-result-box" style="display:none;">
+	<section class="container vote-rank">
+		<header class="header">
+			<button class="btn-close">
+				<span class="icon iconfont icon-close-circle"></span>
+			</button>
+			<h3 class="vote-name">{{vote.name}}</h3>
+			<p class="message">
+				（共0人参与）
+			</p>
+		</header>
+		<section class="content">
+			<!-- app/templates/wall/vote-result-inner.html -->
+		</section>
+		<footer class="footer">
+			<span class="icon iconfont icon-qrcode"></span>
+			<span  class="qrcode">查看二维码</span>
+			<span>{{if wechat}}或 关注微信公众号 {{wechat.alias||wechat.name}} ，发送“投票”{{/if}}即可参与互动。</span>
+		</footer>
+	</section>
+	<section class="container vote-qrcode">
+		<img class="image-qrcode" src="{{voteURL}}" />
+		<footer class="footer">
+			<p class="tips">使用微信扫描二维码参与投票</p>
+			<p class>
+				<span class="text-link closeQRCode">返回投票结果查看</span>
+			</p>
+		</footer>
+	</section>
+</section>

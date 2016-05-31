@@ -1,0 +1,14 @@
+<footer id="footer">
+	<ul class="tabs {{tab.className}}" id="TabsFooter">
+		{{each tab.menus as menu i}}
+		<li {{if currentTab==menu.type}}class="active"{{/if}}>
+			<a href="{{menu.hash}}" {{if menu.action}}data-xx-action="{{menu.action}}"{{/if}}>
+				<div class="icon">
+					<span class="iconfont {{menu.icon}}"></span>
+				</div>
+				<span class="title">{{menu.title}}</span>
+			</a>
+		</li>
+		{{/each}}
+	</ul>
+</footer>

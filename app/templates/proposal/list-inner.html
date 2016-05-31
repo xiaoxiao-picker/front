@@ -1,0 +1,71 @@
+{{each proposals as proposal i}}
+{{if status != 'USER'}}
+<div class="proposal-box">
+	<a href="#organization/{{orgId}}/proposal/{{proposal.id}}/info">
+		<header class="box-header">
+			<img class="avatar" src="{{proposal.user.portraitUrl | imageUrl:'@30w_30h_1e_1c'}}" alt="" onerror="this.src='./images/default/avatar.jpg'">
+			<div class="msg">
+				<div class="title ellipsis">
+				<!-- 置顶标识 -->
+					{{if proposal.top}}
+					<span class="top-flag">【置顶】</span>
+					{{/if}}
+					{{proposal.title}}
+				</div>
+				<div class="user clearfix">
+					<div class="name ellipsis">
+						{{proposal.user.name||proposal.user.nickname||proposal.user.phoneNumber}}
+					</div>
+					<span class="date">发表于{{proposal.createTime}}</span>
+					{{if proposal.category}}
+					<span class="category">{{proposal.category.name}}</span>
+					{{/if}}
+				</div>
+			</div>
+		</header>
+		<section class="box-body">
+			<div class="text">
+				{{proposal.text}}
+			</div>
+			{{if proposal.thumbnailUrls&&proposal.thumbnailUrls.length}}
+			<section class="images-wrapper clearfix">
+				{{each proposal.thumbnailUrls as thumbnailUrl j}}
+				<img src="{{thumbnailUrl | imageUrl:'@75w_75h_1e_1c'}}" alt="" onerror="this.src='./images/default/event.jpg'">
+				{{/each}}
+			</section>
+			{{/if}}
+		</section>
+		{{if status == 'UNSOLVED'}}
+		<footer class="box-footer center">
+			<span class="btn-praise">
+				<span class="iconfont icon-thumb-up"></span>
+				帮顶({{proposal.praisedNumber}})
+			</span>
+		</footer>
+		{{else}}
+		<footer class="box-footer">
+			<span class="btn-mood good" data-xx-action="">
+				<span class="iconfont icon-mood"></span>
+				有用({{proposal.usefulNumber}})
+			</span>
+			<span class="btn-mood bad" data-xx-action="">
+				<span class="iconfont icon-mood-bad"></span>
+				无用({{proposal.uselessNumber}})
+			</span>
+		</footer>
+		{{/if}}
+	</a>
+</div>
+{{else}}
+<div class="proposal-user-box {{proposal.proposalState=='SOLVED' ? 'complete' : ''}}">
+	<a href="#organization/{{orgId}}/proposal/{{proposal.id}}/info">
+		<div class="title ellipsis">{{proposal.title}}</div>
+		<div class="date">
+			<span class="iconfont icon-time-fill"></span>
+			<span>{{proposal.createTime}}</span>
+		</div>
+		<span class="remark">已解决</span>
+	</a>
+</div>
+{{/if}}
+{{/each}}

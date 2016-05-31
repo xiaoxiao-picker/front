@@ -1,0 +1,18 @@
+<section class="lottery-result-modal">
+	<div class="result-box">
+		<span class="btn-modal-close"><i class="close-circle"></i></span>
+		<img src="./images/lottery/result-bg.png">
+		<div class="content-box">
+			{{if award.imageUrl}}
+			<img src="{{award.imageUrl}}" onerror="./images/default/event.jpg">
+			{{/if}}
+			<h4 class="ellipsis">{{award.name}}</h4>
+			{{if !hasSignUp}}
+			<div class="bottom">
+				<a class="btn btn-xx-red btn-submit" href="#organization/{{orgId}}/lottery/{{lotteryId}}/signup">登记个人信息</a>
+				<h5 class="ellipsis">个人信息还是要有的，万一中奖了呢</h5>
+			</div>
+			{{/if}}
+		</div>
+	</div>
+</section>

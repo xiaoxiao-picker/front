@@ -1,0 +1,71 @@
+.email-bind-box,
+.phone-bind-box {
+        width: 300px;
+        max-width: 90%;
+        margin: 0 auto;
+        background-color: #fff;
+        position: relative;
+
+        .btn-close {
+                position: absolute;
+                right: -10px;
+                top: -10px;
+        }
+
+        .box-header {
+                h3 {
+                        font-size: 16px;
+                        text-align: center;
+                        padding: 15px;
+                        font-weight: normal;
+                        color: $color-c2;
+                }
+        }
+
+        .box-content {
+                padding: 0 10px 15px;
+        }
+
+        .box-row {
+                position: relative;
+                padding: 10px;
+
+                > input {
+                        border-bottom: 1px solid $default-border-color;
+                }
+
+                .btn-auth {
+                        position: absolute;
+                        right: 10px;
+                        top: 15px;
+                        padding: 5px;
+                }
+
+                #CaptchaImage {
+                        position: absolute;
+                        right: 10px;
+                        bottom: 12px;
+                }
+
+                .btn-voice-auth {
+                        padding: 0 1px;
+                        background-color: transparent;
+                        color: #2196f3;
+                        border-bottom: 1px #2196f3 solid;
+                }
+        }
+
+        .username,
+        .captcha,
+        .authcode {
+                border-radius: 0;
+                border: none;
+                box-shadow: none;
+        }
+
+        .btn-confirm {
+                width: 100%;
+                border-radius: 0;
+                line-height: 25px;
+        }
+}

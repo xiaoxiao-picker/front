@@ -1,0 +1,31 @@
+<!-- 选择框 -->
+<section class="form-container choicebox">
+	<div class="form-box">
+		<button class="btn btn-close">
+			<span class="iconfont icon-close"></span>
+		</button>
+		<header role="header" class="form-header">
+			<h3>{{title}}</h3>
+		</header>
+		<section role="body" class="form-body">
+			<ul class="choices" id="FormChoice">
+				{{each options as option i}}
+				<li class="" data-value="{{option.id}}" data-text="{{option.name}}">
+					<label>
+						{{option.name}}
+						<input type="checkbox" class="option-input radio" name="{{namespace}}" value="{{option.id}}" {{if option.selected}}checked{{/if}} />
+					</label>
+				</li>
+				{{/each}}
+			</ul>
+		</section>
+		<footer role="footer" class="form-footer clearfix">
+			<button class="btn btn-choice-confirm btn-primary " style="width:100%;">
+				<span class="inside-loading">
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span class="inside-text">确定</span>
+			</button>
+		</footer>
+	</div>
+</section>

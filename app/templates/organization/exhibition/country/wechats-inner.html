@@ -1,0 +1,9 @@
+{{each wechats as wechat i}}
+<li class="wechat-box clearfix" data-value="{{wechat.id}}" data-xx-action="showQRCode">
+	<img class="qrcode-img" src="{{wechat.qrUrl | imageUrl:'@55w_55h_1e_1c'}}" alt="" />
+	<div class="wrapper">
+		<p class="title ellipsis">{{wechat.name}}</p>
+		<p class="type">{{wechat.category}}</p>
+	</div>
+</li>
+{{/each}}

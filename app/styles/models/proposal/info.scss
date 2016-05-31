@@ -1,0 +1,142 @@
+body.proposal-info {
+        background: #fff;
+}
+
+.proposal-info-container {
+        margin-bottom: 70px;
+
+        .info-header {
+                padding: 15px;
+
+                .avatar {
+                        float: left;
+                        height: 40px;
+                        width: 40px;
+                }
+
+                .msg {
+                        margin-left: 50px;
+                        color: $color-c2;
+
+                        .title {
+                                font-size: 16px;
+                                line-height: 25px;
+                                color: $color-c1;
+                        }
+
+                        .name {
+                                float: left;
+                                max-width: 150px;
+                                margin-right: 5px;
+                                font-size: 12px;
+                                line-height: 20px;
+                        }
+
+                        .date {
+                                float: left;
+                                font-size: 12px;
+                                line-height: 20px;
+                        }
+
+                        .user {
+                                height: 25px;
+                        }
+
+                        .category {
+                                display: inline-block;
+                                padding: 1px 5px;
+                                border: 1px solid $theme-color;
+                                color: $theme-color;
+                                border-radius: 10px;
+                                font-size: 12px;
+                                margin-left: 10px;
+                                float: left;
+                        }
+                }
+        }
+
+        .info-body {
+                padding: 0 15px;
+
+                .text {
+                        color: #555;
+                        line-height: 20px;
+                        padding-bottom: 15px;
+
+                        > p {
+                                margin-bottom: 10px;
+                        }
+                }
+        }
+
+        img.proposal-poster {
+                max-width: 100%;
+                margin-bottom: 10px;
+        }
+
+        .reply-box {
+                padding: 15px;
+                background: #f1f9ff;
+                border-top: 1px solid $theme-color;
+                border-bottom: 1px solid $theme-color;
+
+                .title-wrapper {
+                        color: $theme-color;
+                        margin-bottom: 5px;
+                }
+
+                .text {
+                        line-height: 20px;
+                        margin-left: 28px;
+                }
+
+                .adminReplies {
+                        > li {
+                                border-bottom: 1px solid #C8E0F3;
+                                padding: 10px 0 25px;
+                                position: relative;
+
+                                &:last-child {
+                                        border: none;
+                                }
+
+                                .date {
+                                        position: absolute;
+                                        bottom: 5px;
+                                        right: 2px;
+                                        color: $theme-color;
+                                }
+                        }
+                }
+        }
+}
+
+.proposal-info-footer {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-top: 1px solid $default-border-color;
+
+        .options {
+                > li {
+                        float: left;
+                        width: 50%;
+
+                        .material-icons {
+                                font-size: 18px;
+                        }
+
+                        .btn {
+                                color: $color-c2;
+
+                                &.actived {
+                                        color: $theme-color;
+                                }
+
+                                &.btn-report.actived {
+                                        color: $red-color;
+                                }
+                        }
+                }
+        }
+}
+
+@media (max-width: 300px) {}

@@ -1,0 +1,19 @@
+{{each notices as notice i}}
+<section class="notice-box">
+	<header class="box-header">
+		<h4>{{notice.title}}</h4>
+		<div class="text">
+			{{each notice.text&&notice.text.split('\n') as text i}}
+			<div>{{text}}</div>
+			{{/each}}
+		</div>
+	</header>
+	<footer class="box-footer">
+		<div class="org-name ellipsis">{{notice.organization&&notice.organization.name||'未命名组织'}}</div>
+		<span>
+			<span class="iconfont icon-time-fill"></span>
+			{{notice.createTime}}
+		</span>
+	</footer>
+</section>
+{{/each}}

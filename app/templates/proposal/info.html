@@ -1,0 +1,108 @@
+<section class="proposal-info-container">
+	<header class="info-header">
+		<img class="avatar" src="{{proposal.user.portraitUrl | imageUrl:'@40w_40h_1e_1c'}}" onerror="this.src='./images/default/avatar.jpg'">
+		<div class="msg">
+			<div class="title ellipsis">{{proposal.title}}</div>
+			<div class="user clearfix">
+				<div class="name ellipsis">
+					{{proposal.user.name||proposal.user.nickname||proposal.user.phoneNumber}}
+				</div>
+				<span class="date">发表于{{proposal.createTime}}</span>
+				{{if proposal.category}}
+				<span class="category">{{proposal.category.name}}</span>
+				{{/if}}
+			</div>
+		</div>
+	</header>
+	<section class="info-body">
+		<div class="text">
+			{{each proposal.text&&proposal.text.split('\n') as text i}}
+			<p>{{text}}</p>
+			{{/each}}
+		</div>
+		<div class="images">
+			{{each proposal.thumbnailUrls as thumbnailUrl j}}
+			<img class="proposal-poster" src="{{thumbnailUrl}}"  data-xx-action="previewImage" data-image-url="{{thumbnailUrl}}">
+			{{/each}}
+		</div>
+	</section>
+	<section class="reply-box">
+		<header class="title-wrapper">
+			<span class="iconfont icon-comment-fill"></span>
+			组织回复
+		</header>
+		<ul class="adminReplies">
+			{{if proposal.replies.length==0}}
+			<li class="center">暂无组织回复</li>
+			{{/if}}
+
+			{{each proposal.replies as reply i}}
+			<li class="">
+				<section class="text">
+					{{#reply.text}}
+				</section>
+				<span class="date">{{reply.createDate | makedate:'yyyy-MM-dd hh:mm'}}</span>
+			</li>
+			{{/each}}
+		</ul>
+		
+	</section>
+	
+	<section id="CommentsContainer"></section>
+</section>
+<section id="footer" class="proposal-info-footer">
+	{{if proposal.proposalState == 'UNSOLVED'}}
+	<ul class="options clearfix">
+		<li>
+			<button class="btn btn-large btn-empty {{proposal.hasPraised ? 'actived' : ''}}" data-xx-action="praise">
+				<span class="inside-loading">
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span class="inside-text">
+					<span class="iconfont icon-thumb-up"></span>
+					<span>帮顶</span>
+					(<span class="praise-count">{{proposal.praisedNumber}}</span>)
+				</span>
+			</button>
+		</li>
+		<li>
+			<button class="btn btn-large btn-empty btn-report {{proposal.reported ? 'actived' : ''}}" data-xx-action="report">
+				<span class="inside-loading">
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span class="inside-text">
+					<span class="iconfont icon-block"></span>
+					<span class="report-text">{{proposal.reported ? '已举报' : '举报'}}</span>
+				</span>
+			</button>
+		</li>
+	</ul>
+	{{else}}
+	<ul class="options clearfix">
+		<li>
+			<button class="btn btn-large btn-empty {{if proposal.used==1}}actived{{/if}}" data-value="FUL" data-xx-action="use">
+				<span class="inside-loading">
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span class="inside-text">
+					<span class="iconfont icon-mood"></span>
+					<span>有用</span>
+					(<span class="count">{{proposal.usefulNumber}}</span>)
+				</span>
+			</button>
+		</li>
+		<li>
+			<button class="btn btn-large btn-empty {{if proposal.used==2}}actived{{/if}}" data-value="LESS" data-xx-action="use">
+				<span class="inside-loading">
+					<span class="iconfont icon-loading rolling"></span>
+				</span>
+				<span class="inside-text">
+					<span class="iconfont icon-mood-bad"></span>
+					<span>无用</span>
+					(<span class="count">{{proposal.uselessNumber}}</span>)
+				</span>
+			</button>
+		</li>
+	</ul>
+	{{/if}}
+</section>

@@ -1,0 +1,34 @@
+<!-- models/event/register.scss -->
+<section class="signup-box">
+	<button class="btn btn-close" role="button">
+		<span class="iconfont icon-close"></span>
+	</button>
+	<h4>【报名时间】</h4>
+	<ul class="times">
+		{{each eventInfo.signUpTimes as time i}}
+		<li class="ellipsis {{time.state=='ONGOING'?'active':''}}">
+			<div class="date">
+				{{time.startDate | makedate:'MM/dd hh:mm'}} -- {{time.endDate | makedate:'MM/dd hh:mm'}}
+			</div>
+			<div>
+				{{if eventInfo.showNumberOfSignUp}}
+				<span class="remain">已报：{{time.numberOfSignUp}}</span>
+				&nbsp;
+				{{/if}}
+				<span class="total">总数：{{time.numberOfLimit||'不限'}}</span>
+			</div>
+		</li>
+		{{/each}}
+	</ul>
+	<footer>
+		{{if eventInfo.signupState.state == 'ONGOING'}}
+		<a class="btn btn-primary" href="#organization/{{organizationId}}/event/{{eventInfo.id}}/signup">立即报名</a>
+		{{else if eventInfo.signupState.state == 'UPCOMING'}}
+		<button class="btn btn-primary">报名即将开始</button>
+		{{else if eventInfo.signupState.state == 'EMPTY'}}
+		<button class="btn btn-primary">报名名额已满</button>
+		{{else}}
+		<button class="btn btn-primary">报名已结束</button>
+		{{/if}}
+	</footer>
+</section>

@@ -1,0 +1,119 @@
+.form-group {
+        border-bottom: 1px solid $default-border-color;
+
+        .title {
+                padding: 20px 0 10px;
+                line-height: 20px;
+                font-size: 14px;
+                color: $color-c1;
+
+                .icon {
+                        color: $red-color;
+                        font-size: 28px;
+                }
+        }
+
+        .content {
+                padding: 5px 0 20px;
+                cursor: pointer;
+
+                .placeholder {
+                        color: $color-c2;
+                }
+
+                .context {
+                        display: none;
+                        color: $color-c1;
+                        line-height: 20px;
+                }
+
+                &.active {
+                        .context {
+                                display: block;
+                        }
+
+                        .placeholder {
+                                display: none;
+                        }
+                }
+        }
+
+        .image {
+                display: block;
+                width: 75px;
+                height: 75px;
+                border-radius: $default-border-radius;
+                float: left;
+                margin: 10px;
+                position: relative;
+
+                img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: $default-border-radius;
+                }
+
+                .btn-close {
+                        width: 25px;
+                        height: 25px;
+                        padding: 0;
+                        position: absolute;
+                        right: -10px;
+                        top: -10px;
+                        text-align: center;
+                        border-radius: 50%;
+                        line-height: 1;
+
+                        .iconfont {
+                                text-indent: 1px;
+                                transition: all 0.5s;
+                                transform-origin: center;
+                        }
+
+                        &:hover {
+                                .iconfont {
+                                        transform: rotate(90deg);
+                                }
+                        }
+                }
+        }
+
+        .image-add {
+                border: 1px dashed $color-c2;
+                line-height: 75px;
+                text-align: center;
+
+                .iconfont {
+                        font-size: 30px;
+                        color: $color-c2;
+                        cursor: pointer;
+                }
+
+                > input[type=file] {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        opacity: 0;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                }
+
+                img {
+                        width: 25px;
+                        height: 25px;
+                        display: none;
+                        margin: 25px auto;
+                }
+
+                &.loading {
+                        img {
+                                display: block;
+                        }
+
+                        .iconfont {
+                                display: none;
+                        }
+                }
+        }
+}

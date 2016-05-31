@@ -1,0 +1,37 @@
+{{each questionnaires as questionnaire i}}
+<section class="card-box questionnaire-box">
+	<a href="#organization/{{orgId}}/questionnaire/{{questionnaire.id}}/info">
+		<header class="box-header">
+			<img src="{{questionnaire.thumbnail | imageUrl:'@315w_200h_1e_1c'}}" alt="" onerror="./images/default/event.jpg">
+			<div class="front">
+				<div class="bottom">
+					<span class="iconfont icon-time-fill"></span>
+					<span class="font-15" style="vertical-align: middle;">
+						{{if questionnaire.progress.state=="NOTSTART"}}
+						{{#questionnaire.progress.distance}}后开始
+						{{else if questionnaire.progress.state=="UNDERWAY"}}
+						问卷进行中
+						{{else if questionnaire.progress.state=="OVER"}}
+						问卷已结束
+						{{else}}
+						未知
+						{{/if}}
+					</span>
+				</div>
+			</div>
+		</header>
+		<footer class="box-footer">
+			<img class="avatar" src="{{questionnaire.organization.logoUrl}}" alt="" onerror="this.src='./images/default/avatar.jpg'">
+			<div class="msg">
+				<div class="title ellipsis">{{questionnaire.title}}</div>
+				<div class="clearfix">
+					<div class="name ellipsis">
+						{{questionnaire.organization.name}}
+					</div>
+					<span class="date">发表于{{questionnaire.createTime}}</span>
+				</div>
+			</div>
+		</footer>
+	</a>
+</section>
+{{/each}}

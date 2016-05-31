@@ -1,0 +1,12 @@
+{{each lotteries as lottery i}}
+<div class="option-box lottery clearfix" data-value="{{lottery.id}}" data-xx-action="drawLottery">
+    <img class="icon" src="./images/event/lottery-icon.png">
+    <div class="content">
+        <div>
+            <span class="mark">抽奖</span>
+            <span class="tag {{lottery.timeState.color}}">{{lottery.timeState.title}}</span>
+        </div>
+        <div class="title ellipsis">{{lottery.name}}</div>
+    </div>
+</div>
+{{/each}}

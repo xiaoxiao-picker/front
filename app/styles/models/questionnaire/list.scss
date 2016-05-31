@@ -1,0 +1,56 @@
+.questionnaire-list-container {
+    .questionnaires {
+        padding: 15px 15px 0;
+    }
+    .questionnaire-box {
+        padding: 0;
+        margin-bottom: 15px;
+        .box-header {
+            position: relative;
+            >img {
+                display: block;
+                width: 100%;
+            }
+            .bottom {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                background-color: rgba(255, 255, 255, .8);
+                color: $red-color;
+                text-align: center;
+            }
+            &.ended {
+                color: $light-font-color;
+            }
+        }
+        .box-footer {
+            padding: 10px 15px;
+            .avatar {
+                float: left;
+                height: 40px;
+                width: 40px;
+            }
+            .msg {
+                margin-left: 50px;
+                color: $color-c2;
+                .title {
+                    font-size: 16px;
+                    line-height: 25px;
+                    color: $color-c1;
+                }
+                .name {
+                    float: left;
+                    max-width: 50%;
+                    margin-right: 5px;
+                    font-size: 12px;
+                }
+                .date {
+                    float: left;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

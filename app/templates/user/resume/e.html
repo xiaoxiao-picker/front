@@ -1,0 +1,20 @@
+{{if count==0}}
+<div class="empty-tips">
+	暂无第二课堂简历
+</div>
+{{/if}}
+
+{{each comments as comment i}}
+<section class="e">
+	<h4 class="title">
+	<a href="javascript:void(0);">{{comment.operatorUser.name||comment.operatorUser.phoneNumber}}</a> 对Ta的评价：
+	<span class="date">{{comment.createDate | makedate:'yyyy-MM-dd'}}</span>
+	</h4>
+	
+	<section class="desc">
+		{{each comment.text.split('\n') as text i}}
+		<p>{{text}}</p>
+		{{/each}}
+	</section>
+</section>
+{{/each}}

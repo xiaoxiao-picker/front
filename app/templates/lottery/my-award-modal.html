@@ -1,0 +1,44 @@
+<section class="lottery-modal my-award-modal">
+    <div class="card-box">
+        <span class="btn-modal-close"><i class="close-circle"></i></span>
+        <div class="wrapper">
+            <header class="box-header">
+                <img src="./images/lottery/wdjp-title.png">
+            </header>
+            <div class="table-wrapper">
+                <table class="awards-table center">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;">获奖时间</th>
+                            <th>所获奖品</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{each awards as award i}}
+                        <tr>
+                            <td>
+                                {{award.createDate | makedate:'yyyy.MM.dd hh:mm'}}
+                            </td>
+                            <td>
+                                <img src="{{award.portraitUrl | imageUrl:'@75w_60h_1e_1l'}}">
+                                <h4>{{award.name}}({{award.description}})</h4>
+                                {{if award.canJump}}
+                                <a class="link-green underline" href="{{award.jumpUrl}}">点击奖品链接</a>
+                                {{/if}}
+                            </td>
+                        </tr>
+                        {{/each}} {{if awards.length==0}}
+                        <tr>
+                            <td colspan="2">暂无中奖</td>
+                        </tr>
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="buttons clearfix">
+                <span class="iconfont icon-help-fill"></span>
+                <a href="#organization/{{orgId}}/lottery/{{lotteryId}}/info">如何领奖？</a>
+            </div>
+        </div>
+    </div>
+</section>

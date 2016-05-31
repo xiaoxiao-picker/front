@@ -1,0 +1,12 @@
+<section class="proposal-list-container">
+	<header class="inner-header-tabs">
+		<button class="btn-tab {{if sortType=='HOT'}}active{{/if}}" data-xx-action="resort" data-sort-type="HOT">热门</button>
+		<button class="btn-tab {{if sortType=='TIME'}}active{{/if}}" data-xx-action="resort" data-sort-type="TIME">最新</button>
+	</header>
+	<div id="Proposals" class="proposals">
+		<!-- app/templates/proposal/list-inner -->
+	</div>
+	<!-- more -->
+	{{include './../public/list-more'}}
+</section>
+{{include './footer-tabs'}}

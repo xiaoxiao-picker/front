@@ -1,0 +1,434 @@
+body.organization-index {
+        #content {
+                margin-top: 0;
+        }
+
+        .audiojs {
+                display: none;
+        }
+
+        .audio-box {
+                position: fixed;
+                z-index: 900;
+                top: 20px;
+                right: 20px;
+
+                .audio-controller {
+                        position: relative;
+
+                        .controller {
+                                width: 35px;
+                                height: 35px;
+                                text-align: center;
+                                line-height: 35px;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                border-radius: 50%;
+                                color: #fff;
+                        }
+
+                        .iconfont {
+                                font-size: 18px;
+                        }
+
+                        .play {
+                                display: inline-block;
+                        }
+
+                        .load, .pause {
+                                display: none;
+                        }
+                }
+
+                .audio-flowers {
+                        position: relative;
+                        display: none;
+                        top: 40px;
+
+                        .icon-music {
+                                position: absolute;
+                                bottom: 0;
+                                left: 10px;
+                                animation-fill-mode: both;
+                                animation-iteration-count: infinite;
+                        }
+                }
+
+                &.loading {
+                        .audio-controller {
+                                .play, .pause {
+                                        display: none;
+                                }
+
+                                .load {
+                                        display: inline-block;
+                                }
+                        }
+                }
+
+                &.playing {
+                        .audio-controller {
+                                .play, .load {
+                                        display: none;
+                                }
+
+                                .pause {
+                                        display: inline-block;
+                                }
+                        }
+
+                        .audio-flowers {
+                                display: block;
+
+                                .flower-01 {
+                                        color: #FD65DC;
+                                        animation-name: flower-01;
+                                        animation-delay: 1s;
+                                        animation-duration: 5s;
+                                        animation-direction: ease-in-out;
+                                }
+
+                                .flower-02 {
+                                        color: #FD6565;
+                                        animation-name: flower-02;
+                                        animation-delay: .6s;
+                                        animation-duration: 3s;
+                                        animation-direction: linear;
+                                }
+
+                                .flower-03 {
+                                        color: #DE65FD;
+                                        animation-name: flower-03;
+                                        animation-delay: .3s;
+                                        animation-duration: 7s;
+                                        animation-direction: ease-in-out;
+                                }
+
+                                .flower-04 {
+                                        color: #A465FD;
+                                        animation-name: flower-03;
+                                        animation-delay: .2s;
+                                        animation-duration: 1.4s;
+                                        animation-direction: linear;
+                                }
+
+                                .flower-05 {
+                                        color: #7065FD;
+                                        animation-name: flower-05;
+                                        animation-delay: 1.2s;
+                                        animation-duration: 5s;
+                                        animation-direction: ease-in-out;
+                                }
+
+                                .flower-06 {
+                                        color: #65A5FD;
+                                        animation-name: flower-06;
+                                        animation-delay: 1s;
+                                        animation-duration: 1.5s;
+                                        animation-direction: linear;
+                                }
+
+                                .flower-07 {
+                                        color: #65E0FD;
+                                        animation-name: flower-07;
+                                        animation-delay: .1s;
+                                        animation-duration: 3s;
+                                        animation-direction: ease-in-out;
+                                }
+
+                                .flower-08 {
+                                        color: #65FD7E;
+                                        animation-name: flower-08;
+                                        animation-delay: .2s;
+                                        animation-duration: 5s;
+                                        animation-direction: linear;
+                                }
+
+                                .flower-09 {
+                                        color: #9EFD65;
+                                        animation-name: flower-09;
+                                        animation-delay: .6s;
+                                        animation-duration: 9s;
+                                        animation-direction: ease-in-out;
+                                }
+
+                                .flower-10 {
+                                        color: #D8FD65;
+                                        animation-name: flower-10;
+                                        animation-delay: 0s;
+                                        animation-duration: 5s;
+                                        animation-direction: linear;
+                                }
+                        }
+                }
+        }
+}
+
+@keyframes flower-01 {
+        0% {
+                transform: rotate(0deg) translate(0, -20px);
+                opacity: 0;
+        }
+
+        15% {
+                transform: rotate(15deg) translate(-5px, -30px);
+                opacity: 0.9;
+        }
+
+        50% {
+                transform: rotate(30deg) translate(-10px, -40px);
+                opacity: .6;
+        }
+
+        75% {
+                transform: rotate(-13deg) translate(-5px, -50px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(17deg) translate(0px, -60px);
+                opacity: 0;
+        }
+}
+
+@keyframes flower-02 {
+        0% {
+                transform: rotate(0deg) translate(-5px, 0);
+                opacity: 0;
+        }
+
+        35% {
+                transform: rotate(15deg) translate(-8px, -30px);
+                opacity: 0.9;
+        }
+
+        60% {
+                transform: rotate(-15deg) translate(-10px, -40px);
+                opacity: .6;
+        }
+
+        75% {
+                transform: rotate(-10deg) translate(-9px, -50px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(20deg) translate(-5px, -60px);
+                opacity: 0;
+        }
+}
+
+@keyframes flower-03 {
+        0% {
+                transform: rotate(0deg) translate(10px, -20px);
+                opacity: 0;
+        }
+
+        15% {
+                transform: rotate(15deg) translate(12px, -25px);
+                opacity: 0.9;
+        }
+
+        40% {
+                transform: rotate(20deg) translate(7px, -30px);
+                opacity: .6;
+        }
+
+        85% {
+                transform: rotate(40deg) translate(5px, -50px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(60deg) translate(0px, -60px);
+                opacity: 0;
+        }
+}
+
+@keyframes flower-04 {
+        0% {
+                transform: rotate(0deg) translate(0px, -15px);
+                opacity: 0;
+        }
+
+        30% {
+                transform: rotate(-8deg) translate(-5px, -20px);
+                opacity: 0.9;
+        }
+
+        45% {
+                transform: rotate(-15deg) translate(-2px, -30px);
+                opacity: .6;
+        }
+
+        75% {
+                transform: rotate(-30deg) translate(-7px, -40px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(20deg) translate(-10px, -60px);
+                opacity: 0;
+        }
+}
+
+@keyframes flower-05 {
+        0% {
+                transform: rotate(15deg) translate(0, -20px);
+                opacity: 0;
+        }
+
+        25% {
+                transform: rotate(10deg) translate(-5px, -30px);
+                opacity: 0.9;
+        }
+
+        40% {
+                transform: rotate(20deg) translate(-2px, -45px);
+                opacity: .6;
+        }
+
+        55% {
+                transform: rotate(30deg) translate(0px, -60px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(20deg) translate(-3px, -60px);
+                opacity: 0;
+        }
+}
+
+@keyframes flower-06 {
+        0% {
+                transform: rotate(-90deg) translate(-5px, -18px);
+                opacity: 0;
+        }
+
+        35% {
+                transform: rotate(-105deg) translate(-8px, -30px);
+                opacity: 0.9;
+        }
+
+        60% {
+                transform: rotate(-80deg) translate(-3px, -42px);
+                opacity: .6;
+        }
+
+        75% {
+                transform: rotate(-50deg) translate(-5px, -50px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(-100deg) translate(0px, -55px);
+                opacity: 0;
+        }
+}
+
+@keyframes flower-07 {
+        0% {
+                transform: rotate(10deg) translate(3px, -20px);
+                opacity: 0;
+        }
+
+        35% {
+                transform: rotate(15deg) translate(-5px, -30px);
+                opacity: 0.9;
+        }
+
+        60% {
+                transform: rotate(50deg) translate(0px, -32px);
+                opacity: .6;
+        }
+
+        75% {
+                transform: rotate(30deg) translate(-5px, -40px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(0deg) translate(-8px, -60px);
+                opacity: 0;
+        }
+}
+
+@keyframes flower-08 {
+        0% {
+                transform: rotate(0deg) translate(3px, -17px);
+                opacity: 0;
+        }
+
+        35% {
+                transform: rotate(-15deg) translate(-2px, -10px);
+                opacity: 0.9;
+        }
+
+        60% {
+                transform: rotate(15deg) translate(-8px, 0px);
+                opacity: .6;
+        }
+
+        75% {
+                transform: rotate(30deg) translate(-10px, -45px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(60deg) translate(5px, -70px);
+                opacity: 0;
+        }
+}
+
+@keyframes flower-09 {
+        0% {
+                transform: rotate(0deg) translate(-2px, -19px);
+                opacity: 0;
+        }
+
+        25% {
+                transform: rotate(16deg) translate(-5px, -25px);
+                opacity: 0.9;
+        }
+
+        50% {
+                transform: rotate(90deg) translate(6px, -30px);
+                opacity: .6;
+        }
+
+        85% {
+                transform: rotate(127deg) translate(5px, -50px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(180deg) translate(2px, -70px);
+                opacity: 0;
+        }
+}
+
+@keyframes flower-10 {
+        0% {
+                transform: rotate(0deg) translate(3px, -23px);
+                opacity: 0;
+        }
+
+        35% {
+                transform: rotate(15deg) translate(5px, -30px);
+                opacity: 0.9;
+        }
+
+        60% {
+                transform: rotate(180deg) translate(8px, -50px);
+                opacity: .6;
+        }
+
+        75% {
+                transform: rotate(200deg) translate(-5px, -40px);
+                opacity: .3;
+        }
+
+        100% {
+                transform: rotate(360deg) translate(5px, -70px);
+                opacity: 0;
+        }
+}

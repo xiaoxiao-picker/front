@@ -1,0 +1,75 @@
+<section id="EventInfo">
+    <div class="event-header">
+        <div id="BackImage" style="">
+            <img src="{{eventInfo.thumbnailUrl | imageUrl:'@280h_1e_1c'}}" height="150%" class="blur" width="150%" style="position: absolute;top: -25%;left:-25%;" />
+        </div>
+        <div class="front">
+            <img id="Poster" class="poster" src="{{eventInfo.thumbnailUrl}}" data-xx-action="previewImage" data-image-url="{{eventInfo.thumbnailUrl}}">
+        </div>
+        <button class="btn-praise" data-xx-action="praise">
+            <span class="iconfont {{if eventInfo.hasPraised}}icon-favorite-fill{{else}}icon-favorite{{/if}}"></span>
+            <span class="praise-number">{{eventInfo.totalPraises||0}}</span>
+        </button>
+    </div>
+    <div class="event-op">
+        <p class="row org-name">
+            <span class="iconfont icon-friend"></span>
+            <span>{{eventInfo.organization.name||'未命名组织'}}</span>
+        </p>
+        <h3 class="row event-name">
+		{{eventInfo.name}}
+		</h3>
+
+        <!-- 活动报名 -->
+        {{if eventInfo.allowToSignUp}}
+        <div class="option-box event clearfix" data-xx-action="{{if eventInfo.hasSignUped}}cancelSignup{{else}}signup{{/if}}">
+            <img class="icon" src="./images/event/signup-icon.png">
+            <div class="content">
+                <div>
+                    <span class="mark">报名</span>
+                    <span class="tag {{eventInfo.signupState.color}}">{{eventInfo.signupState.title}}</span>
+                </div>
+                <div class="title ellipsis">活动{{if eventInfo.hasSignUped}}取消报名{{else}}报名{{/if}}</div>
+            </div>
+            {{if eventInfo.showNumberOfSignUp}}
+            <span class="total">{{eventInfo.totalSignups}}人参与</span> {{/if}}
+        </div>
+        {{/if}}
+
+        <!-- 活动投票 -->
+        {{if eventInfo.totalVotes}}
+        <div id="VOTES">
+        <!-- app/templates/event/info/vote -->
+        </div>
+        {{/if}}
+
+        <!-- 活动电子票 -->
+        {{if eventInfo.totalTicketSources}}
+        <div id="TICKETS">
+        <!-- app/templates/event/info/ticket -->
+        </div>
+        {{/if}}
+
+        <!-- 活动抽奖 -->
+        <div id="LOTTERY">
+        <!-- app/templates/event/info/lottery -->
+        </div>
+    </div>
+    <div class="event-info user-select">
+        <div class="row">
+            <p class="name">【活动时间】</p>
+            <div class="context">
+                {{eventInfo.startDate | makedate:'MM/dd hh:mm'}} -- {{eventInfo.endDate | makedate:'MM/dd hh:mm'}}
+            </div>
+        </div>
+        <div class="row">
+            <p class="name">【活动地点】</p>
+            <div class="context">{{eventInfo.address}}</div>
+        </div>
+        <div class="row">
+            <p class="name">【活动详情】</p>
+            <div class="context user-select">{{#eventInfo.description}}</div>
+        </div>
+    </div>
+    <section id="CommentsContainer"></section>
+</section>

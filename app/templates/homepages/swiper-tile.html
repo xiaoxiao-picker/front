@@ -1,0 +1,26 @@
+<!-- 平铺轮播图 -->
+<!-- 背景音乐 -->
+{{include './back-music'}}
+<div id="PAGECONTAINER" class="swiper-tile-box unselect back-image" style="{{if json.backColor}}background-color:{{json.backColor}};{{else if json.backImage}}background-image:url({{json.backImage}}){{/if}}">
+	{{include './swiper'}}
+	<section>
+		<ul class="menus">
+			{{each menus as menu i}}
+			<li class="menu back-image" style="{{if menu.backImage}}background-image:url({{menu.backImage}});{{/if}}">
+				<a href="{{menu.url}}">
+					<div class="wrapper" style="{{menu.css}}">
+						<div class="menu-content">
+							<p class="icon-wrapper">
+								<img  class="icon" src="{{menu.icon}}" />
+							</p>
+							<p class="name">
+								{{menu.name}}
+							</p>
+						</div>
+					</div>
+				</a>
+			</li>
+			{{/each}}
+		</ul>
+	</section>
+</div>

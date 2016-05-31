@@ -1,0 +1,22 @@
+
+<!-- 背景音乐 -->
+{{include './back-music'}}
+
+<div id="PAGECONTAINER" class="swiper-note-box back-image" style="{{if json.backColor}}background-color:{{json.backColor}};{{else if json.backImage}}background-image:url({{json.backImage}}){{/if}}">
+	{{include './swiper'}}
+	<section>
+		<div class="menus clearfix">
+			{{each menus as menu i}}
+			<div class="wrapper">
+				<a href="{{menu.url}}">
+					<div class="menu back-image" style="{{if menu.backImage}}background-image:url({{menu.backImage}});{{/if}}">
+						<div class="name ellipsis" style="{{if menu.backColor}}background-color:{{menu.backColor}};{{/if}}">
+							{{menu.name}}
+						</div>
+					</div>
+				</a>
+			</div>
+			{{/each}}
+		</div>
+	</section>
+</div>

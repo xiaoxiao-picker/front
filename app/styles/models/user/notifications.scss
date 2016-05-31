@@ -1,0 +1,47 @@
+body.user-notifications {
+	background: #fff;
+}
+.user-notifications-container {
+	.notifications {
+		padding: 0 15px;
+	}
+	.notification-box {
+		border-bottom: 1px solid $default-border-color;
+		padding: 20px 0;
+		.avatar {
+			float: left;
+			width: 35px;
+			height: 35px;
+		}
+		.info-wrapper {
+			margin-left: 45px;
+			line-height: 18px;
+		}
+		.date {
+			color: $color-c2;
+			margin-top: 5px;
+		}
+
+		.box-wrapper {
+			height: 75px;
+			background: $body-background-color;
+			margin: 15px 0;
+			.poster-img {
+				float: left;
+				display: block;
+				height: 75px;
+				width: 75px;
+				border-radius: $default-border-radius;
+			}
+			.wrapper {
+				margin-left: 75px;
+				padding: 15px;
+				.title {
+					color: $color-c1;
+					line-height: 20px;
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+}

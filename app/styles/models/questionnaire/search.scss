@@ -1,0 +1,39 @@
+.vote-search-wrapper {
+    position: relative;
+    margin: 7px 0 7px 45px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 0 60px 0 15px;
+    line-height: 30px;
+    overflow: hidden;
+    input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        &:focus {
+            background-color: #fff;
+        }
+    }
+    .btn-search {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 30px;
+        width: 60px;
+        color: $theme-color;
+        span {
+            display: block;
+            border-left: 1px solid $theme-color;
+        }
+    }
+}
+
+.vote-list-container {
+    .search-result {
+        line-height: 44px;
+        text-align: center;
+        color: $success-color;
+        border-bottom: 1px solid $theme-color;
+    }
+}

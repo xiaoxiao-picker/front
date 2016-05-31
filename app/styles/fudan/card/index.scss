@@ -1,0 +1,130 @@
+.fudan-card-index {
+	.info-header-o {
+		.front-o {
+			text-align: center;
+			.icon {
+				width: 100px;
+				height: 70px;
+				margin: 50px auto 10px;
+				border-radius: 8px;
+			}
+		}
+	}
+
+	.card-box {
+	width: auto;
+	margin: 30px auto 0;
+	background-color: #ededed;
+	max-width: 300px;
+	border-radius: 3px;
+	//border:1px solid #f2f2f2;
+	.card-header {
+		width: 100%;
+		height: 155px;
+		background-color: #fff;
+		border-radius: 3px 3px 0 0;
+		background-image: url(../images/wei_bg_02.png);
+		background-size: 100%;
+		overflow: visible;
+		box-shadow: 0px 3px 3px rgba(0, 0, 0, .1);
+		position: relative;
+		padding-top:40px;
+		.avatar {
+			display: block;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			margin: auto;
+			overflow: hidden;
+			background-color: #fff;
+		}
+		.name {
+			font-size: 16px;
+			padding-top: 10px;
+			text-align: center;
+			color: #fff;
+		}
+		.buttons{
+			position: absolute;
+			right: -10px;
+			top: -10px;
+		}
+	}
+	.card-body {
+		width: 100%;
+		position: relative;
+		padding: 44px;
+		.tag {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			bottom: 0;
+			right: 0;
+			background-size: 100% 100%;
+			border-radius: 0 0 3px 0;
+		}
+		.QRCode {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+			background-color: #fff;
+			border: 1px solid $default-border-color;
+		}
+		.qrcode-header {
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			text-align: center;
+			font-size: 14px;
+			line-height: 44px;
+			color: #111;
+		}
+		.qrcode-footer {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+			font-size: 14px;
+			line-height: 44px;
+			height: 44px;
+			overflow: hidden;
+			color: #111;
+			padding: 0 20px;
+		}
+	}
+}
+	
+}
+.card-menu-wrapper {
+	margin: 60px 20px 30px;
+	.item-wrapper {
+		.item {
+			display: block;
+			width: 120px;
+			height: 120px;
+			margin: auto;
+			color: #808080;
+			text-align: center;
+			.icon {
+				width: 40px;
+				height: 40px;
+				margin: auto;
+			}
+			.icon-o {
+				margin-top: 50px;
+			}
+			.title {
+				font-size: 12px;
+				line-height: 30px;
+			}
+		}
+	}
+	.item-border-bottom {
+		border-bottom: 1px solid $default-border-color;
+	}
+	.item-border-right {
+		border-right: 1px solid $default-border-color;
+	}
+}

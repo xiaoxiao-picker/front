@@ -1,0 +1,13 @@
+<!-- Modal -->
+<section class="modal-backdrop {{theme}}" style="z-index:{{zIndex}};">
+	<div class="content {{effects}}">
+		{{if loading}}
+		{{include './../loading'}}
+		{{/if}}
+	</div>
+	{{if closeButton}}
+	<button class="btn-close">
+		<span class="iconfont icon-close"></span>
+	</button>
+	{{/if}}
+</section>

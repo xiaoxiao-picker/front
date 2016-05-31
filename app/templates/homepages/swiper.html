@@ -1,0 +1,21 @@
+<header>
+	<div class="swiper-container unselect">
+		<div class="swiper-wrapper">
+			{{each carousels as carousel i}}
+			<div class="swiper-slide">
+				<a href="{{carousel.url}}">
+					<img class="poster" src="{{carousel.backImage}}" />
+					<header class="name">
+						<span>{{carousel.name}}</span>
+					</header>
+				</a>
+			</div>
+			{{/each}}
+		</div>
+		<!-- 前/后一页控制器 -->
+		<!-- <div class="swiper-button-prev"></div> -->
+		<!-- <div class="swiper-button-next"></div> -->
+		<!-- 分页容器 -->
+		<div class="swiper-pagination"></div>
+	</div>
+</header>

@@ -1,0 +1,78 @@
+body.questionnaire-info {
+        background: #fff;
+
+        #content {
+                margin-top: 0;
+        }
+}
+
+.questionnaire-info-container {
+        .info-header {
+                position: relative;
+                height: 230px;
+
+                .bottom {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: 20px;
+                        background-color: rgba(255, 255, 255, 0.8);
+                        color: $red-color;
+                        text-align: center;
+
+                        .pk {
+                                transform: scale(0.6);
+                        }
+                }
+        }
+
+        .base-info {
+                padding: 15px 15px 10px;
+
+                .avatar {
+                        float: left;
+                        height: 40px;
+                        width: 40px;
+                }
+
+                .msg {
+                        margin-left: 50px;
+                        color: $color-c2;
+
+                        .title {
+                                font-size: 16px;
+                                line-height: 25px;
+                                color: $color-c1;
+                        }
+
+                        .name {
+                                float: left;
+                                max-width: 150px;
+                                margin-right: 5px;
+                                font-size: 12px;
+                        }
+
+                        .date {
+                                float: left;
+                                font-size: 12px;
+                        }
+                }
+        }
+
+        .context {
+                padding: 0 15px;
+                color: #818181;
+                line-height: 25px;
+                margin-bottom: 60px;
+        }
+}
+
+body.questionnaire-signup {
+        background: #fff;
+}
+
+#QuestionnaireSignup {
+        padding: 0 15px;
+        margin-bottom: 55px;
+}

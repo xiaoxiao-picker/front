@@ -1,0 +1,26 @@
+<div class="event-list-container list-container">
+	<ul id="EventsContainer">
+	<!-- app/templates/event/list-option -->
+	</ul>
+	{{include './../public/list-more'}}
+	<footer id="footer">
+		<ul class="tabs tab-2" id="TabsFooter">
+			<li>
+				<a href="#organization/{{organizationId}}/events">
+					<div class="icon">
+						<span class="iconfont icon-list"></span>
+					</div>
+					<span class="title">活动列表</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="#organization/{{organizationId}}/relation/events">
+					<div class="icon">
+						<span class="iconfont icon-people"></span>
+					</div>
+					<span class="title">关联组织活动</span>
+				</a>
+			</li>
+		</ul>
+	</footer>
+</div>

@@ -1,0 +1,24 @@
+<!-- 背景音乐 -->
+{{include './back-music'}}
+<div id="PAGECONTAINER" class="swiper-photo-box back-image" style="{{if json.backColor}}background-color:{{json.backColor}};{{else if json.backImage}}background-image:url({{json.backImage}}){{/if}}">
+	{{include './swiper'}}
+	<section>
+		<ul class="menus">
+			{{each menus as menu i}}
+			<li class="menu clearfix">
+				<a href="{{menu.url}}">
+					<div class="menu-content" style="{{if menu.backColor}}background-color:{{menu.backColor}};{{/if}}">
+						<p class="icon-wrapper">
+							<img class="icon" src="{{menu.icon}}" />
+						</p>
+						<p class="name ellipsis">
+							<span>{{menu.name}}</span>
+						</p>
+					</div>
+					<div class="menu-img back-image" style="{{if menu.backImage}}background-image:url({{menu.backImage}});{{/if}}"></div>
+				</a>
+			</li>
+			{{/each}}
+		</ul>	
+	</section>
+</div>

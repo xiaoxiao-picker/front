@@ -1,0 +1,18 @@
+<section class="message-detail-box">
+	<section class="container">
+		<header class="header">
+			<button class="btn-close">
+				<span class="icon iconfont icon-close-circle"></span>
+			</button>
+			<div class="avatar-wrapper">
+				<img class="avatar" src="{{message.user.portraitUrl | imageUrl:''}}" onerror="this.src='/images/default/avatar.jpg';" />
+			</div>
+			<h3 class="user-name">{{message.user.nickname||message.user.name||message.user.phoneNumber||"匿名"}}</h3>
+		</header>
+		<section class="content">
+			{{each message.text.split('\n') as context i}}
+			<p class="context">{{context}}</p>
+			{{/each}}
+		</section>
+	</section>
+</section>

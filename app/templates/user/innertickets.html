@@ -1,0 +1,51 @@
+<!--用户已抢到的电子票列表模板（个人主页）-->
+{{if page=="zone"}}
+<header class="pub-header clearfix">
+	<h3 class="pub-title">{{title}}</h3>
+	<div class="toolbars">
+		<a href="#organization/{{orgId}}/user/tickets">
+			查看更多 <i class="fa fa-angle-double-right"></i>
+		</a>
+	</div>
+</header>
+{{/if}}
+<div class="ticket-list clearfix">
+	{{if tickets.length==0}}
+	<!-- styles/global/helper.scss -->
+	<div class="g-empty-wrapper">
+		<span>暂无抢票记录</span>
+	</div>
+	{{/if}}
+	{{each tickets as ticket i}}
+	<div class="ticket-cell">
+		<div class="ticket-wrapper">
+			<div class="event-poster-wrapper">
+				<div class="event-poster back" style="background-image:url({{ticket.eventThumbnailUrl}}@300w_200h_1e_1c),url(../images/default/event.jpg)"></div>
+				<div class="event-info-wrapper front">
+					<a href="#organization/{{orgId}}/event/{{ticket.eventId}}/info">
+						<div class="event-other-info-wrapper image-shadow">
+							<div class="event-other-info">
+								<div class="event-date">
+									<span class="fa fa-clock-o"></span>
+									{{ticket.eventStartDate | makedate:'yy/MM/dd hh:mm'}}&nbsp;至&nbsp;{{ticket.eventEndDate | makedate:'yy/MM/dd hh:mm'}}
+								</div>
+								<div class="event-loc">
+									<span class="fa fa-dot-circle-o"></span>
+									{{ticket.eventAddress}}
+								</div>
+							</div>
+							
+						</div>
+					</a>
+					<div onclick="" class="event-QRcode-wrapper" data-ticket-sourceId="{{ticket.sourceId}}" data-ticket-code="{{ticket.code}}" data-xx-action="showTicketQRCode" style="background-image:url({{ticket.qrcode}}@200w_200h_1e_1c)"></div>
+				</div>
+			</div>
+			<div class="event-title ellipsis">
+				<a href="#organization/{{orgId}}/event/{{ticket.eventId}}/info">
+					{{ticket.eventName}}
+				</a>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>

@@ -1,0 +1,75 @@
+.modal-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1030;
+        background-color: rgba(255, 255, 255, 0.85);
+        overflow: auto;
+        opacity: 0;
+        transition: all .5s ease-in-out;
+
+        &.black {
+                background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        &.deep-black {
+                background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .btn-close {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                border-radius: 50%;
+                background-color: $red-color;
+                color: #fff;
+        }
+
+        &.fade {
+                opacity: 1;
+        }
+
+        .content {
+                width: 100%;
+                padding-bottom: 30px;
+        }
+
+        .content {
+                &.topIn {
+                        animation: topIn .5s 1;
+                }
+        }
+
+        .content {
+                &.topOut {
+                        animation: topOut .5s 1;
+                }
+        }
+}
+
+@keyframes topIn {
+        0% {
+                transform: translateY(-80px);
+        }
+
+        100% {
+                transform: translateY(0);
+        }
+}
+
+@keyframes topOut {
+        0% {
+                transform: translateY(0);
+        }
+
+        100% {
+                transform: translateY(-80px);
+        }
+}

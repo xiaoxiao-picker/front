@@ -1,0 +1,18 @@
+<!-- 城市选择器 -->
+<section class="city-selector" id="CitySelector">
+	<span class="arrow"><i class="arrow-in"></i></span>
+	<div class="backdrop">
+		<div class="content clearfix">
+			<ul class="provinces">
+				{{each provinces as province i}}
+				<li class="{{selectProvince==province ? 'active': ''}}">
+					<a href="javascript:void(0);" class="province">{{province}}</a>
+				</li>
+				{{/each}}
+			</ul>
+			<ul class="cities" id="Cities">
+				
+			</ul>
+		</div>
+	</div>
+</section>

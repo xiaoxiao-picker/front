@@ -1,0 +1,21 @@
+.page-error {
+        text-align: center;
+        padding: 15px;
+
+        .error-404 {
+                margin: 10px auto;
+                background-image: url("/images/message/404.png");
+        }
+
+        .error-message {
+                margin: 20px 0;
+        }
+
+        .error-buttons {
+                margin: 50px 0;
+
+                .btn {
+                        width: 100%;
+                }
+        }
+}

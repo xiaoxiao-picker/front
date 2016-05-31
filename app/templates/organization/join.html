@@ -1,0 +1,22 @@
+<!-- models/event/register.scss -->
+<section id="OrganizationJoin">
+	<!--  './../public/require/fields'	 -->
+</section>
+<footer id="footer">
+	<footer id="footer">
+	{{if memberRank == -200 && orgInfo.permit}}
+	<button class="btn btn-large btn-xx-theme" data-xx-action="join">
+		<span class="inside-loading">
+			<span class="iconfont icon-loading rolling"></span>
+		</span>
+		<span class="inside-text">确定</span>
+	</button>
+	{{else if memberRank == -100}}
+	<button class="btn btn-large btn-xx-theme">正在审核中</button>
+	{{else if memberRank == 0}}
+	<button class="btn btn-large btn-xx-theme">你已经是 成员</button>
+	{{else if memberRank > 0}}
+	<button class="btn btn-large btn-xx-theme">你已经是 管理员</button>
+	{{/if}}
+</footer>
+</footer>

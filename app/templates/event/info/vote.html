@@ -1,0 +1,12 @@
+{{each votes as vote i}}
+<div class="option-box vote clearfix" data-value="{{vote.id}}" data-xx-action="vote">
+    <img class="icon" src="./images/event/vote-icon.png">
+    <div class="content">
+        <div>
+            <span class="mark">投票</span>
+            <span class="tag {{vote.timeState.color}}">{{vote.timeState.title}}</span>
+        </div>
+        <div class="title ellipsis">{{vote.name}}</div>
+    </div>
+</div>
+{{/each}}

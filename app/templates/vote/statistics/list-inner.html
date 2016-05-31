@@ -1,0 +1,9 @@
+{{each options as option i}}
+<div class="option-box">
+	<h4>{{option.index}}.{{option.name}}</h4>
+	<div class="percent clearfix">
+		<span class="progress" data-value="{{option.progress}}"></span>
+		<span>&nbsp;{{option.totalResult}}({{option.percent}})</span>
+	</div>
+</div>
+{{/each}}

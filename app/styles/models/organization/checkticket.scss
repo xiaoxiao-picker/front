@@ -1,0 +1,64 @@
+.checkticket-result {
+        text-align: center;
+        margin-top: 100px;
+        padding: 15px;
+
+        &.success, &.error, &.auth {
+                div.check-result {
+                        width: 180px;
+                        height: 180px;
+                        margin: 20px auto 50px;
+                }
+        }
+
+        &.success {
+                text-align: center;
+
+                div.check-result {
+                        background-image: url("/images/message/check-success.png");
+                }
+
+                p.check-message {
+                        color: $success-color;
+                }
+        }
+
+        &.error {
+                div.check-result {
+                        background-image: url("/images/message/check-error.png");
+                }
+
+                p.check-message {
+                        color: $red-color;
+                }
+        }
+        &.auth {
+                div.check-result {
+                        margin: 50px auto 0;
+                        background-image: url("/images/message/check-auth.png");
+                }
+        }
+
+        .btn.btn-check-again {
+                width: 100%;
+                padding: 15px;
+        }
+
+        .token {
+                display: inline-block;
+                width: 100%;
+                line-height: 35px;
+                text-align: center;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid $default-border-color;
+                margin: 30px 0;
+        }
+
+        .tips {
+                text-align: left;
+                padding: 15px;
+                color: $color-c2;
+                line-height: 18px;
+        }
+}

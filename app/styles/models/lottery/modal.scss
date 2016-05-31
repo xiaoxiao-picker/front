@@ -1,0 +1,275 @@
+$lottery-yellow-color: #ffd038;
+
+.lottery-modal {
+        .card-box {
+                position: relative;
+                border: 5px solid $lottery-yellow-color;
+                border-radius: 10px;
+                background: #fef2c2;
+                padding: 3px;
+                margin: 0 5%;
+                overflow: visible;
+
+                .wrapper {
+                        border: 1px dashed $lottery-yellow-color;
+                        border-radius: 6px;
+                        min-height: 150px;
+                        padding: 15px;
+                }
+
+                .btn-modal-close {
+                        position: absolute;
+                        top: -60px;
+                        right: -16px;
+                        cursor: pointer;
+                        padding: 10px;
+
+                        .close-circle {
+                                position: relative;
+                                display: inline-block;
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50%;
+                                border: 2px solid #fef2c2;
+
+                                &:after {
+                                        display: inline-block;
+                                        position: absolute;
+                                        right: 5px;
+                                        top: 4px;
+                                        content: "\e61a";
+                                        background-color: transparent;
+                                        vertical-align: middle;
+                                        font-family: "iconfont" !important;
+                                        font-size: 16px;
+                                        font-style: normal;
+                                        -webkit-font-smoothing: antialiased;
+                                        -webkit-text-stroke-width: 0.2px;
+                                        -moz-osx-font-smoothing: grayscale;
+                                        color: #fef2c2;
+                                }
+                        }
+                }
+        }
+
+        .box-header {
+                > img {
+                        display: block;
+                        margin: 5px auto 15px;
+                        width: 60%;
+                }
+        }
+}
+
+.awards-modal {
+        .awards {
+                max-height: 280px;
+                overflow: auto;
+
+                > li {
+                        float: left;
+                        width: 50%;
+                        text-align: center;
+                        margin: 15px 0;
+                        height: 110px;
+                        overflow: hidden;
+                }
+        }
+
+        .image-wrapper {
+                height: 60px;
+                margin-bottom: 10px;
+
+                &:before {
+                        content: "1";
+                        height: 0;
+                        width: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        line-height: 60px;
+                        white-space: nowrap;
+                        display: inline-block;
+                        margin-left: -5px;
+                }
+
+                > img {
+                        display: inline-block;
+                        max-width: 75px;
+                        max-height: 100%;
+                        vertical-align: middle;
+                }
+        }
+
+        h4 {
+                color: #f93e4f;
+        }
+
+        .count {
+                font-size: 12px;
+        }
+}
+
+.my-award-modal {
+        .table-wrapper {
+                max-height: 300px;
+                overflow: auto;
+        }
+
+        .awards-table {
+                width: 100%;
+                border-spacing: 0;
+                border: solid $lottery-yellow-color;
+                border-width: 1px 0 0 1px;
+                color: #aa4400;
+                margin-bottom: 15px;
+
+                th,
+                td {
+                        border: solid $lottery-yellow-color;
+                        border-width: 0 1px 1px 0;
+                }
+
+                th {
+                        font-size: 14px;
+                        padding: 10px 5px;
+                }
+
+                td {
+                        font-size: 12px;
+                        padding: 15px 5px;
+                        color: #f93e4f;
+                }
+
+                .link-green {
+                        margin-top: 8px;
+                        display: inline-block;
+                }
+        }
+
+        .buttons {
+                text-align: right;
+
+                .iconfont {
+                        color: #aa4400;
+                }
+
+                a {
+                        color: #aa4400;
+                        font-size: 12px;
+                        text-decoration: underline;
+                }
+        }
+}
+
+.lottery-result-modal {
+        .result-box {
+                position: relative;
+
+                .btn-modal-close {
+                        position: absolute;
+                        top: -50px;
+                        right: 8%;
+                        cursor: pointer;
+                        padding: 10px;
+
+                        .close-circle {
+                                position: relative;
+                                display: inline-block;
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50%;
+                                border: 2px solid #fef2c2;
+
+                                &:after {
+                                        display: inline-block;
+                                        position: absolute;
+                                        right: 5px;
+                                        top: 4px;
+                                        content: "\e61a";
+                                        background-color: transparent;
+                                        vertical-align: middle;
+                                        font-family: "iconfont" !important;
+                                        font-size: 16px;
+                                        font-style: normal;
+                                        -webkit-font-smoothing: antialiased;
+                                        -webkit-text-stroke-width: 0.2px;
+                                        -moz-osx-font-smoothing: grayscale;
+                                        color: #fef2c2;
+                                }
+                        }
+                }
+
+                > img {
+                        display: block;
+                        width: 96%;
+                        margin: auto;
+                }
+
+                .content-box {
+                        position: absolute;
+                        top: 25%;
+                        left: 23%;
+                        width: 55%;
+                        height: 70%;
+                        text-align: center;
+                        padding: 10px 0;
+
+                        > img {
+                                max-width: 75px;
+                                max-height: 60px;
+                        }
+                }
+
+                h4 {
+                        font-size: 16px;
+                        color: #f93e4f;
+                        margin: 10px 0;
+                }
+
+                .bottom {
+                        position: absolute;
+                        bottom: 5px;
+                        left: 0;
+                        width: 100%;
+                }
+
+                .btn-submit {
+                        width: 100%;
+                        border-radius: 5px;
+                        background: #f93e4f;
+                }
+
+                h5 {
+                        color: #c3a28c;
+                        font-size: 12px;
+                        margin-top: 5px;
+                }
+        }
+}
+
+.lottery-xiaoxiao-modal {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .back {
+                cursor: pointer;
+                display: block;
+        }
+
+        .wrap {
+                position: absolute;
+                z-index: 1040;
+                display: block;
+                padding: 0 20px;
+                left: 0;
+                right: 0;
+        }
+
+        img {
+                display: block;
+                width: 100%;
+        }
+}

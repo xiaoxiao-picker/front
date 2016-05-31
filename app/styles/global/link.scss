@@ -1,0 +1,55 @@
+a {
+        text-decoration: none;
+        color: #444;
+        outline: none;
+
+        &.underline {
+                text-decoration: underline;
+        }
+
+        &:hover, &:focus {
+                color: #111;
+        }
+
+        &:visited, &:active {
+                color: #444;
+        }
+
+        &.link-signup {
+                color: #3fcdfc;
+
+                &:hover {
+                        color: #2ebce8;
+                }
+        }
+
+        &.link-white {
+                color: #fff;
+
+                &:hover {
+                        color: #ddd;
+                }
+        }
+}
+
+.link-theme {
+        color: $theme-color;
+
+        &:hover, &:focus, &:visited, &:active {
+                color: $deep-blue-color;
+        }
+}
+
+.link-blue {
+        color: $blue-color;
+        &:hover, &:focus, &:visited, &:active {
+                color: $deep-blue-color;
+        }
+}
+
+.link-green {
+        color: $success-color;
+        &:hover, &:focus, &:visited, &:active {
+                color: $deep-success-color;
+        }
+}

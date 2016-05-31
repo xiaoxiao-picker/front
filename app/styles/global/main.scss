@@ -1,0 +1,70 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: inherit;
+	box-sizing: border-box;
+	letter-spacing: 0.5px;
+	word-wrap: break-word;
+	outline: none;
+	-webkit-overflow-scrolling: touch;
+	// 去掉点击链接和文本框对象时默认的灰色半透明覆盖层(iOS)或者虚框(Android)
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	// 是字体变清晰，擦除锯齿感
+	-webkit-font-smoothing: antialiased;
+
+	&:before, &:after {
+		box-sizing: border-box;
+		-webkit-overflow-scrolling: touch;
+	}
+}
+body{
+	background-color: $body-background-color;
+}
+body {
+	// 黑体的标准写法
+	// font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	//font-family: Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+	//font-family: "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif, Helvetica, Tahoma, Arial;
+	font-family: 'Helvetica Neue', Helvetica, Heiti, "黑体", sans-serif, "Microsoft YaHei", "微软雅黑";
+	color: $color-c1;
+	font-size: 14px;
+	overflow: auto;
+	user-select: none;
+}
+ul, li {
+	list-style: none;
+}
+input[type=text], input[type=password], input[type=number], input[type=tel], input[type=email], input[type=date], input[type=datetime], input[type=datetime-local], input[type=time], textarea {
+	outline: none;
+	border: 1px solid $default-border-color;
+	// 去掉默认样式
+	-webkit-appearance: none;
+	transition: all .8s;
+}
+
+[hidden]{
+	display:none !important;
+}
+[data-xx-action]{
+	cursor: pointer;
+}
+
+
+// 站长统计
+#cnzz_stat_icon_1254929763 {
+	display: none;
+}
+#LoginBox {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 9999999;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	iframe {
+		border: none;
+	}
+}

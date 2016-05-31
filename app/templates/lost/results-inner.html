@@ -1,0 +1,13 @@
+<div class="lost-list-container" style="margin-bottom: 0;">
+	{{each losts as lost i}}
+	<div class="lost-search-box">
+		<a href="#organization/{{orgId}}/lost/{{lost.id}}/info">
+			<div class="title ellipsis">[{{lost.type=='LOST' ? '失物招领' : '寻物启事'}}]{{lost.title}}</div>
+			<div class="date">
+				<span class="iconfont icon-time-fill"></span>
+				<span>{{lost.eventDate | makedate:'yyyy-MM-dd hh:mm'}}</span>
+			</div>
+		</a>
+	</div>
+	{{/each}}
+</div>

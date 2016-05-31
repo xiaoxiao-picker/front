@@ -1,0 +1,10 @@
+{{each organizations as organization i}}
+<li class="org-box">
+	<a href="{{if organization.relateOrgId}}#organization/{{organization.relateOrgId}}/index{{else}}#organization/{{organization.orgId}}/exhibition/{{organization.id}}/info/school{{/if}}" title="">
+		<div>
+			<img class="avatar-img" src="{{organization.thumbnailUrl | imageUrl:'@75w_75h_1e_1c'}}" onerror="this.src='./images/default/org.jpg'"/>
+		</div>
+		<div class="title ellipsis">{{organization.name}}</div>
+	</a>
+</li>
+{{/each}}

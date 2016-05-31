@@ -1,0 +1,75 @@
+<section class="lost-info-container">
+	<header class="base-info">
+		<h3>
+		{{if lost.type=="LOST"}}[失物招领]{{else}}[寻物启事]{{/if}}
+		{{lost.title}}
+		</h3>
+		<section class="msg-content clearfix">
+			<div class="msg-wrapper clearfix">
+				<div class="inner-title">{{if lost.type=="LOST"}}拾物{{else}}失物{{/if}}时间：</div>
+				<div class="inner-content">
+					{{lost.eventDate | makedate:'yyyy-MM-dd hh:mm'}}
+				</div>
+			</div>
+			<div class="msg-wrapper clearfix">
+				<div class="inner-title">{{if lost.type=="LOST"}}拾物{{else}}失物{{/if}}地点：</div>
+				<div class="inner-content">
+					{{lost.location}}
+				</div>
+			</div>
+			<div class="msg-wrapper clearfix" style="margin-bottom: 0;">
+				<div class="inner-title">{{if lost.type=="LOST"}}拾物{{else}}失物{{/if}}简介：</div>
+				<div class="inner-content">
+					{{each lost.text.split('\n') as text i}}
+					<p>{{text}}</p>
+					{{/each}}
+				</div>
+			</div>
+		</section>
+	</header>
+	{{if lost.picUrls.length}}
+	<section class="images-wrapper">
+		<section class="images clearfix">
+			{{each lost.picUrls as url i}}
+			<img src="{{url | imageUrl:'@75w_75h_1e_1c'}}" alt="">
+			{{/each}}
+		</section>
+	</section>
+	{{/if}}
+	<section class="contact-info">
+		<h4>联系方式</h4>
+		<section>
+			<span class="inner-title">联&nbsp;系&nbsp;人&nbsp;：</span>
+			{{lost.contactInfo.name}}
+		</section>
+		{{if lost.contactInfo.QQ}}
+		<section>
+			<span class="inner-title">QQ号码：</span>
+			{{lost.contactInfo.QQ}}
+		</section>
+		{{/if}}
+		<section>
+			<span class="inner-title">联系电话：</span>
+			{{lost.contactInfo.phone}}
+		</section>
+
+		<footer class="buttons">
+			{{if lost.isCompleted}}
+			<div class="lost-result">{{{FIND:"已找到",LOST:"已归还"}[lost.type]}}</div>
+			{{else}}
+				{{if lost.user&&lost.user.id == userId}}
+				<button class="btn btn-xx-theme btn-xx-large" data-xx-action="finish">
+					<span class="inside-loading">
+						<i class="fa fa-spinner rolling font-18"></i>
+					</span>
+					<span class="inside-text">
+						{{{FIND:"确认找到","LOST":"确认归还"}[lost.type]}}
+					</span>
+				</button>
+				{{else}}
+				<div class="lost-result">{{{FIND:"未找到","LOST":"未归还"}[lost.type]}}</div>
+				{{/if}}
+			{{/if}}
+		</footer>
+	</section>
+</section>

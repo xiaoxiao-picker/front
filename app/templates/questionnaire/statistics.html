@@ -1,0 +1,23 @@
+<section id="Statistics" class="questionnaire-statistics-container">
+	{{each choices as choice i}}
+	<div class="choice-box">
+		<h4>{{i+1}}.{{choice.title}}（{{choice.type == 'SINGLETON' ? '单选' : '多选'}}）</h4>
+		<ul class="subOptions">
+			{{each choice.options as option j}}
+			<li>
+				<div class="name">{{option.name}}</div>
+				<div class="percent clearfix">
+					<span class="progress" data-value="{{option.progress}}"></span>
+					<span>&nbsp;{{option.total}}({{option.percent}})</span>
+				</div>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+	{{/each}}
+	{{if choices.length == 0}}
+	<div class="empty-tips">
+		暂无问卷选项
+	</div>
+	{{/if}}
+</section>

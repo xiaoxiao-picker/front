@@ -1,0 +1,48 @@
+// scripts/lib/SearchBox.js
+.search-box-container {
+        .content {
+                height: 100%;
+        }
+}
+.search-box {
+        position: relative;
+        z-index: 1200;
+        height: 100%;
+        .back {
+                border: none;
+                display: block;
+        }
+        .front {
+                padding: 0 15px;
+                height: auto;
+                margin-bottom: 55px;
+        }
+        .search {
+                position: relative;
+                border: 1px solid $default-border-color;
+                border-radius: $default-border-radius;
+                margin: 6px 0;
+                input {
+                        border: none;
+                        font-size: 14px;
+                        color: $color-c1;
+                        width: 100%;
+                        padding: 10px;
+                        padding-right: 80px;
+                }
+                button {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 70px;
+                        border-left: 1px solid $default-border-color;
+                        height: 100%;
+                        border-radius: 0;
+                        background-color: #f2f2f2;
+                        color: #666;
+                        .material-icons {
+                                font-size: 20px;
+                        }
+                }
+        }
+}
