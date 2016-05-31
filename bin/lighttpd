@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+mkdir -p logs
+sudo touch logs/lighttpd.error.log
+sudo touch logs/access.log
+
+sudo lighttpd -D -f lighttpd.default.conf

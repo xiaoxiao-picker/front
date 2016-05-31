@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+nodePath=`pwd`
+
+
+cp -R patch/grunt-tmod/ node_modules/grunt-tmod/
+rm -rf node_modules/grunt-tmod/node_modules
+cd node_modules/grunt-tmod && npm install
+cp template-debug.js $nodePath/node_modules/grunt-tmod/node_modules/tmodjs/node_modules/art-template/dist/template-debug.js

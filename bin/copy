@@ -1,0 +1,42 @@
+#!/bin/bash
+set -e
+
+mkdir -p dist/oa
+echo -e "\033[40;32;25m created oa"
+
+mkdir -p dist/admin
+echo -e "\033[40;32;25m created admin"
+
+
+rm dist/oa/* -rf
+echo -e "\033[40;32;25m empty oa complete"
+
+rm dist/admin/* -rf
+echo -e "\033[40;32;25m empty admin complete"
+
+cp ../back-admin/dist/* -r dist/oa/
+echo -e "\033[40;32;25m oa copy complete"
+
+cp ../management/dist/* -r dist/admin/
+echo -e "\033[40;32;25m admin copy complete"
+
+
+
+if [ "$(ls -A dist/oa)" ]; then	
+	echo -e "\033[40;31;0m"
+	echo -e "\033[40;37;0m dist/oa 文件列表"
+	ls dist/oa 
+else
+	echo -e "\033[40;31;25m dist/oa is Empty"
+fi
+
+if [ "$(ls -A dist/admin)" ]; then	
+	echo -e "\033[40;31;0m"
+	echo -e "\033[40;37;0m dist/admin 文件列表"
+	ls dist/admin 
+else
+	echo -e "\033[40;31;0m dist/admin is Empty"
+fi
+
+echo -e "\033[40;37;0m"
+

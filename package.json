@@ -1,0 +1,54 @@
+{
+  "name": "wechat-front",
+  "dependencies": {
+    "tmodjs": "1.0.1-rc5"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^1.0.0",
+    "grunt-bower-install": "~1.4.0",
+    "grunt-cmd-concat": "^0.2.7",
+    "grunt-cmd-transport": "^0.4.1",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compass": "^1.0.2",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-imagemin": "^0.8.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha": "^0.4.10",
+    "grunt-modernizr": "^0.5.2",
+    "grunt-newer": "^0.7.0",
+    "grunt-rev": "^0.1.0",
+    "grunt-sass": "^1.1.0",
+    "grunt-svgmin": "^0.4.0",
+    "grunt-tmod": "^1.0.0",
+    "grunt-usemin": "^2.3.0",
+    "grunt-wiredep": "^1.7.0",
+    "http-proxy": "^1.8.1",
+    "jshint-stylish": "^0.4.0",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.4.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "tmodjs-config": {
+    "output": "./build",
+    "charset": "utf-8",
+    "syntax": "simple",
+    "helpers": null,
+    "escape": true,
+    "compress": true,
+    "type": "default",
+    "runtime": "template.js",
+    "combo": true,
+    "minify": true,
+    "cache": true
+  }
+}
